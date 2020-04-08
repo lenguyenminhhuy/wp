@@ -118,3 +118,22 @@
     font-size: 18px;
     line-height: 1.9;
   }
+  .showing {
+    text-align: center; 
+    font-family: 'Abril Fatface', cursive;
+    padding: 30px; 
+    font-size: 52px
+  }
+  .name{
+    font-family: 'IM Fell French Canon SC', serif;
+    margin-top: 15px;
+  
+  }
+  .movie-schedule{
+    margin-top: 30px;
+    font-family: 'Oswald', sans-serif;
+    
+  }
+  .movie-info{
+    font-family: 'Oswald', sans-serif;
+  }
