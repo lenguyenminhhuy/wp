@@ -3,7 +3,7 @@
     background-image: url("media2/movie1.jpg");
   
     /* Set a specific height */
-    min-height: 500px; 
+    min-height: 700px; 
     opacity: 0.7;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -16,8 +16,8 @@
     background-image: url("media2/movie2.jpg");
   
     /* Set a specific height */
-    min-height: 500px; 
-    opacity: 0.9;
+    min-height: 700px; 
+    opacity: 0.7;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -30,8 +30,8 @@
     background-image: url("media2/movie3.jpg");
   
     /* Set a specific height */
-    min-height: 500px; 
-    opacity: 0.9;
+    min-height: 700px; 
+    opacity: 0.7;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -44,8 +44,8 @@
     background-image: url("media2/movie2.jpg");
   
     /* Set a specific height */
-    min-height: 500px; 
-    opacity: 0.9;
+    min-height: 700px; 
+    opacity: 0.7;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -80,10 +80,18 @@ span{
     
 }
 /* Set up nav bar */
+.sticky{
+    overflow:hidden;
+    width:100%; 
+    color:white; 
+    position:sticky;
+    top:0px;
+    z-index: 1;
+}
 nav{
     width: 100%;
     height: 50px;
-    background: rgba(0, 0, 0, .8);
+    background-color: black;
     border-top: 1px solid rgba(255, 255, 255, .2);
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     position: sticky;
@@ -113,15 +121,16 @@ nav ul li a{
 
 nav ul li a:hover,
 nav ul li a.active {
-    background: salmon;
+    background: lightsteelblue;
 }
 
 /* Section heading */
-  .SectionHeading{
+  .section-heading{
       text-align: center;
       padding-top: 30px;
       padding-bottom: 0px;
       font-size: 430%;
+      font-family: cursive;
   }
   /* Section quotes */
   .Sectionquote{
@@ -163,12 +172,22 @@ nav ul li a.active {
     font-size: 240%;
     padding-bottom: 10px;
     padding-top: 20px;
+    padding-left: 20px;
+    font-family: cursive;
+    
 }
 
-.aup{
+.aup3{
     position: relative;
     left: 57px;
+    margin-bottom: 20px;
 }
+.aup4{
+  position: relative;
+  left: 57px;
+  margin-bottom: 20px;
+}
+
 
 .aud{
     font-size: 130%;
@@ -178,17 +197,22 @@ nav ul li a.active {
 
 #aup1{
     position: relative;
-    left: 270px;
-}
+    width: 1345px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+
+  }
 
 #aup2{
     position: relative;
-    left: 320px;
+    width: 1345px;
+    padding-left: 50px;
+
 }
 
-.aup3{
+.aup5{
     position: relative;
-    left: 340px;
+    padding-left: 10px;
 }
 
 table{
@@ -198,7 +222,7 @@ table{
     margin-bottom: 30px;
     background-image: url(media2/bg2.jpg);
     background-size: cover;
-<<<<<<< HEAD
+
   }
   .carousel-caption {
     bottom: 270px;
@@ -231,8 +255,7 @@ table{
   .movie-info{
     font-family: 'Oswald', sans-serif;
   }
-=======
-}
+
 
 
 table, th, td{
@@ -246,9 +269,9 @@ th, td{
 }
 
 #Prices{
-    text-align: center;
+      text-align: center;
       padding-top: 30px;
       padding-bottom: 10px;
       font-size: 430%;
+      font-family: cursive;
 }
->>>>>>> eac600e60503c601b536fe1fe332ed9c6576d74a
