@@ -4,12 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cinemax</title>
-
+  <title> Assignment 2 - Cinemax </title>
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
-
   <script src='../wireframe.js'></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -25,12 +23,6 @@
 </head>
 
 <body>
-
-  <!-- Logo and company name  -->
-  <!-- <header>
-    <div>Put company logo and name here</div>
-  </header> -->
-
   <!-- Navigation bar  -->
   <main>
     <img id="logo" src="media2/logo-op.png" />
@@ -44,13 +36,12 @@
       </ul>
     </nav>
 
+    <!-- We apply parallax effect scrolling into our website to make it more appealing.  -->
 
-    <!-- Parallel effect scrolling  -->
-    <div class="parallax1"></div>
 
     <!-- Promotion slide -->
+    <div class="parallax1"></div>
     <div id="Promotion" style="background-color:whitesmoke ">
-
       <h3 class="section-heading" style="color: #E25B45;">Promotion</h3>
       <div class="Sectionquote">We are running this speacial new openning promotion. Limited time only! </div>
       <div class="list-innovation">
@@ -60,8 +51,6 @@
           <li> Free snack pack with purchase of one General Admision </li>
         </ul>
       </div>
-
-
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -87,14 +76,12 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-
       </div>
-
     </div>
 
-    <div class="parallax2"></div>
 
     <!-- About us section -->
+    <div class="parallax2"></div>
     <section>
       <div id="About-us" style="background-color: whitesmoke ">
         <h3 class="section-heading" style="color: #E25B45;">About Us</h3>
@@ -163,62 +150,65 @@
         </div>
       </div>
     </section>
-
-    <div class="parallax2"></div>
+    <!-- End of About us section  -->
 
     <!-- Price section  -->
-    <section>
-      <div id="Prices"> Prices </div>
-      <div style="padding-left: 4%;">
-        <table>
-          <tr>
-            <th>Seat Type</th>
-            <th>Seat Code</th>
-            <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
-            <th>All other times</th>
-          </tr>
-          <tr>
-            <td>Standard Adult</td>
-            <td>STA</td>
-            <td>14.00</td>
-            <td>19.80</td>
-          </tr>
-          <tr>
-            <td>Standard Concession</td>
-            <td>STP</td>
-            <td>12.50</td>
-            <td>17.50</td>
-          </tr>
-          <tr>
-            <td>Standard Child</td>
-            <td>STC</td>
-            <td>11.00</td>
-            <td>15.30</td>
-          </tr>
-          <tr>
-            <td>First Class Adult</td>
-            <td>FCA</td>
-            <td>24.00</td>
-            <td>30.00</td>
-          </tr>
-          <tr>
-            <td>First Class Concession</td>
-            <td>FCP</td>
-            <td>22.50</td>
-            <td>27.00</td>
-          </tr>
-          <tr>
-            <td>First Class Child</td>
-            <td>FCC</td>
-            <td>21.00</td>
-            <td>24.00</td>
-          </tr>
-        </table>
-      </div>
-    </section>
+    <div class="parallax3">
+      <section>
+        <div id="Prices"> Prices </div>
+        <div style="padding-left: 4%;">
+          <table>
+            <tr>
+              <th>Seat Type</th>
+              <th>Seat Code</th>
+              <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
+              <th>All other times</th>
+            </tr>
+            <tr>
+              <td>Standard Adult</td>
+              <td>STA</td>
+              <td>14.00</td>
+              <td>19.80</td>
+            </tr>
+            <tr>
+              <td>Standard Concession</td>
+              <td>STP</td>
+              <td>12.50</td>
+              <td>17.50</td>
+            </tr>
+            <tr>
+              <td>Standard Child</td>
+              <td>STC</td>
+              <td>11.00</td>
+              <td>15.30</td>
+            </tr>
+            <tr>
+              <td>First Class Adult</td>
+              <td>FCA</td>
+              <td>24.00</td>
+              <td>30.00</td>
+            </tr>
+            <tr>
+              <td>First Class Concession</td>
+              <td>FCP</td>
+              <td>22.50</td>
+              <td>27.00</td>
+            </tr>
+            <tr>
+              <td>First Class Child</td>
+              <td>FCC</td>
+              <td>21.00</td>
+              <td>24.00</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+    <!-- End Price Section -->
 
+
+    <!-- Now showing section  -->
     <div class="parallax2"></div>
-
     <div style="background-color: whitesmoke ;font-size:36px">
       <div class="container-fluid">
         <div class="row">
@@ -243,13 +233,10 @@
                   <div class="name">
                     <h4 style="font-size:30px; color: rgb(206, 120, 107)"> <b> Avengers: Endgame </b><span
                         style="text-align: center; color: rgb(224, 90, 49); font-size: 27px;"> ( R ) </span></h4>
-
                   </div>
-
                   <div class="movie-schedule" style="font-size: 20px"> <b> Showing timetable in this week </b>
                   </div>
                   <div class="movie-info" style="font-size: 18px" ;>
-
                     <p>
                       <br /> <b> Wednesday </b>: 9pm (T21)
                       <br /> <b> Friday </b>: 9pm (T21)
@@ -257,7 +244,56 @@
                       <br /> <b> Sunday </b>: 6pm (T18)
                     </p>
                   </div>
-
+                  <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
+                    data-toggle="modal" data-target=".bd-example-modal-lg">See more</button>
+                  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
+                        <div class="row">
+                          <div class="col-sm-9">
+                            <h5 class="modal-title" id="exampleModalLabel"
+                              style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                              Happy Prince <span style="margin-left: 200px;">PG</span></h5>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+                            <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                              Plot Description
+                            </h7>
+                            <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                              The Happy
+                              Prince by
+                              Oscar Wilde is the story of a statue, the Happy Prince, covered with gold and
+                              many fine
+                              jewels. It sits overlooking the city. One day, a swallow passing through seeks
+                              shelter
+                              under the statue and discovers the prince is not happy, but sad </p>
+                          </div>
+                          <div class="col-sm-8">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                              <b>Make a
+                                booking: </b> </label>
+                          </div>
+                          <div class="col-sm-9" style="color:grey;">
+                            <button type="button" class="btn btn-outline-warning"> Wednesday: 12pm (T12)</button>
+                            <button type="button" class="btn btn-outline-danger"> Friday: 12pm (T12)</button>
+                            <button type="button" class="btn btn-outline-dark"> Saturday: 9pm (T21)</button>
+                            <button type="button" class="btn btn-outline-info"> Sunday: 9pm (T21)</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -283,12 +319,60 @@
                       <br /> <b> Sunday </b>: 3pm (T15)
                     </p>
                   </div>
+                  <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
+                    data-toggle="modal" data-target=".bd-example-modal-lg">See more</button>
 
+                  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
+                        <div class="row">
+                          <div class="col-sm-9">
+                            <h5 class="modal-title" id="exampleModalLabel"
+                              style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                              Happy Prince <span style="margin-left: 200px;">PG</span></h5>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+                            <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                              Plot Description
+                            </h7>
+                            <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                              The Happy
+                              Prince by
+                              Oscar Wilde is the story of a statue, the Happy Prince, covered with gold and
+                              many fine
+                              jewels. It sits overlooking the city. One day, a swallow passing through seeks
+                              shelter
+                              under the statue and discovers the prince is not happy, but sad </p>
+                          </div>
+                          <div class="col-sm-8">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                              <b>Make a
+                                booking: </b> </label>
+                          </div>
+                          <div class="col-sm-9" style="color:grey;">
+                            <button type="button" class="btn btn-outline-warning"> Wednesday: 12pm (T12)</button>
+                            <button type="button" class="btn btn-outline-danger"> Friday: 12pm (T12)</button>
+                            <button type="button" class="btn btn-outline-dark"> Saturday: 9pm (T21)</button>
+                            <button type="button" class="btn btn-outline-info"> Sunday: 9pm (T21)</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
             </div>
-
           </div>
           <div style=" margin-top:7.5px;">
             <div class=" d-flex row justify-content-center my-3">
@@ -313,23 +397,65 @@
                         <br /> <b> Tuesday </b>: 12pm (T12)
                         <br /> <b> Wednesday </b>: 6pm (T18)
                         <br /> <b> Friday </b>: 6pm (T18)
-
                         <br /> <b> Saturday </b>: 12pm (T12)
                         <br /> <b> Sunday </b>: 12pm (T12)
                       </p>
                     </div>
-
-
-
-
+                    <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
+                      data-toggle="modal" data-target=".bd-example-modal-lg">See more</button>
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                      aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
+                          <div class="row">
+                            <div class="col-sm-9">
+                              <h5 class="modal-title" id="exampleModalLabel"
+                                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                                Happy Prince <span style="margin-left: 200px;">PG</span></h5>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+                              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                                Plot Description
+                              </h7>
+                              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                                The Happy
+                                Prince by
+                                Oscar Wilde is the story of a statue, the Happy Prince, covered with gold and
+                                many fine
+                                jewels. It sits overlooking the city. One day, a swallow passing through seeks
+                                shelter
+                                under the statue and discovers the prince is not happy, but sad </p>
+                            </div>
+                            <div class="col-sm-8">
+                              <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                                <b>Make a
+                                  booking: </b> </label>
+                            </div>
+                            <div class="col-sm-9" style="color:grey;">
+                              <button type="button" class="btn btn-outline-warning"> Wednesday: 12pm (T12)</button>
+                              <button type="button" class="btn btn-outline-danger"> Friday: 12pm (T12)</button>
+                              <button type="button" class="btn btn-outline-dark"> Saturday: 9pm (T21)</button>
+                              <button type="button" class="btn btn-outline-info"> Sunday: 9pm (T21)</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
                 </div>
-
               </div>
-
               <div class="col-xs-5 col-md-5 col-sm-12 mx-2 "
-                style="background-color: #F3DBCF;padding-top: 8px;padding-bottom: 8px; ">
+                style="background-color: #F3DBCF;padding-top: 8px; padding-bottom: 8px;">
                 <div class="row px-1">
                   <div class="col-sm-6">
                     <img src="media2/now-showing4.jpg"
@@ -410,12 +536,16 @@
           </div>
       </section>
     </div>
+    <!-- End of now showing section  -->
+
+    <!-- Booking area section -->
     <div class="parallax2"></div>
-    <section>
+    <section id="booking">
       <div class="booking" id="booking-area" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 400%;  color: #E25B45;
       "> Booking area </div>
       <img style="padding-left: 8%;" src="./media2/under-construction.png" alt="">
     </section>
+    <!-- End of booking section  -->
   </main>
 
   <!-- Footer  -->
@@ -434,7 +564,6 @@
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
   </footer>
-
 </body>
 
 </html>
