@@ -24,3 +24,62 @@ document.addEventListener('scroll', () => {
         activeLink[2].classList.add('active') // the class of the div of this section will be added "active"
     else activeLink[2].classList.remove('active') // otherwise, it will be disable
 })
+
+document.getElementById('myBtn').onclick = function () { myFunction() };
+document.getElementById('myBtn1').onclick = function () { myFunction1() };
+document.getElementById('myBtn2').onclick = function () { myFunction2() };
+document.getElementById('myBtn3').onclick = function () { myFunction3() };
+document.getElementById('myBtn4').onclick = function () { myFunction4() };
+document.getElementById('myBtn5').onclick = function () { myFunction5() };
+
+
+function myFunction() {
+    document.getElementById('booking-area').classList.toggle("show");
+    document.getElementById('booking-area1').classList.remove("show");
+    document.getElementById('booking-area2').classList.remove("show");
+    document.getElementById('booking-area3').classList.remove("show");
+    document.getElementById('booking-area4').classList.remove("show");
+    document.getElementById('booking-area5').classList.remove("show");
+}
+function myFunction1() {
+    document.getElementById('booking-area').classList.remove("show");
+    document.getElementById('booking-area2').classList.remove("show");
+    document.getElementById('booking-area3').classList.remove("show");
+    document.getElementById('booking-area1').classList.toggle("show");
+    document.getElementById('booking-area4').classList.remove("show");
+    document.getElementById('booking-area5').classList.remove("show");
+
+}
+function myFunction2() {
+    document.getElementById('booking-area1').classList.remove("show");
+    document.getElementById('booking-area3').classList.remove("show");
+    document.getElementById('booking-area').classList.remove("show");
+    document.getElementById('booking-area4').classList.remove("show");
+    document.getElementById('booking-area5').classList.remove("show");
+    document.getElementById('booking-area2').classList.toggle("show");
+
+}
+function myFunction3() {
+    document.getElementById('booking-area2').classList.remove("show");
+    document.getElementById('booking-area1').classList.remove("show");
+    document.getElementById('booking-area').classList.remove("show");
+    document.getElementById('booking-area4').classList.remove("show");
+    document.getElementById('booking-area5').classList.remove("show");
+    document.getElementById('booking-area3').classList.toggle("show");
+}
+function myFunction4() {
+    document.getElementById('booking-area2').classList.remove("show");
+    document.getElementById('booking-area1').classList.remove("show");
+    document.getElementById('booking-area').classList.remove("show");
+    document.getElementById('booking-area4').classList.toggle("show");
+    document.getElementById('booking-area3').classList.remove("show");
+    document.getElementById('booking-area5').classList.remove("show");
+}
+function myFunction5() {
+    document.getElementById('booking-area2').classList.remove("show");
+    document.getElementById('booking-area1').classList.remove("show");
+    document.getElementById('booking-area').classList.remove("show");
+    document.getElementById('booking-area5').classList.toggle("show");
+    document.getElementById('booking-area4').classList.remove("show");
+    document.getElementById('booking-area3').classList.remove("show");
+}

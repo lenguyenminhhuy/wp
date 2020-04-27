@@ -255,4 +255,93 @@ padding-top: 60px;
 
 }
 
+.booking{
+  display: none;
+}
 
+.booking p {
+  display: block;
+  color: black;
+}
+
+.show {
+  display:block;
+}
+
+
+/*contact form*/
+input {
+	outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+.contact-form {
+  width: 100%; 
+  padding-bottom: 40px;
+}
+
+.contact-form-title {
+  width: 100%;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 350%;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.wrap-input {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 65px;
+}
+
+
+.label-input {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  color: black;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  font-family: Poppins-SemiBold;
+  font-size: 18px;
+  color: #555555;
+  height: 40px;
+}
+
+
+textarea.input {
+  min-height: 100px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+.send-btn {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px 0px 20px;
+  margin-left: 40%;
+  min-width: 160px;
+  height: 50px;
+  background-color: #da8757;
+  border-radius: 25px;
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: 0px 9px 28px 0px rgba(240, 177, 135, 0.5);
+}
+.send-btn:hover {
+  background-color: #333333;
+  box-shadow: grey
+}
+ 
