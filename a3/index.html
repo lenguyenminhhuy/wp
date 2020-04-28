@@ -548,7 +548,126 @@
     <section id="booking">
       <div class="booking" id="booking-area" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 400%;  color: #E25B45;
       "> Booking area </div>
-      <img style="padding-left: 8%;" src="./media2/under-construction.png" alt="">
+      <div class="container-fluid">
+        <p style="font-size:xx-large; font-weight: bold;">Movie title-Day-Time</p> 
+        <form action="" method="GET">        
+          <div class="row">
+            <div class="col-lg-6" >
+                <fieldset>
+                  <legend>Standard </legend>
+                  <label for="seats-STA">Adults </label><select class="select" name="seats[STA]" id="seats-STA">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <br>
+                  <label for="seats-STP">Concessions </label><select class="select" name="seats[STP]" id="seats-STP">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <br>
+                  <label for="seats-STC">Children </label><select class="select" name="seats[STC]" id="seats-STC">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </fieldset>
+                <fieldset>
+                  <legend>First class </legend>
+                  <label for="seats-FCA">Adults </label><select class="select" name="seats[FCA]" id="seats-FCA">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <br>
+                  <label for="seats-FCP">Concessions </label><select class="select" name="seats[FCP]" id="seats-FCP">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <br>
+                  <label for="seats-FCC">Children </label><select class="select" name="seats[FCC]" id="seats-FCC">
+                    <option value="">Please select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                  <legend style="color: whitesmoke;">b</legend>
+                  <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name">
+                  <br>
+                  <label for="cust-name">Email </label><input type="text" name="cust[mail]" id="cust-mail">
+                  <br>
+                  <label for="cust-name">Mobile </label><input type="text" name="cust[mobile]" id="cust-mobile">
+                  <br>
+                  <label for="cust-name">Creditcard </label><input type="text" name="cust[card]" id="cust-credit">
+                  <br>
+                  <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry" min="2020-04" max="2020-07">
+                  <br>
+                  <input type="submit" value="Order">
+
+                </fieldset>  
+            </div>
+        </form> 
+        </div>
+      </div>
     </section>
     <!-- End of booking section  -->
   </main>
