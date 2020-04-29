@@ -21,6 +21,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -223,7 +226,7 @@
       <section class="container-fluid" style="background-color: whitesmoke;">
         <div class="col-sm-12" style="padding-top: 8px; padding-bottom: 8px;">
           <div class=" d-flex row justify-content-center my-3">
-            <div class="col-xs-5 col-md-5 col-sm-12 mx-2 "
+            <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="content1-btn"
               style="background-color: #F3DBCF; padding-top: 8px;padding-bottom: 8px;">
               <div class="row px-1">
                 <div class="col-sm-6">
@@ -246,60 +249,11 @@
                     </p>
                     <!-- Modal 1 -->
                   </div>
-                  <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
-                    data-toggle="modal" data-target=".bd-example-modal-lg">See more</button>
-                  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
-                        <div class="row">
-                          <div class="col-sm-9">
-                            <h5 class="modal-title" id="exampleModalLabel"
-                              style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
-                              Avengers: Endgame <span style="margin-left: 200px;">Rated: PG-13</span></h5>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
-                            <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
-                              Plot Description
-                            </h7>
-                            <p style="text-align: left; margin-left: 10px; font-size: 18px;">
-                              The grave course of events set in motion by
-                              Thanos that wiped out half the universe and fractured
-                              the Avengers ranks compels the remaining Avengers to take one
-                              final stand in Marvel Studios' grand conclusion to twenty-two films, "Avengers: Endgame."
-                            </p>
-                          </div>
-                          <div class="col-sm-8">
-                            <iframe style="padding-left: 10%;" width="615" height="315"
-                              src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
-                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen></iframe>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
-                              <b>Make a
-                                booking: </b> </label>
-                          </div>
-                          <div class="col-sm-9" style="color:grey;">
-                            <button type="button" class="btn btn-outline-warning" id="myBtn"> Wednesday: 9pm
-                              (T21)</button>
-                            <button type="button" class="btn btn-outline-danger" id="myBtn1"> Friday: 9pm (T21)</button>
-                            <button type="button" class="btn btn-outline-dark" id="myBtn2"> Saturday: 6pm (T18)</button>
-                            <button type="button" class="btn btn-outline-info" id="myBtn3"> Sunday: 6pm (T18)</button>
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-xs-5 col-md-5 col-sm-12 mx-2 "
+            <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="content2-btn"
               style="background-color: #F3DBCF;padding-top: 8px;padding-bottom: 8px;">
               <div class="row px-1">
                 <div class="col-sm-6">
@@ -324,65 +278,16 @@
                     <!-- Modal 2 -->
 
                   </div>
-                  <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
-                    data-toggle="modal" data-target=".bd-example-modal-lg-2">See more</button>
-
-                  <div class="modal fade bd-example-modal-lg-2" tabindex="-1" role="dialog"
-                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
-                        <div class="row">
-                          <div class="col-sm-9">
-                            <h5 class="modal-title" id="exampleModalLabel"
-                              style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
-                              Top End Wedding <span style="margin-left: 200px;">Rated: MA</span></h5>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
-                            <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
-                              Plot Description
-                            </h7>
-                            <p style="text-align: left; margin-left: 10px; font-size: 18px;">
-                              Lauren and Ned are engaged, they are in love,
-                              and they have just ten days to find Lauren's mother who
-                              has gone AWOL somewhere in the remote far north of Australia, reunite
-                              her parents and pull off their dream wedding. </p>
-                          </div>
-                          <div class="col-sm-8">
-                            <iframe style="padding-left: 10%;" width="560" height="315"
-                              src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
-                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen></iframe>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
-                              <b>Make a
-                                booking: </b> </label>
-                          </div>
-                          <div class="col-sm-9" style="color:grey;">
-
-                            <button type="button" class="btn btn-outline-warning" id="myBtn"> Monday: 6pm (T18)</button>
-                            <button type="button" class="btn btn-outline-danger" id="myBtn1"> Tuesday: 6pm
-                              (T18)</button>
-                            <button type="button" class="btn btn-outline-dark" id="myBtn2"> Saturday: 3pm (T15)</button>
-                            <button type="button" class="btn btn-outline-info" id="myBtn3"> Sunday: 3pm (T15)</button>
 
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div style=" margin-top:7.5px;">
             <div class=" d-flex row justify-content-center my-3">
-              <div class="col-xs-5 col-md-5 col-sm-12 mx-2 "
+
+              <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="content3-btn"
                 style="background-color: #F3DBCF;padding-top: 8px;padding-bottom: 8px;">
                 <div class="row px-1">
                   <div class="col-sm-6">
@@ -410,69 +315,13 @@
                       <!-- Modal 3 -->
 
                     </div>
-                    <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
-                      data-toggle="modal" data-target=".bd-example-modal-lg-3">See more</button>
-                    <div class="modal fade bd-example-modal-lg-3" tabindex="-1" role="dialog"
-                      aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
-                          <div class="row">
-                            <div class="col-sm-9">
-                              <h5 class="modal-title" id="exampleModalLabel"
-                                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
-                                Dumbo <span style="margin-left: 200px;">Rated: MA</span></h5>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
-                              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
-                                Plot Description
-                              </h7>
-                              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
-                                Struggling circus owner Max Medici enlists former star
 
-                                Holt Farrier and his children Milly and Joe to care for Dumbo,
-                                a baby elephant whose oversized ears make him the circus' laughing stock.
-                                But when they discover that Dumbo can fly, the circus makes an incredible comeback,
-                                attracting persuasive entrepreneur V.A. </p>
-                            </div>
-                            <div class="col-sm-8">
-                              <iframe style="padding-left: 10%;" width="560" height="315"
-                                src="https://www.youtube.com/embed/ocWpGdITSR4" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-3">
-                              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
-                                <b>Make a
-                                  booking: </b> </label>
-                            </div>
-                            <div class="col-sm-9" style="color:grey;">
 
-                              <button type="button" class="btn btn-outline-warning" id="myBtn"> Monday: 12pm
-                                (T12)</button>
-                              <button type="button" class="btn btn-outline-danger" id="myBtn1"> Tuesday: 12pm
-                                (T12)</button>
-                              <button type="button" class="btn btn-outline-warning" id="myBtn2"> Wednesday: 6pm
-                                (T18)</button>
-                              <button type="button" class="btn btn-outline-danger" id="myBtn3"> Friday: 6pm
-                                (T18)</button>
-                              <button type="button" class="btn btn-outline-dark" id="myBtn4"> Saturday: 12pm
-                                (T12)</button>
-                              <button type="button" class="btn btn-outline-info" id="myBtn5"> Sunday: 12pm
-                                (T12)</button>
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xs-5 col-md-5 col-sm-12 mx-2 "
+
+              <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="content4-btn"
                 style="background-color: #F3DBCF;padding-top: 8px; padding-bottom: 8px;">
                 <div class="row px-1">
                   <div class="col-sm-6">
@@ -497,63 +346,8 @@
                       <!-- Modal 4 -->
 
                     </div>
-                    <button type="button" class="btn btn-light" style="font-family: 'Oswald', sans-serif;"
-                      data-toggle="modal" data-target=".bd-example-modal-lg-4">See more</button>
 
-                    <div class="modal fade bd-example-modal-lg-4" tabindex="-1" role="dialog"
-                      aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content" style="background-color: #FFDECD; background-size: cover; ">
-                          <div class="row">
-                            <div class="col-sm-9">
-                              <h5 class="modal-title" id="exampleModalLabel"
-                                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
-                                Happy Prince <span style="margin-left: 200px;">PG</span></h5>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
-                              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
-                                Plot Description
-                              </h7>
-                              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
-                                The Happy
-                                Prince by
-                                Oscar Wilde is the story of a statue, the Happy Prince, covered with gold and
-                                many fine
-                                jewels. It sits overlooking the city. One day, a swallow passing through seeks
-                                shelter
-                                under the statue and discovers the prince is not happy, but sad </p>
-                            </div>
-                            <div class="col-sm-8">
-                              <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-3">
-                              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
-                                <b>Make a
-                                  booking: </b> </label>
-                            </div>
-                            <div class="col-sm-9" style="color:grey;">
-                              <button type="button" class="btn btn-outline-warning" id="myBtn" target="_blank">
-                                Wednesday: 12pm (T12)</button>
-                              <button type="button" class="btn btn-outline-danger" id="myBtn1" target="_blank"> Friday:
-                                12pm (T12)</button>
 
-                              <button type="button" class="btn btn-outline-dark" id="myBtn2" target="_blank">
-                                Saturday:
-                                9pm (T21)</button>
-                              <button type="button" class="btn btn-outline-info" id="myBtn3" target="_blank"> Sunday:
-                                9pm (T21)</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -564,133 +358,222 @@
     </div>
     <!-- End of now showing section  -->
 
-    <!-- Booking area section -->
-<<<<<<< HEAD
-    <div class="parallax2"></div>
-    <section id="booking">
-      <div class="booking" id="booking-area" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 400%;  color: #E25B45;
-      "> Booking area </div>
-      <div class="container-fluid">
-        <p style="font-size:xx-large; font-weight: bold;">Movie title-Day-Time</p> 
-        <form action="" method="GET">        
+
+    <!-- content1 -->
+    <div id="content1" class="content">
+      <div>
+        <div style="background-color: #FFDECD; background-size: cover; ">
           <div class="row">
-            <div class="col-lg-6" >
-                <fieldset>
-                  <legend>Standard </legend>
-                  <label for="seats-STA">Adults </label><select class="select" name="seats[STA]" id="seats-STA">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                  <br>
-                  <label for="seats-STP">Concessions </label><select class="select" name="seats[STP]" id="seats-STP">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                  <br>
-                  <label for="seats-STC">Children </label><select class="select" name="seats[STC]" id="seats-STC">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </fieldset>
-                <fieldset>
-                  <legend>First class </legend>
-                  <label for="seats-FCA">Adults </label><select class="select" name="seats[FCA]" id="seats-FCA">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                  <br>
-                  <label for="seats-FCP">Concessions </label><select class="select" name="seats[FCP]" id="seats-FCP">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                  <br>
-                  <label for="seats-FCC">Children </label><select class="select" name="seats[FCC]" id="seats-FCC">
-                    <option value="">Please select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </fieldset>
+            <div class="col-sm-9">
+              <h5
+                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                Avengers: Endgame <span style="margin-left: 200px;">Rated: PG-13</span></h5>
             </div>
-            <div class="col-lg-6">
-                <fieldset>
-                  <legend style="color: whitesmoke;">b</legend>
-                  <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name">
-                  <br>
-                  <label for="cust-name">Email </label><input type="text" name="cust[mail]" id="cust-mail">
-                  <br>
-                  <label for="cust-name">Mobile </label><input type="text" name="cust[mobile]" id="cust-mobile">
-                  <br>
-                  <label for="cust-name">Creditcard </label><input type="text" name="cust[card]" id="cust-credit">
-                  <br>
-                  <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry" min="2020-04" max="2020-07">
-                  <br>
-                  <input type="submit" value="Order">
-                </fieldset>  
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                Plot Description
+              </h7>
+              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                The grave course of events set in motion by
+                Thanos that wiped out half the universe and fractured
+                the Avengers ranks compels the remaining Avengers to take one
+                final stand in Marvel Studios' grand conclusion to twenty-two films, "Avengers: Endgame."
+              </p>
             </div>
-        </form> 
+            <div class="col-sm-8">
+              <iframe style="padding-left: 10%;" width="615" height="315"
+                src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                <b>Make a
+                  booking: </b> </label>
+            </div>
+            <div class="col-sm-9" style="color:grey;">
+              <button type="button" class="btn btn-outline-warning" id="myBtn"> Wednesday: 9pm
+                (T21)</button>
+              <button type="button" class="btn btn-outline-danger" id="myBtn1"> Friday: 9pm (T21)</button>
+              <button type="button" class="btn btn-outline-dark" id="myBtn2"> Saturday: 6pm (T18)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn3"> Sunday: 6pm (T18)</button>
+
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-=======
+    </div>
+    <!-- end of content1 -->
+
+    <!-- content 2 -->
+    <div id="content2" class="content">
+      <div>
+        <div style="background-color: #FFDECD; background-size: cover; ">
+          <div class="row">
+            <div class="col-sm-9">
+              <h5 style=" font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration:
+            underline;">
+                Top End Wedding <span style="margin-left: 200px;">Rated: MA</span></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                Plot Description
+              </h7>
+              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                Lauren and Ned are engaged, they are in love,
+                and they have just ten days to find Lauren's mother who
+                has gone AWOL somewhere in the remote far north of Australia, reunite
+                her parents and pull off their dream wedding. </p>
+            </div>
+            <div class="col-sm-8">
+              <iframe style="padding-left: 10%;" width="560" height="315"
+                src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                <b>Make a
+                  booking: </b> </label>
+            </div>
+            <div class="col-sm-9" style="color:grey;">
+
+              <button type="button" class="btn btn-outline-warning" id="myBtna"> Monday: 6pm (T18)</button>
+              <button type="button" class="btn btn-outline-danger" id="myBtn1a"> Tuesday: 6pm
+                (T18)</button>
+              <button type="button" class="btn btn-outline-dark" id="myBtn2a"> Saturday: 3pm (T15)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn3a"> Sunday: 3pm (T15)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of content2 -->
+
+    <!-- content3 -->
+    <div id="content3" class="content">
+      <div>
+        <div style="background-color: #FFDECD; background-size: cover; ">
+          <div class="row">
+            <div class="col-sm-9">
+              <h5 class="modal-title" id="exampleModalLabel"
+                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                Dumbo <span style="margin-left: 200px;">Rated: MA</span></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                Plot Description
+              </h7>
+              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                Struggling circus owner Max Medici enlists former star
+
+                Holt Farrier and his children Milly and Joe to care for Dumbo,
+                a baby elephant whose oversized ears make him the circus' laughing stock.
+                But when they discover that Dumbo can fly, the circus makes an incredible comeback,
+                attracting persuasive entrepreneur V.A. </p>
+            </div>
+            <div class="col-sm-8">
+              <iframe style="padding-left: 10%;" width="560" height="315"
+                src="https://www.youtube.com/embed/ocWpGdITSR4" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                <b>Make a
+                  booking: </b> </label>
+            </div>
+            <div class="col-sm-9" style="color:grey;">
+
+              <button type="button" class="btn btn-outline-warning" id="myBtnb"> Monday: 12pm
+                (T12)</button>
+              <button type="button" class="btn btn-outline-danger" id="myBtn1b"> Tuesday: 12pm
+                (T12)</button>
+              <button type="button" class="btn btn-outline-warning" id="myBtn2b"> Wednesday: 6pm
+                (T18)</button>
+              <button type="button" class="btn btn-outline-danger" id="myBtn3b"> Friday: 6pm
+                (T18)</button>
+              <button type="button" class="btn btn-outline-dark" id="myBtn4b"> Saturday: 12pm
+                (T12)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn5b"> Sunday: 12pm
+                (T12)</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of content 3 -->
+
+    <!-- content 4 -->
+    <div id="content4" class="content">
+      <div>
+        <div style="background-color: #FFDECD; background-size: cover; ">
+          <div class="row">
+            <div class="col-sm-9">
+              <h5
+                style="font-size: 40px; padding-left: 20px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
+                Happy Prince <span style="margin-left: 200px;">PG</span></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="padding-top: 4%; padding-bottom: 4%; padding-left: 2%;">
+              <h7 style="font-size: 32px; padding-left: 5%; font-family:'Franklin Gothic Medium';">
+                Plot Description
+              </h7>
+              <p style="text-align: left; margin-left: 10px; font-size: 18px;">
+                The Happy
+                Prince by
+                Oscar Wilde is the story of a statue, the Happy Prince, covered with gold and
+                many fine
+                jewels. It sits overlooking the city. One day, a swallow passing through seeks
+                shelter
+                under the statue and discovers the prince is not happy, but sad </p>
+            </div>
+            <div class="col-sm-8">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label style="margin: 4% 0 0 0; font-size: 20px;  padding-left: 4%;">
+                <b>Make a
+                  booking: </b> </label>
+            </div>
+            <div class="col-sm-9" style="color:grey;">
+              <button type="button" class="btn btn-outline-warning" id="myBtnc" target="_blank">
+                Wednesday: 12pm (T12)</button>
+              <button type="button" class="btn btn-outline-danger" id="myBtn1c" target="_blank"> Friday:
+                12pm (T12)</button>
+
+              <button type="button" class="btn btn-outline-dark" id="myBtn2c" target="_blank">
+                Saturday:
+                9pm (T21)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn3c" target="_blank"> Sunday:
+                9pm (T21)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <div class="booking" id="booking-area" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
     ">
       <p> Booking area </p>
@@ -715,66 +598,164 @@
     ">
       <p> Booking area5 </p>
     </div>
->>>>>>> d019250e2844dc703c36cc28059952714483e14b
+
+
+
+    <!-- Booking area section -->
+
+    <section id="booking" class="booking">
+      <div class="container-fluid">
+        <div style="font-size:xx-large; font-weight: bold;" id="formTitleDayTime">Movie title - Day - Time</div>
+        <input type="hidden" name="movie[id]" id="movie-id" value="ACT">
+        <input type="hidden" name="movie[id]" id="movie-id" value="AHF">
+        <input type="hidden" name="movie[id]" id="movie-id" value="ANM">
+        <input type="hidden" name="movie[id]" id="movie-id" value="RMC ">
+        <input type="hidden" name="movie[day]" id='movie-day' value="MON">
+        <input type="hidden" name="movie[day]" id='movie-day' value="TUE">
+        <input type="hidden" name="movie[day]" id='movie-day' value="WED">
+        <input type="hidden" name="movie[day]" id='movie-day' value="THU">
+        <input type="hidden" name="movie[day]" id='movie-day' value="FRI">
+        <input type="hidden" name="movie[day]" id='movie-day' value="SAT">
+        <input type="hidden" name="movie[day]" id='movie-day' value="SUN">
+        <input type="hidden" name="movie[hour]" id='movie-hour' value="T12">
+        <input type="hidden" name="movie[hour]" id='movie-hour' value="T15">
+        <input type="hidden" name="movie[hour]" id='movie-hour' value="T18">
+        <input type="hidden" name="movie[hour]" id='movie-hour' value="T21">
+        <form action="" method="GET">
+          <div class="row">
+            <div class="col-lg-6">
+              <fieldset class="standard">
+                <legend class="legend">Standard </legend>
+                <label for="seats-STA">Adults </label><select class="select" name="seats[STA]" id="seats-STA">
+                  <option value=""> Please select </option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br>
+                <label for="seats-STP">Concessions </label><select class="select" name="seats[STP]" id="seats-STP">
+                  <option value="">Please select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br>
+                <label for="seats-STC">Children </label><select class="select" name="seats[STC]" id="seats-STC">
+                  <option value="">Please select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </fieldset>
+              <fieldset class="first-class">
+                <legend class="legend">First class </legend>
+                <label for="seats-FCA">Adults </label><select class="select" name="seats[FCA]" id="seats-FCA">
+                  <option value="">Please select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br>
+                <label for="seats-FCP">Concessions </label><select class="select" name="seats[FCP]" id="seats-FCP">
+                  <option value="">Please select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br>
+                <label for="seats-FCC">Children </label><select class="select" name="seats[FCC]" id="seats-FCC">
+                  <option value="">Please select</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </fieldset>
+              <div class="total"> Total $ </div>
+              <div class="total-price">
+                <div class="card-body">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                </br>
+                <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name" required>
+                <br>
+                <label for="cust-name">Email </label><input type="email" name="cust[mail]" id="cust-mail" required>
+                <br>
+                <label for="cust-name">Mobile </label><input type="tel" name="cust[mobile]" id="cust-mobile" required>
+                <br>
+                <label for="cust-name">Creditcard </label><input type="text" name="cust[card]" id="cust-credit"
+                  required>
+                <br>
+                <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry" min="04-2020"
+                  max="07-2020" required>
+                <br>
+                <button class="order-btn" type="submit" id="order">
+                  Order
+                  <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </button>
+              </fieldset>
+            </div>
+        </form>
+      </div>
+      </div>
+    </section>
+
     <!-- End of booking section  -->
 
-    <!-- contact info  -->
-    <form class="contact-form validate-form" id="contact-form">
-      <div class="contact-form-title" style="align-items: center;">
-        Contact Us
-        </br> <span style="font-size: 15px; font-family: 'Oswald', sans-serif; color:rgb(206, 120, 107);">
-          <i>
-            Fields
-            have * are required.</i>
-        </span>
-      </div>
-      <div class="container-send-btn">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="wrap-input input1 validate-input" data-validate="Name iyls required">
-                <span class="label-input">Your Name <span style="color:rgb(224, 90, 49)"> * </span> </span>
-                <input class="input" type="text" name="name" placeholder="Please enter your name" required>
-              </div>
-            </div>
-            <div class="col">
-              <div class="wrap-input input1 validate-input" data-validate="Valid email is required: abc@xyz.hfg">
-                <span class="label-input">Email <span style="color:rgb(224, 90, 49)"> * </span> </span>
-                <input class="input" type="text" name="email" placeholder="Please enter your email addess" required>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="wrap-input input1 validate-input" data-validate="Phone number is required">
-                <span class="label-input">Mobile phone <span style="color:rgb(224, 90, 49)"> * </span> </span>
-                <input class="input" type="text" name="name" placeholder="Please enter your mobile phone number"
-                  required>
-              </div>
 
 
-            </div>
-            <div class="col">
-              <div class="wrap-input input1 validate-input" data-validate="Valid credit card is required">
-                <span class="label-input">Credit card <span style="color:rgb(224, 90, 49)"> * </span> </span>
-                <input class="input" type="text" name="email" placeholder="Please enter your credit card number"
-                  required>
-              </div>
-            </div>
-          </div>
-          <div class="wrap-input validate-input" data-validate="Message is required">
-            <span class="label-input">Message </span>
-            <textarea class="input" name="message" placeholder=" Leave your message here..."></textarea>
-          </div>
-        </div>
-        <button class="send-btn">
-          <span>
-            Send
-            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-          </span>
-        </button>
-      </div>
-    </form>
+
 
   </main>
 

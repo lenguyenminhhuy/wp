@@ -29,57 +29,91 @@ document.getElementById('myBtn').onclick = function () { myFunction() };
 document.getElementById('myBtn1').onclick = function () { myFunction1() };
 document.getElementById('myBtn2').onclick = function () { myFunction2() };
 document.getElementById('myBtn3').onclick = function () { myFunction3() };
-document.getElementById('myBtn4').onclick = function () { myFunction4() };
-document.getElementById('myBtn5').onclick = function () { myFunction5() };
 
 
+// toggle là nó xóa class nếu đã có, và thêm class nếu chưa có 
+// ý tưởng: đầu tiên là vi mỗi phim, lưu danh sách suất chiếu và nội dung chi tiết vào mảng (2 chiều hoặc thế nào đó )
+// thứ 2 là dùng for để tạo mấy cái nut đó tdưa vào mảng, mỗi nút có 1 cái id riêng (gợi ý id ựa trên chỉ số của phim đó trong mảng)
+// Viết 1 cái hàm chung, haowjc sửa lại hàm show phim này cũng được.
+// truyền vào đó id của suất chiếu trong mảng, rồi từ cái hàm này lấy trong mảng ra (y)
+
+function showFilm(nameFilm = "") {
+    if (!document.getElementById('booking').classList.contains("show")) {
+        document.getElementById('booking').classList.add("show");
+    }
+    document.getElementById('formTitleDayTime').innerHTML = nameFilm;
+}
 function myFunction() {
-    document.getElementById('booking-area').classList.toggle("show");
-    document.getElementById('booking-area1').classList.remove("show");
-    document.getElementById('booking-area2').classList.remove("show");
-    document.getElementById('booking-area3').classList.remove("show");
-    document.getElementById('booking-area4').classList.remove("show");
-    document.getElementById('booking-area5').classList.remove("show");
+    showFilm('Avenger Endgame - Wednesday - 9pm');
+
 }
 function myFunction1() {
-    document.getElementById('booking-area').classList.remove("show");
-    document.getElementById('booking-area2').classList.remove("show");
-    document.getElementById('booking-area3').classList.remove("show");
-    document.getElementById('booking-area1').classList.toggle("show");
-    document.getElementById('booking-area4').classList.remove("show");
-    document.getElementById('booking-area5').classList.remove("show");
-
+    showFilm('Avenger Endgame - Friday - 9pm');
 }
 function myFunction2() {
-    document.getElementById('booking-area1').classList.remove("show");
-    document.getElementById('booking-area3').classList.remove("show");
-    document.getElementById('booking-area').classList.remove("show");
-    document.getElementById('booking-area4').classList.remove("show");
-    document.getElementById('booking-area5').classList.remove("show");
-    document.getElementById('booking-area2').classList.toggle("show");
+    showFilm('Avenger Endgame - Saturday - 6pm');
+}
+
+function myFunction3() {
+    showFilm('Avenger Endgame - Sunday - 6pm');
+}
+
+
+// display synopsis
+function getContent(x) {
+    if (x == 1) {
+        document.getElementById('content1').style.display = 'block';
+        document.getElementById('content1').scrollIntoView();
+    }
+    else
+        document.getElementById('content1').style.display = 'none';
+    document.getElementById('content2').style.display = 'none';
+    document.getElementById('content3').style.display = 'none';
+    document.getElementById('content4').style.display = 'none';
+}
+document.getElementById('content1-btn').onclick = function () { getContent(1) };
+
+function getContent1(x) {
+    if (x == 2) {
+        document.getElementById('content2').style.display = 'block'
+        document.getElementById('content2').scrollIntoView();
+    }
+    else
+        document.getElementById('content2').style.display = 'none';
+    document.getElementById('content1').style.display = 'none';
+    document.getElementById('content3').style.display = 'none';
+    document.getElementById('content4').style.display = 'none';
 
 }
-function myFunction3() {
-    document.getElementById('booking-area2').classList.remove("show");
-    document.getElementById('booking-area1').classList.remove("show");
-    document.getElementById('booking-area').classList.remove("show");
-    document.getElementById('booking-area4').classList.remove("show");
-    document.getElementById('booking-area5').classList.remove("show");
-    document.getElementById('booking-area3').classList.toggle("show");
+
+document.getElementById('content2-btn').onclick = function () { getContent1(2) };
+
+function getContent2(x) {
+    if (x == 3) {
+        document.getElementById('content3').style.display = 'block'
+        document.getElementById('content3').scrollIntoView();
+    }
+    else
+        document.getElementById('content3').style.display = 'none';
+    document.getElementById('content1').style.display = 'none';
+    document.getElementById('content2').style.display = 'none';
+    document.getElementById('content4').style.display = 'none';
 }
-function myFunction4() {
-    document.getElementById('booking-area2').classList.remove("show");
-    document.getElementById('booking-area1').classList.remove("show");
-    document.getElementById('booking-area').classList.remove("show");
-    document.getElementById('booking-area4').classList.toggle("show");
-    document.getElementById('booking-area3').classList.remove("show");
-    document.getElementById('booking-area5').classList.remove("show");
+document.getElementById('content3-btn').onclick = function () { getContent2(3) };
+
+function getContent3(x) {
+    if (x == 4) {
+        document.getElementById('content4').style.display = 'block'
+        document.getElementById('content4').scrollIntoView();
+    }
+
+    else
+        document.getElementById('content4').style.display = 'none';
+    document.getElementById('content1').style.display = 'none';
+    document.getElementById('content2').style.display = 'none';
+    document.getElementById('content3').style.display = 'none';
+
+    return
 }
-function myFunction5() {
-    document.getElementById('booking-area2').classList.remove("show");
-    document.getElementById('booking-area1').classList.remove("show");
-    document.getElementById('booking-area').classList.remove("show");
-    document.getElementById('booking-area5').classList.toggle("show");
-    document.getElementById('booking-area4').classList.remove("show");
-    document.getElementById('booking-area3').classList.remove("show");
-}
+document.getElementById('content4-btn').onclick = function () { getContent3(4) };
+
