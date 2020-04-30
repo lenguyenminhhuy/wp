@@ -25,38 +25,61 @@ document.addEventListener('scroll', () => {
     else activeLink[2].classList.remove('active') // otherwise, it will be disable
 })
 
-document.getElementById('myBtn').onclick = function () { myFunction() };
-document.getElementById('myBtn1').onclick = function () { myFunction1() };
-document.getElementById('myBtn2').onclick = function () { myFunction2() };
-document.getElementById('myBtn3').onclick = function () { myFunction3() };
+// // Avengers button
+document.getElementById('myBtn').onclick = function () { showFilminfo(movieInfo[0][0], movieInfo[3][0], movieInfo[3][1]) };
+document.getElementById('myBtn1').onclick = function () { showFilminfo(movieInfo[0][0], movieInfo[4][0], movieInfo[4][1]) };
+document.getElementById('myBtn2').onclick = function () { showFilminfo(movieInfo[0][0], movieInfo[5][0], movieInfo[5][1])  };
+document.getElementById('myBtn3').onclick = function () { showFilminfo(movieInfo[0][0], movieInfo[6][0], movieInfo[6][1])  };
+
+// // Top end wedding button
+document.getElementById('myBtna').onclick = function () { showFilminfo(movieInfo[0][1], movieInfo[1][0], movieInfo[1][2])  };
+document.getElementById('myBtn1a').onclick = function () { showFilminfo(movieInfo[0][1], movieInfo[2][0], movieInfo[2][2]) };
+document.getElementById('myBtn2a').onclick = function () { showFilminfo(movieInfo[0][1], movieInfo[5][0], movieInfo[5][2]) };
+document.getElementById('myBtn3a').onclick = function () { showFilminfo(movieInfo[0][1], movieInfo[6][0], movieInfo[6][2]) };
+
+// // Dumbo button
+document.getElementById('myBtnb').onclick = function () { showFilminfo(movieInfo[0][2], movieInfo[1][0], movieInfo[1][3]) };
+document.getElementById('myBtn1b').onclick = function () { mshowFilminfo(movieInfo[0][2], movieInfo[2][0], movieInfo[2][3]) };
+document.getElementById('myBtn2b').onclick = function () { showFilminfo(movieInfo[0][2], movieInfo[3][0], movieInfo[3][3]) };
+document.getElementById('myBtn3b').onclick = function () { showFilminfo(movieInfo[0][2], movieInfo[4][0], movieInfo[4][3]) };
+document.getElementById('myBtn4b').onclick = function () { showFilminfo(movieInfo[0][2], movieInfo[5][0], movieInfo[5][3]) };
+document.getElementById('myBtn5b').onclick = function () { showFilminfo(movieInfo[0][2], movieInfo[6][0], movieInfo[6][3]) };
+
+// // Happy prince button
+document.getElementById('myBtnc').onclick = function () { showFilminfo(movieInfo[0][3], movieInfo[3][0], movieInfo[3][4]) };
+document.getElementById('myBtn1c').onclick = function () { showFilminfo(movieInfo[0][3], movieInfo[4][0], movieInfo[4][4]) };
+document.getElementById('myBtn2c').onclick = function () { showFilminfo(movieInfo[0][3], movieInfo[5][0], movieInfo[5][4]) };
+document.getElementById('myBtn3c').onclick = function () { showFilminfo(movieInfo[0][3], movieInfo[6][0], movieInfo[6][4]) };
 
 
-// toggle là nó xóa class nếu đã có, và thêm class nếu chưa có 
-// ý tưởng: đầu tiên là vi mỗi phim, lưu danh sách suất chiếu và nội dung chi tiết vào mảng (2 chiều hoặc thế nào đó )
-// thứ 2 là dùng for để tạo mấy cái nut đó tdưa vào mảng, mỗi nút có 1 cái id riêng (gợi ý id ựa trên chỉ số của phim đó trong mảng)
-// Viết 1 cái hàm chung, haowjc sửa lại hàm show phim này cũng được.
-// truyền vào đó id của suất chiếu trong mảng, rồi từ cái hàm này lấy trong mảng ra (y)
 
-function showFilm(nameFilm = "") {
+
+
+
+// Booking form movie title fuction
+
+function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
     if (!document.getElementById('booking').classList.contains("show")) {
         document.getElementById('booking').classList.add("show");
     }
-    document.getElementById('formTitleDayTime').innerHTML = nameFilm;
-}
-function myFunction() {
-    showFilm('Avenger Endgame - Wednesday - 9pm');
-
-}
-function myFunction1() {
-    showFilm('Avenger Endgame - Friday - 9pm');
-}
-function myFunction2() {
-    showFilm('Avenger Endgame - Saturday - 6pm');
+    document.getElementById('formTitle').innerHTML = nameFilm;
+    document.getElementById('formDay').innerHTML = dayFilm;
+    document.getElementById('formTime').innerHTML = timeFilm;
 }
 
-function myFunction3() {
-    showFilm('Avenger Endgame - Sunday - 6pm');
-}
+// Movie title,day,time
+
+var movieInfo = [
+    ["Avengers: Endgame","Top End Wedding","Dumbo","Happy Prince"],
+    ["Monday","0","6pm","12pm","0"],
+    ["Tuesday","0","6pm","12pm","0"],
+    ["Wednesday","9pm","0","6pm","12pm"],
+    ["Friday","9pm","0","6pm","12pm"],
+    ["Saturday","6pm","3pm","12pm","9pm"],
+    ["Sunday","6pm","3pm","12pm","9pm"]
+];
+
+
 
 
 // display synopsis
