@@ -572,44 +572,15 @@
     </div>
 
 
-
-
-    <div class="booking" id="booking-area" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area </p>
-    </div>
-    <div class="booking" id="booking-area1" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area1 </p>
-    </div>
-    <div class="booking" id="booking-area2" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area2 </p>
-    </div>
-    <div class="booking" id="booking-area3" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area3 </p>
-    </div>
-    <div class="booking" id="booking-area4" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area4 </p>
-    </div>
-    <div class="booking" id="booking-area5" style="font-family: 'Abril Fatface', cursive; text-align: center; font-size: 25px;  color: #E25B45;
-    ">
-      <p> Booking area5 </p>
-    </div>
-
-
-
     <!-- Booking area section -->
 
     <section id="booking" class="booking">
       <div class="container-fluid">
         <span style="font-size:xx-large; font-weight: bold;" id="formTitle">Movie title</span>
-        <span style="font-size:xx-large; font-weight: bold;" >  -  </span>
-        <span style="font-size:xx-large; font-weight: bold;" id="formDay">  Day </span>
-        <span style="font-size:xx-large; font-weight: bold;" >  -  </span>
-        <span style="font-size:xx-large; font-weight: bold;" id="formTime">  Time </span>
+        <span style="font-size:xx-large; font-weight: bold;"> - </span>
+        <span style="font-size:xx-large; font-weight: bold;" id="formDay"> Day </span>
+        <span style="font-size:xx-large; font-weight: bold;"> - </span>
+        <span style="font-size:xx-large; font-weight: bold;" id="formTime"> Time </span>
         <input type="hidden" name="movie[id]" id="movie-id" value="ACT">
         <input type="hidden" name="movie[id]" id="movie-id" value="AHF">
         <input type="hidden" name="movie[id]" id="movie-id" value="ANM">
@@ -630,7 +601,8 @@
             <div class="col-lg-6">
               <fieldset class="standard">
                 <legend class="legend">Standard </legend>
-                <label for="seats-STA">Adults </label><select class="select" name="seats[STA]" id="seats-STA">
+                <label for="seats-STA">Adults </label>
+                <select class="select" name="seats[STA]" id="seats-STA" onchange="totalPrice()">
                   <option value=""> Please select </option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -645,7 +617,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-STP">Concessions </label><select class="select" name="seats[STP]" id="seats-STP">
+                <label for="seats-STP">Concessions </label>
+                <select class="select" name="seats[STP]" id="seats-STP" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -660,7 +633,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-STC">Children </label><select class="select" name="seats[STC]" id="seats-STC">
+                <label for="seats-STC">Children </label>
+                <select class="select" name="seats[STC]" id="seats-STC" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -677,7 +651,8 @@
               </fieldset>
               <fieldset class="first-class">
                 <legend class="legend">First class </legend>
-                <label for="seats-FCA">Adults </label><select class="select" name="seats[FCA]" id="seats-FCA">
+                <label for="seats-FCA">Adults </label>
+                <select class="select" name="seats[FCA]" id="seats-FCA" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -692,7 +667,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-FCP">Concessions </label><select class="select" name="seats[FCP]" id="seats-FCP">
+                <label for="seats-FCP">Concessions </label>
+                <select class="select" name="seats[FCP]" id="seats-FCP" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -707,7 +683,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-FCC">Children </label><select class="select" name="seats[FCC]" id="seats-FCC">
+                <label for="seats-FCC">Children </label>
+                <select class="select" name="seats[FCC]" id="seats-FCC" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -722,9 +699,9 @@
                   <option value="10">10</option>
                 </select>
               </fieldset>
-              <div class="total"> Total $ </div>
+              <div class="total" id="price"> Total $ </div>
               <div class="total-price">
-                <div class="card-body">
+                <div class="card-body" id="total">
                 </div>
               </div>
 
