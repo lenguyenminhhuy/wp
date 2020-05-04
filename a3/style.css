@@ -1,3 +1,4 @@
+
 .parallax1 {
   /* The image used */
   background-color: #FCAF67;
@@ -363,6 +364,11 @@ height: 30px;
 .order-btn:hover {
   background-color: #333333;
   box-shadow: grey
+}
+
+
+.booking{
+  display: none;
 }
 
 
