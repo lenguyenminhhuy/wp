@@ -262,11 +262,13 @@ form{
   width: 100%; 
 } 
 .standard{
-  border: black 2px solid;
+  border: rgb(226, 201, 154) 2px solid;
+  background-color: #F3DBCF;
 }
 .first-class{  
-  border: black 2px solid;
+  border: rgb(226, 201, 154) 2px solid;
   margin-top: 20px;
+  background-color: #F3DBCF;
 
 }
 label { 
@@ -313,6 +315,12 @@ input[type="month"] {
   padding-right: 2%; 
 
   width: inherit;
+}
+.customer-info{
+  border: rgb(226, 201, 154) 2px solid;
+  background-color: #F3DBCF;
+  margin-top: 16px;
+  padding-bottom: 10px;
 }
 .select{
 margin: 10px 0px;
