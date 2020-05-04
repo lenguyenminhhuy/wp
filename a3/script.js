@@ -29,7 +29,7 @@ document.addEventListener('scroll', () => {
 
 
 // display synopsis
-function getContent() {
+function getContent(x) {
     if (x == 1) {
         document.getElementById('content1').style.display = 'block';
         document.getElementById('content1').scrollIntoView();
@@ -90,9 +90,10 @@ document.getElementById('content4-btn').onclick = function () { getContent3(4) }
 
 // Booking form movie title fuction
 
-// Movie title/day/time + booking form
-
 function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
+    if (!document.getElementById('booking').classList.contains("show")) {
+        document.getElementById('booking').classList.add("show");
+    }
     document.getElementById('formTitle').innerHTML = nameFilm;
     document.getElementById('formDay').innerHTML = dayFilm;
     document.getElementById('formTime').innerHTML = timeFilm;
@@ -214,8 +215,19 @@ var movieInfo = {
     Name: ["Avengers: Endgame", "Top End Wedding", "Dumbo", "Happy Prince"],
     Day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     Time: ["0", "3pm", "6pm", "9pm", "12pm"]
+
 }
 
+// Movie title/day/time + booking form
+
+function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
+    if (!document.getElementById('booking').classList.contains("show")) {
+        document.getElementById('booking').classList.add("show");
+    }
+    document.getElementById('formTitle').innerHTML = nameFilm;
+    document.getElementById('formDay').innerHTML = dayFilm;
+    document.getElementById('formTime').innerHTML = timeFilm;
+}
 
 // Reset Booking Form 
 
