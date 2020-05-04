@@ -137,7 +137,7 @@ function totalPrice() {
     var numberOfSeatFCP = document.getElementById('seats-FCP').value
     var numberOfSeatFCC = document.getElementById('seats-FCC').value
 
-    
+
     // discount or not
     if (document.getElementById('formDay').innerHTML !== movieInfo['Day'][5] // not Saturday
         && document.getElementById('formDay').innerHTML !== movieInfo['Day'][6]  // not Sunday
@@ -145,8 +145,8 @@ function totalPrice() {
         || document.getElementById('formDay').innerHTML == movieInfo['Day'][0] // Monday
         || document.getElementById('formDay').innerHTML == movieInfo['Day'][2]) // Wednesday
 
- 
-        
+
+
     {
         var priceSTA = seatPrice['STA']['discount']
         var priceSTP = seatPrice['STP']['discount']
@@ -184,11 +184,13 @@ var button = document.getElementById("myBtn")
 var button1 = document.getElementById("myBtn1")
 var button2 = document.getElementById("myBtn2")
 var button3 = document.getElementById("myBtn3")
+var button4 = document.getElementById("myBtn4")
 
 var buttona = document.getElementById("myBtna")
 var button1a = document.getElementById("myBtn1a")
 var button2a = document.getElementById("myBtn2a")
 var button3a = document.getElementById("myBtn3a")
+var button4a = document.getElementById("myBtn4a")
 
 var buttonb = document.getElementById("myBtnb")
 var button1b = document.getElementById("myBtn1b")
@@ -196,11 +198,14 @@ var button2b = document.getElementById("myBtn2b")
 var button3b = document.getElementById("myBtn3b")
 var button4b = document.getElementById("myBtn4b")
 var button5b = document.getElementById("myBtn5b")
+var button6b = document.getElementById("myBtn6b")
 
 var buttonc = document.getElementById("myBtnc")
 var button1c = document.getElementById("myBtn1c")
 var button2c = document.getElementById("myBtn2c")
 var button3c = document.getElementById("myBtn3c")
+var button4c = document.getElementById("myBtn4c")
+
 
 
 
@@ -226,22 +231,22 @@ function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
 
 // Reset Booking Form 
 
-function Reset() {  
+function Reset() {
 
-    var dropDown = document.getElementById("seats-STA");  
-    var dropDown1 = document.getElementById("seats-STP");  
-    var dropDown2 = document.getElementById("seats-STC");  
-    var dropDown3 = document.getElementById("seats-FCA");  
-    var dropDown4 = document.getElementById("seats-FCP"); 
-    var dropDown5 = document.getElementById("seats-FCC"); 
+    var dropDown = document.getElementById("seats-STA");
+    var dropDown1 = document.getElementById("seats-STP");
+    var dropDown2 = document.getElementById("seats-STC");
+    var dropDown3 = document.getElementById("seats-FCA");
+    var dropDown4 = document.getElementById("seats-FCP");
+    var dropDown5 = document.getElementById("seats-FCC");
 
 
-    dropDown.selectedIndex = 0;  
-    dropDown1.selectedIndex = 0;  
-    dropDown2.selectedIndex = 0;  
-    dropDown3.selectedIndex = 0;  
-    dropDown4.selectedIndex = 0;  
-    dropDown5.selectedIndex = 0;  
+    dropDown.selectedIndex = 0;
+    dropDown1.selectedIndex = 0;
+    dropDown2.selectedIndex = 0;
+    dropDown3.selectedIndex = 0;
+    dropDown4.selectedIndex = 0;
+    dropDown5.selectedIndex = 0;
 
     document.getElementById("total").innerHTML = ''
 
@@ -251,7 +256,7 @@ function Reset() {
     $('#cust-credit').val(' ');
     $('#cust-expiry').val(' ');
 
-}  
+}
 
 
 //  Avengers button
@@ -259,7 +264,7 @@ button.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0]
 button.addEventListener("click", Reset);
 
 button1.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][4], movieInfo['Time'][3]) });
-button1.addEventListener("click",  Reset);
+button1.addEventListener("click", Reset);
 
 button2.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][5], movieInfo['Time'][2]) });
 button2.addEventListener("click", Reset);
@@ -267,6 +272,8 @@ button2.addEventListener("click", Reset);
 button3.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][6], movieInfo['Time'][2]) });
 button3.addEventListener("click", Reset);
 
+button4.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3]) });
+button4.addEventListener("click", Reset);
 
 // Top end wedding button
 buttona.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2]) });
@@ -301,6 +308,10 @@ button4b.addEventListener("click", Reset);
 button5b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][6], movieInfo['Time'][4]) });
 button5b.addEventListener("click", Reset);
 
+button6b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][3], movieInfo['Time'][4]) });
+button6b.addEventListener("click", Reset);
+
+
 
 //  Happy prince button
 buttonc.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][2], movieInfo['Time'][4]) });
@@ -314,4 +325,7 @@ button2c.addEventListener("click", Reset);
 
 button3c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][6], movieInfo['Time'][3]) });
 button3c.addEventListener("click", Reset);
+
+button4c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4]) });
+button4c.addEventListener("click", Reset);
 

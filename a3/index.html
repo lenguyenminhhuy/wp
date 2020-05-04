@@ -243,6 +243,7 @@
                   <div class="movie-info" style="font-size: 18px" ;>
                     <p>
                       <br /> <b> Wednesday </b>: 9pm (T21)
+                      <br /> <b> Thursday </b>: 9pm (T21)
                       <br /> <b> Friday </b>: 9pm (T21)
                       <br /> <b> Saturday </b>: 6pm (T18)
                       <br /> <b> Sunday </b>: 6pm (T18)
@@ -307,6 +308,7 @@
                         <br /> <b> Monday </b>: 12pm (T12)
                         <br /> <b> Tuesday </b>: 12pm (T12)
                         <br /> <b> Wednesday </b>: 6pm (T18)
+                        <br /> <b> Thursday </b>: 6pm (T18)
                         <br /> <b> Friday </b>: 6pm (T18)
                         <br /> <b> Saturday </b>: 12pm (T12)
                         <br /> <b> Sunday </b>: 12pm (T12)
@@ -338,6 +340,7 @@
                     <div class="movie-info" style="font-size: 18px;">
                       <p>
                         <br /> <b> Wednesday </b>: 12pm (T12)
+                        <br /> <b> Thursday </b>: 12pm (T12)
                         <br /> <b> Friday </b>: 12pm (T12)
                         <br /> <b> Saturday </b>: 9pm (T21)
                         <br /> <b> Sunday </b>: 9pm (T21)
@@ -397,6 +400,8 @@
             </div>
             <div class="col-sm-9" style="color:grey;">
               <button type="button" class="btn btn-outline-warning" id="myBtn"> Wednesday: 9pm
+                (T21)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn4"> Thursday: 9pm
                 (T21)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn1"> Friday: 9pm (T21)</button>
               <button type="button" class="btn btn-outline-dark" id="myBtn2"> Saturday: 6pm (T18)</button>
@@ -503,6 +508,8 @@
                 (T12)</button>
               <button type="button" class="btn btn-outline-warning" id="myBtn2b"> Wednesday: 6pm
                 (T18)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn6b"> Thursday: 6pm
+                (T18)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn3b"> Friday: 6pm
                 (T18)</button>
               <button type="button" class="btn btn-outline-dark" id="myBtn4b"> Saturday: 12pm
@@ -557,13 +564,15 @@
             <div class="col-sm-9" style="color:grey;">
               <button type="button" class="btn btn-outline-warning" id="myBtnc" target="_blank">
                 Wednesday: 12pm (T12)</button>
+              <button type="button" class="btn btn-outline-info" id="myBtn4c" target="_blank">
+                Thursday: 12pm (T12)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn1c" target="_blank"> Friday:
                 12pm (T12)</button>
 
-              <button  type="button" class="btn btn-outline-dark" id="myBtn2c" target="_blank">
+              <button type="button" class="btn btn-outline-dark" id="myBtn2c" target="_blank">
                 Saturday:
                 9pm (T21)</button>
-              <button  type="button" class="btn btn-outline-info" id="myBtn3c" target="_blank"> Sunday:
+              <button type="button" class="btn btn-outline-info" id="myBtn3c" target="_blank"> Sunday:
                 9pm (T21)</button>
             </div>
           </div>
@@ -581,21 +590,10 @@
         <span style="font-size:xx-large; font-weight: bold;" id="formDay"> Day </span>
         <span style="font-size:xx-large; font-weight: bold;"> - </span>
         <span style="font-size:xx-large; font-weight: bold;" id="formTime"> Time </span>
-        <input type="hidden" name="movie[id]" id="movie-id" value="ACT">
-        <input type="hidden" name="movie[id]" id="movie-id" value="AHF">
-        <input type="hidden" name="movie[id]" id="movie-id" value="ANM">
-        <input type="hidden" name="movie[id]" id="movie-id" value="RMC ">
-        <input type="hidden" name="movie[day]" id='movie-day' value="MON">
-        <input type="hidden" name="movie[day]" id='movie-day' value="TUE">
-        <input type="hidden" name="movie[day]" id='movie-day' value="WED">
-        <input type="hidden" name="movie[day]" id='movie-day' value="THU">
-        <input type="hidden" name="movie[day]" id='movie-day' value="FRI">
-        <input type="hidden" name="movie[day]" id='movie-day' value="SAT">
-        <input type="hidden" name="movie[day]" id='movie-day' value="SUN">
-        <input type="hidden" name="movie[hour]" id='movie-hour' value="T12">
-        <input type="hidden" name="movie[hour]" id='movie-hour' value="T15">
-        <input type="hidden" name="movie[hour]" id='movie-hour' value="T18">
-        <input type="hidden" name="movie[hour]" id='movie-hour' value="T21">
+        <input type="hidden" name="movie[id]" id="movie-id" value="">
+        <input type="hidden" name="movie[day]" id='movie-day' value="">
+        <input type="hidden" name="movie[hour]" id='movie-hour' value="">
+
         <form action="" method="GET">
           <div class="row">
             <div class="col-lg-6">
@@ -709,7 +707,7 @@
             <div class="col-lg-6">
               <fieldset>
                 </br>
-                <label for="cust-name">Name </label><input type="text" name="cust[name]"  id="cust-name" required>
+                <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name" required>
                 <br>
                 <label for="cust-mail">Email </label><input type="email" name="cust[mail]" id="cust-mail" required>
                 <br>
@@ -718,8 +716,7 @@
                 <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]" id="cust-credit"
                   required>
                 <br>
-                <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry"
-                   required>
+                <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry" required>
                 <br>
                 <button class="order-btn" type="submit" id="order">
                   Order
