@@ -255,7 +255,9 @@ color: #E25B45;
 padding-top: 60px;
 
 }
-
+#formID{
+  display: none;
+}
 .container-fluid{
   background-color: #f5f5f5;
 }

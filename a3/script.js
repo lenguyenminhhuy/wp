@@ -90,13 +90,21 @@ document.getElementById('content4-btn').onclick = function () { getContent3(4) }
 
 // Booking form movie title fuction
 
-function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
+function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "", idFilm = "") {
     if (!document.getElementById('booking').classList.contains("show")) {
         document.getElementById('booking').classList.add("show");
     }
     document.getElementById('formTitle').innerHTML = nameFilm;
+    document.getElementById('space').innerHTML = "-";
+
     document.getElementById('formDay').innerHTML = dayFilm;
+    document.getElementById('movie-day').value = dayFilm; // set value for movie-day 
+    document.getElementById('space1').innerHTML = "-";
+
     document.getElementById('formTime').innerHTML = timeFilm;
+    document.getElementById('movie-hour').value = timeFilm; // set value for movie-hour 
+    document.getElementById('formID').innerHTML = idFilm;
+    document.getElementById('movie-id').value = idFilm; // set value for movie-id 
 }
 
 
@@ -212,21 +220,11 @@ var button4c = document.getElementById("myBtn4c")
 // Movie title,day,time
 
 var movieInfo = {
-    Name: ["Avengers: Endgame", "Top End Wedding", "Dumbo", "Happy Prince"],
+    Name: ["Avengers: Endgame ", "Top End Wedding ", "Dumbo ", "Happy Prince "],
     Day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    Time: ["0", "3pm", "6pm", "9pm", "12pm"]
+    Time: ["0", "3pm", "6pm", "9pm", "12pm"],
+    Id: ["ACT", " AHF", "ANM", "RMC "]
 
-}
-
-// Movie title/day/time + booking form
-
-function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "") {
-    if (!document.getElementById('booking').classList.contains("show")) {
-        document.getElementById('booking').classList.add("show");
-    }
-    document.getElementById('formTitle').innerHTML = nameFilm;
-    document.getElementById('formDay').innerHTML = dayFilm;
-    document.getElementById('formTime').innerHTML = timeFilm;
 }
 
 // Reset Booking Form 
@@ -260,72 +258,77 @@ function Reset() {
 
 
 //  Avengers button
-button.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][2], movieInfo['Time'][3]) });
+button.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][2], movieInfo['Time'][3], movieInfo['Id'][0]) });
 button.addEventListener("click", Reset);
 
-button1.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][4], movieInfo['Time'][3]) });
+button1.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][4], movieInfo['Time'][3], movieInfo['Id'][0]) });
 button1.addEventListener("click", Reset);
 
-button2.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][5], movieInfo['Time'][2]) });
+button2.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][5], movieInfo['Time'][2], movieInfo['Id'][0]) });
 button2.addEventListener("click", Reset);
 
-button3.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][6], movieInfo['Time'][2]) });
+button3.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][6], movieInfo['Time'][2], movieInfo['Id'][0]) });
 button3.addEventListener("click", Reset);
 
-button4.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3]) });
+button4.addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3], movieInfo['Id'][0]) });
 button4.addEventListener("click", Reset);
 
 // Top end wedding button
-buttona.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2]) });
+buttona.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2], movieInfo['Id'][1]) });
 buttona.addEventListener("click", Reset);
 
-button1a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][1], movieInfo['Time'][2]) });
+button1a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][1], movieInfo['Time'][2], movieInfo['Id'][1]) });
 button1a.addEventListener("click", Reset);
 
-button2a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][5], movieInfo['Time'][1]) });
+button2a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][5], movieInfo['Time'][1], movieInfo['Id'][1]) });
 button2a.addEventListener("click", Reset);
 
-button3a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][6], movieInfo['Time'][1]) });
+button3a.addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][6], movieInfo['Time'][1], movieInfo['Id'][1]) });
 button3a.addEventListener("click", Reset);
 
 
 //  Dumbo button
-buttonb.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][0], movieInfo['Time'][4]) });
+buttonb.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][0], movieInfo['Time'][4], movieInfo['Id'][2]) });
 buttonb.addEventListener("click", Reset);
 
-button1b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][1], movieInfo['Time'][4]) });
+button1b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][1], movieInfo['Time'][4], movieInfo['Id'][2]) });
 button1b.addEventListener("click", Reset);
 
-button2b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][2], movieInfo['Time'][2]) });
+button2b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][2], movieInfo['Time'][2], movieInfo['Id'][2]) });
 button2b.addEventListener("click", Reset);
 
-button3b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][4], movieInfo['Time'][2]) });
+button3b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][4], movieInfo['Time'][2], movieInfo['Id'][2]) });
 button3b.addEventListener("click", Reset);
 
-button4b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][5], movieInfo['Time'][4]) });
+button4b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][5], movieInfo['Time'][4], movieInfo['Id'][2]) });
 button4b.addEventListener("click", Reset);
 
-button5b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][6], movieInfo['Time'][4]) });
+button5b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][6], movieInfo['Time'][4], movieInfo['Id'][2]) });
 button5b.addEventListener("click", Reset);
 
-button6b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][3], movieInfo['Time'][4]) });
+button6b.addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][3], movieInfo['Time'][4]), movieInfo['Id'][2] });
 button6b.addEventListener("click", Reset);
 
 
 
 //  Happy prince button
-buttonc.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][2], movieInfo['Time'][4]) });
+buttonc.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][2], movieInfo['Time'][4], movieInfo['Id'][3]) });
 buttonc.addEventListener("click", Reset);
 
-button1c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][4], movieInfo['Time'][4]) });
+button1c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][4], movieInfo['Time'][4], movieInfo['Id'][3]) });
 button1c.addEventListener("click", Reset);
 
-button2c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][5], movieInfo['Time'][3]) });
+button2c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][5], movieInfo['Time'][3], movieInfo['Id'][3]) });
 button2c.addEventListener("click", Reset);
 
-button3c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][6], movieInfo['Time'][3]) });
+button3c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][6], movieInfo['Time'][3], movieInfo['Id'][3]) });
 button3c.addEventListener("click", Reset);
 
-button4c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4]) });
+button4c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4], movieInfo['Id'][3]) });
 button4c.addEventListener("click", Reset);
+
+var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (e) {
+    if (document.getElementById('total').innerText == 0) e.preventDefault() // if the result of total is nothing
+})
 
