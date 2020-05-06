@@ -29,10 +29,13 @@ document.addEventListener('scroll', () => {
 
 
 // display synopsis
+// Endgame
 function getContent(x) {
     if (x == 1) {
         document.getElementById('content1').style.display = 'block';
         document.getElementById('content1').scrollIntoView();
+        showFilminfo(movieInfo['Name'][0], "Day" , "Time")
+
     }
     else
         document.getElementById('content1').style.display = 'none';
@@ -42,10 +45,13 @@ function getContent(x) {
 }
 document.getElementById('content1-btn').onclick = function () { getContent(1) };
 
+// Top end wedding 
 function getContent1(x) {
     if (x == 2) {
         document.getElementById('content2').style.display = 'block'
         document.getElementById('content2').scrollIntoView();
+        showFilminfo(movieInfo['Name'][1], "Day" , "Time")
+
     }
     else
         document.getElementById('content2').style.display = 'none';
@@ -57,10 +63,12 @@ function getContent1(x) {
 
 document.getElementById('content2-btn').onclick = function () { getContent1(2) };
 
+// Dumbo
 function getContent2(x) {
     if (x == 3) {
         document.getElementById('content3').style.display = 'block'
         document.getElementById('content3').scrollIntoView();
+        showFilminfo(movieInfo['Name'][2], "Day" , "Time")
     }
     else
         document.getElementById('content3').style.display = 'none';
@@ -70,10 +78,12 @@ function getContent2(x) {
 }
 document.getElementById('content3-btn').onclick = function () { getContent2(3) };
 
+// Haapy Prince
 function getContent3(x) {
     if (x == 4) {
         document.getElementById('content4').style.display = 'block'
         document.getElementById('content4').scrollIntoView();
+        showFilminfo(movieInfo['Name'][3], "Day" , "Time")
     }
 
     else
