@@ -723,10 +723,10 @@
                 <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]"
                   pattern="^( ?\d){14,19}" id="cust-credit" required>
                 <br>
-                <label for="">Expiry</label><input type="month" name="cust[expiry]" id="cust-expiry" required>
-
+                <label for="">Expiry</label>  
+                <select id="cust-Expiry-month" name="cust[expiryMonth]" required></select> 
+                <select id="cust-Expiry-year" name="cust[expiryYear]" required></select>
                 <br>
-
                 <button class="order-btn" type="submit" id="order">
                   Order
                   <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

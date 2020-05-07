@@ -345,6 +345,30 @@ validateForm.addEventListener('submit', function (e) {
     }
 })
 
+// Get current month, year
+
+var  min1 = new Date().getMonth() + 1;
+     max1 = min1 + 5;
+     select1 = document.getElementById('cust-Expiry-month');
+
+var min = new Date().getFullYear();
+    max = min + 2;
+    select = document.getElementById('cust-Expiry-year');
+
+    for (var i = min; i<=max; i++){
+       var opt = document.createElement('option');
+       opt.value = i;
+       opt.innerHTML = i;
+       select.appendChild(opt);
+    }
+
+    for (var i = min1; i<=max1; i++){
+        var opt1 = document.createElement('option');
+        opt1.value = i;
+        opt1.innerHTML = i;
+        select1.appendChild(opt1);
+     }
+
 
 
 
