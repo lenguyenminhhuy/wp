@@ -34,7 +34,7 @@ function getContent(x) {
     if (x == 1) {
         document.getElementById('content1').style.display = 'block';
         document.getElementById('content1').scrollIntoView();
-        showFilminfo(movieInfo['Name'][0], "Day" , "Time")
+        showFilminfo(movieInfo['Name'][0], "Day", "Time")
 
     }
     else
@@ -50,7 +50,7 @@ function getContent1(x) {
     if (x == 2) {
         document.getElementById('content2').style.display = 'block'
         document.getElementById('content2').scrollIntoView();
-        showFilminfo(movieInfo['Name'][1], "Day" , "Time")
+        showFilminfo(movieInfo['Name'][1], "Day", "Time")
 
     }
     else
@@ -68,7 +68,7 @@ function getContent2(x) {
     if (x == 3) {
         document.getElementById('content3').style.display = 'block'
         document.getElementById('content3').scrollIntoView();
-        showFilminfo(movieInfo['Name'][2], "Day" , "Time")
+        showFilminfo(movieInfo['Name'][2], "Day", "Time")
     }
     else
         document.getElementById('content3').style.display = 'none';
@@ -83,7 +83,7 @@ function getContent3(x) {
     if (x == 4) {
         document.getElementById('content4').style.display = 'block'
         document.getElementById('content4').scrollIntoView();
-        showFilminfo(movieInfo['Name'][3], "Day" , "Time")
+        showFilminfo(movieInfo['Name'][3], "Day", "Time")
     }
 
     else
@@ -191,7 +191,7 @@ function totalPrice() {
 
     var total = priceOfSeatSTA + priceOfSeatSTP + priceOfSeatSTC + priceOfSeatFCA + priceOfSeatFCP + priceOfSeatFCC;
     if (!isNaN(total))
-        document.getElementById("total").innerHTML = total
+        document.getElementById("total").innerHTML = "$" + total
 }
 
 
@@ -339,12 +339,60 @@ button4c.addEventListener("click", Reset);
 
 var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (e) {
+    if (document.getElementById('total').innerText == 0) e.preventDefault() // if the result of total is nothing
+})
+
+var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (e) {
     if (document.getElementById('total').innerText == 0) {
-         e.preventDefault() 
-         alert("Please select the amount of ticket")
+        e.preventDefault()
+        alert("Please select the amount of ticket")
     }
 })
 
+// Get current month, year
 
+var min1 = 1;
+max1 = min1 + 11;
+select1 = document.getElementById('cust-Expiry-month');
 
+var currentYear = new Date().getFullYear();
+max = currentYear + 5;
+select = document.getElementById('cust-Expiry-year');
 
+for (var i = currentYear; i <= max; i++) {
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+for (var i = min1; i <= max1; i++) {
+    var opt1 = document.createElement('option');
+    opt1.value = i;
+    opt1.innerHTML = i;
+    select1.appendChild(opt1);
+}
+
+var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (a) {
+    var selectedMonth = document.getElementById('cust-Expiry-month').value
+    var selectedYear = document.getElementById('cust-Expiry-year').value
+    var currentMonth = new Date().getMonth() + 1
+    if (parseInt(selectedYear) == currentYear) {
+        if (parseInt(selectedMonth) < currentMonth) a.preventDefault()
+    }
+})
+
+var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (a) {
+    var selectedMonth = document.getElementById('cust-Expiry-month').value
+    var selectedYear = document.getElementById('cust-Expiry-year').value
+    var currentMonth = new Date().getMonth() + 1
+    if (parseInt(selectedYear) == currentYear) {
+        if (parseInt(selectedMonth) < currentMonth) {
+            a.preventDefault()
+            alert("Please insert the valid credit card")
+        }
+    }
+})
