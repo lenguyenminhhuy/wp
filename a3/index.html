@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Assignment 2 - Cinemax </title>
+  <title> Assignment 3 - Cinemax </title>
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
@@ -160,7 +160,7 @@
     <div class="parallax3">
       <section>
         <div id="Prices"> Prices </div>
-        <div style="padding-left: 4%;">
+        <div style="overflow-x:auto;">
           <table>
             <tr>
               <th>Seat Type</th>
@@ -212,7 +212,7 @@
 
 
     <!-- Now showing section  -->
-    <div class="parallax2"></div>
+    <div class=" parallax2"></div>
     <div style="background-color: whitesmoke ;font-size:36px" id="nowshowing">
       <div class="container-fluid">
         <div class="row">
@@ -333,7 +333,8 @@
                   <div class="col-sm-6">
                     <div class="name">
                       <h4 style="font-size:30px; color: rgb(206, 120, 107)"> <b> Happy Prince </b> <span
-                          style="text-align: center;color: rgb(224, 90, 49);font-size: 27px"> </br>( PG )</span> </h4>
+                          style="text-align: center;color: rgb(224, 90, 49);font-size: 27px"> </br>( PG )</span>
+                      </h4>
                     </div>
                     <div class="movie-schedule" style="font-size: 20px"> <b>Showing timetable in
                         this week </b></div>
@@ -385,8 +386,8 @@
                 final stand in Marvel Studios' grand conclusion to twenty-two films, "Avengers: Endgame."
               </p>
             </div>
-            <div class="col-sm-7">
-              <iframe style="padding-left: 10%;" width="615" height="315"
+            <div class="col-sm-7" class="container-iframe">
+              <iframe class="responsive-iframe" style="padding-left: 10%;"
                 src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -423,7 +424,7 @@
             <div class="col-sm-9">
               <h5 style=" font-size: 40px; padding-left: 60px; padding-top: 50px; font-family:'Franklin Gothic Medium'; text-decoration:
             underline;">
-                Top End Wedding <span style="margin-left: 220px;">Rated: MA</span></h5>
+                Top End Wedding <span style="margin-left:15%;">Rated: MA</span></h5>
             </div>
           </div>
           <div class="row">
@@ -437,8 +438,8 @@
                 has gone AWOL somewhere in the remote far north of Australia, reunite
                 her parents and pull off their dream wedding. </p>
             </div>
-            <div class="col-sm-7">
-              <iframe style="padding-left: 10%;" width="560" height="315"
+            <div class="col-sm-7" class="container-iframe">
+              <iframe class="responsive-iframe" style="padding-left: 10%;"
                 src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -472,7 +473,7 @@
             <div class="col-sm-9">
               <h5 class="modal-title" id="exampleModalLabel"
                 style="font-size: 40px; padding-left: 60px; padding-top: 50px; font-family:'Franklin Gothic Medium'; text-decoration: underline;">
-                Dumbo <span style="margin-left: 500px;">Rated: MA</span></h5>
+                Dumbo <span style="margin-left: 50%;">Rated: MA</span></h5>
             </div>
           </div>
           <div class="row">
@@ -488,8 +489,8 @@
                 But when they discover that Dumbo can fly, the circus makes an incredible comeback,
                 attracting persuasive entrepreneur V.A. </p>
             </div>
-            <div class="col-sm-7">
-              <iframe style="padding-left: 10%;" width="560" height="315"
+            <div class="col-sm-7" class="container-iframe">
+              <iframe class="responsive-iframe" style="padding-left: 10%;"
                 src="https://www.youtube.com/embed/ocWpGdITSR4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -550,8 +551,9 @@
                 shelter
                 under the statue and discovers the prince is not happy, but sad </p>
             </div>
-            <div class="col-sm-7">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8" frameborder="0"
+            <div class="col-sm-7" class="container-iframe">
+              <iframe class="responsive-iframe" style="padding-left: 10%;"
+                src="https://www.youtube.com/embed/4HmN9r1Fcr8" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             </div>
@@ -701,7 +703,7 @@
                   <option value="10">10</option>
                 </select>
               </fieldset>
-              <div class="total" id="price"> Total $ </div>
+              <div class="total" id="price"> Total </div>
               <div class="total-price">
                 <div class="card-body" id="total">
                 </div>
@@ -723,8 +725,9 @@
                 <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]"
                   pattern="^( ?\d){14,19}" id="cust-credit" required>
                 <br>
-                <label for="">Expiry</label>  
-                <select id="cust-Expiry-month" name="cust[expiryMonth]" required></select> 
+
+                <label for="">Expiry</label>
+                <select id="cust-Expiry-month" name="cust[expiryMonth]" required></select>
                 <select id="cust-Expiry-year" name="cust[expiryYear]" required></select>
                 <br>
                 <button class="order-btn" type="submit" id="order">
@@ -751,7 +754,7 @@
     <div>&copy;
       <script>
         document.write(new Date().getFullYear());
-      </script> Web programming - Assignment 2
+      </script> Web programming - Assignment 3
       <div> <b> Group </b>: Group 12
         <br>
         <b> Student name 1 </b> : Le Nguyen Minh Huy - s3777280
