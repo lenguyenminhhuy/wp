@@ -387,3 +387,15 @@ validateForm.addEventListener('submit', function (a) {
     }
 })
 
+var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (a) {
+    var selectedMonth = document.getElementById('cust-Expiry-month').value
+    var selectedYear = document.getElementById('cust-Expiry-year').value
+    var currentMonth = new Date().getMonth() + 1
+    if (parseInt(selectedYear) == currentYear) {
+        if (parseInt(selectedMonth) < currentMonth) {
+            a.preventDefault()
+            alert("Please insert the valid credit card")
+        }
+    }
+})
