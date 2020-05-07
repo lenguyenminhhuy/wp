@@ -339,6 +339,12 @@ button4c.addEventListener("click", Reset);
 
 var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (e) {
-    if (document.getElementById('total').innerText == 0) e.preventDefault() // if the result of total is nothing
+    if (document.getElementById('total').innerText == 0) {
+         e.preventDefault() 
+         alert("Please select the amount of ticket")
+    }
 })
+
+
+
 
