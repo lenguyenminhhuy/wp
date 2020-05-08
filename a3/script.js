@@ -24,80 +24,28 @@ document.addEventListener('scroll', () => {
         activeLink[2].classList.add('active') // the class of the div of this section will be added "active"
     else activeLink[2].classList.remove('active') // otherwise, it will be disable
 })
-
-
-
-
-// display synopsis
-// Endgame
-function getContent(x) {
-    if (x == 1) {
-        document.getElementById('content1').style.display = 'block';
-        document.getElementById('content1').scrollIntoView();
-        showFilminfo(movieInfo['Name'][0], "Day", "Time")
-
-    }
-    else
-        document.getElementById('content1').style.display = 'none';
-    document.getElementById('content2').style.display = 'none';
-    document.getElementById('content3').style.display = 'none';
-    document.getElementById('content4').style.display = 'none';
+// synopsis
+function displayContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
+    document.getElementById(id1).style.display = 'block'
+    // showFilminfo(movieInfo['Name'][1], "Day", "Time")
+    document.getElementById(id2).style.display = 'none';
+    document.getElementById(id3).style.display = 'none';
+    document.getElementById(id4).style.display = 'none';
 }
-document.getElementById('content1-btn').onclick = function () { getContent(1) };
-
-// Top end wedding 
-function getContent1(x) {
-    if (x == 2) {
-        document.getElementById('content2').style.display = 'block'
-        document.getElementById('content2').scrollIntoView();
-        showFilminfo(movieInfo['Name'][1], "Day", "Time")
-
-    }
-    else
-        document.getElementById('content2').style.display = 'none';
-    document.getElementById('content1').style.display = 'none';
-    document.getElementById('content3').style.display = 'none';
-    document.getElementById('content4').style.display = 'none';
-
+function scrollToRightPlace(id) {
+    document.getElementById(id).scrollIntoView();
+}
+function getContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
+    displayContent(id1, id2, id3, id4)
+    scrollToRightPlace(id1)
 }
 
-document.getElementById('content2-btn').onclick = function () { getContent1(2) };
+document.getElementById('content1-btn').onclick = function () { getContent('content1', 'content2', 'content3', 'content4') } // end game
+document.getElementById('content2-btn').onclick = function () { getContent('content2', 'content1', 'content3', 'content4') } // top end wedding
+document.getElementById('content3-btn').onclick = function () { getContent('content3', 'content2', 'content1', 'content4') } // dumbo 
+document.getElementById('content4-btn').onclick = function () { getContent('content4', 'content2', 'content3', 'content1') } // happy prince
 
-// Dumbo
-function getContent2(x) {
-    if (x == 3) {
-        document.getElementById('content3').style.display = 'block'
-        document.getElementById('content3').scrollIntoView();
-        showFilminfo(movieInfo['Name'][2], "Day", "Time")
-    }
-    else
-        document.getElementById('content3').style.display = 'none';
-    document.getElementById('content1').style.display = 'none';
-    document.getElementById('content2').style.display = 'none';
-    document.getElementById('content4').style.display = 'none';
-}
-document.getElementById('content3-btn').onclick = function () { getContent2(3) };
-
-// Haapy Prince
-function getContent3(x) {
-    if (x == 4) {
-        document.getElementById('content4').style.display = 'block'
-        document.getElementById('content4').scrollIntoView();
-        showFilminfo(movieInfo['Name'][3], "Day", "Time")
-    }
-
-    else
-        document.getElementById('content4').style.display = 'none';
-    document.getElementById('content1').style.display = 'none';
-    document.getElementById('content2').style.display = 'none';
-    document.getElementById('content3').style.display = 'none';
-
-    return
-}
-document.getElementById('content4-btn').onclick = function () { getContent3(4) };
-
-//booking form
-
+// booking form
 // Booking form movie title fuction
 
 function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "", idFilm = "") {
@@ -162,9 +110,6 @@ function totalPrice() {
         && document.getElementById('formTime').innerHTML == movieInfo['Time'][4] // 12pm 
         || document.getElementById('formDay').innerHTML == movieInfo['Day'][0] // Monday
         || document.getElementById('formDay').innerHTML == movieInfo['Day'][2]) // Wednesday
-
-
-
     {
         var priceSTA = seatPrice['STA']['discount']
         var priceSTP = seatPrice['STP']['discount']
@@ -237,6 +182,23 @@ var movieInfo = {
 
 }
 
+// var movieInformation = {
+//     film1: [{ "name": "Avengers: Endgame", "day": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ["9pm", "6pm"] }],
+//     film2: [{ "name": "Top End Wedding", "day": ["Monday", "Tuesday", "Saturday", "Sunday"], "time": ["6pm", "3pm"] }],
+//     film3: [{ "name": "Dumbo", "day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ["12pm", "6pm"] }],
+//     film4: [{ "name": "Happy Prince", "day": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ['12pm', "9pm"] }]
+
+// }
+
+// var x, y, z = " "
+// for (i = 0; i < movieInformation.film1.length; i++) {
+//     x += movieInformation.film1[i].name
+//     for (j= 0; j < movieInformation.film1.day.length; j ++ ) {
+//         x += movieInformation.film1[i].day[j]
+//         for
+//     }
+
+
 // Reset Booking Form 
 
 function Reset() {
@@ -265,6 +227,7 @@ function Reset() {
     $('#cust-expiry').val(' ');
 
 }
+
 
 
 //  Avengers button
@@ -337,6 +300,8 @@ button3c.addEventListener("click", Reset);
 button4c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4], movieInfo['Id'][3]) });
 button4c.addEventListener("click", Reset);
 
+
+// choose at least one seat 
 var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (e) {
     if (document.getElementById('total').innerText == 0) e.preventDefault() // if the result of total is nothing
@@ -352,41 +317,28 @@ validateForm.addEventListener('submit', function (e) {
 
 // Get current month, year
 
-var min1 = 1;
-max1 = min1 + 11;
+var firstMonth = 1;
+totalMonth = firstMonth + 11;
 select1 = document.getElementById('cust-Expiry-month');
 
 var currentYear = new Date().getFullYear();
-max = currentYear + 5;
+var totalYear = currentYear + 5;
 select = document.getElementById('cust-Expiry-year');
 
-for (var i = currentYear; i <= max; i++) {
+for (var i = currentYear; i <= totalYear; i++) {
     var opt = document.createElement('option');
     opt.value = i;
     opt.innerHTML = i;
     select.appendChild(opt);
 }
 
-for (var i = min1; i <= max1; i++) {
+for (var i = firstMonth; i <= totalMonth; i++) {
     var opt1 = document.createElement('option');
     opt1.value = i;
     opt1.innerHTML = i;
     select1.appendChild(opt1);
 }
-
-var validateForm = document.getElementById("booking")
-validateForm.addEventListener('submit', function (a) {
-    var selectedMonth = document.getElementById('cust-Expiry-month').value
-    var selectedYear = document.getElementById('cust-Expiry-year').value
-    var currentMonth = new Date().getMonth() + 1
-    if (parseInt(selectedYear) == currentYear) {
-        if (parseInt(selectedMonth) < currentMonth){
-             a.preventDefault()
-             alert("Please choose the month in the future only")
-        }
-    }
-})
-
+// check expiry time whether in the future or not 
 var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (a) {
     var selectedMonth = document.getElementById('cust-Expiry-month').value
@@ -395,7 +347,8 @@ validateForm.addEventListener('submit', function (a) {
     if (parseInt(selectedYear) == currentYear) {
         if (parseInt(selectedMonth) < currentMonth) {
             a.preventDefault()
-            alert("Please insert the valid credit card")
+            alert("Please choose the month in the future only")
         }
     }
 })
+
