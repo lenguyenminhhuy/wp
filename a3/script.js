@@ -1,14 +1,14 @@
 /* Insert your javascript here */
 
 let element = document.getElementsByTagName('nav') // get element which has tag name = nav, they are: about us, price, now showing
-let navbarHeight = element[0].clientHeight // height of navigation bar equal to the height of aboutus_clientheight 
-let aboutUs = document.getElementById('About-us') // assign variable aboutUs to get all the content in which the id = about-us
-let price = document.getElementById('Prices') // assign variable price to get all the content in which the id = Prices
-let nowshowing = document.getElementById('nowshowing') // assign variable nowshowing to get all the content in which the id = nowshowing
-let reachAboutUs = aboutUs.offsetTop // assign reachAboutUs: get the height to reach About us section: from the top of page to "About us" section
-let reachPrice = price.offsetTop // assign reachPrice: get the height to reach Price section: from the top of page to "Price" section
-let reachNowShowing = nowshowing.offsetTop // assign reachNowShowing: get the height to reach Now showing section: from the top of page to "now showing" section
-let activeLink = document.querySelectorAll('.nav-item')
+var navbarHeight = element[0].clientHeight // height of navigation bar equal to the height of aboutus_clientheight 
+var aboutUs = document.getElementById('About-us') // assign variable aboutUs to get all the content in which the id = about-us
+var price = document.getElementById('Prices') // assign variable price to get all the content in which the id = Prices
+var nowshowing = document.getElementById('nowshowing') // assign variable nowshowing to get all the content in which the id = nowshowing
+var reachAboutUs = aboutUs.offsetTop // assign reachAboutUs: get the height to reach About us section: from the top of page to "About us" section
+var reachPrice = price.offsetTop // assign reachPrice: get the height to reach Price section: from the top of page to "Price" section
+var reachNowShowing = nowshowing.offsetTop // assign reachNowShowing: get the height to reach Now showing section: from the top of page to "now showing" section
+var activeLink = document.querySelectorAll('.nav-item')
 
 document.addEventListener('scroll', () => {
     let scrollDistance = navbarHeight + window.scrollY // the real scroll long is equaled to the height of navigation bar + window scrolling 
@@ -46,7 +46,6 @@ document.getElementById('content2-btn').onclick = function () { getContent('cont
 document.getElementById('content3-btn').onclick = function () { getContent('content3', 'content2', 'content1', 'content4') } // dumbo 
 document.getElementById('content4-btn').onclick = function () { getContent('content4', 'content2', 'content3', 'content1') } // happy prince
 
-// booking form
 // Booking form movie title fuction
 
 function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "", idFilm = "") {
@@ -68,7 +67,6 @@ function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "", idFilm = "") {
 
 
 // total price
-
 function totalPrice() {
     var seatPrice = {
         STA: {
@@ -137,15 +135,10 @@ function totalPrice() {
 
     var total = priceOfSeatSTA + priceOfSeatSTP + priceOfSeatSTC + priceOfSeatFCA + priceOfSeatFCP + priceOfSeatFCC;
     if (!isNaN(total))
-        document.getElementById("total").innerHTML = "$" + total
+        document.getElementById("total").innerHTML = "$" + parseFloat(total).toFixed(2) // format: X.ab
 }
 
-
-
-
-
 // Movie title,day,time
-
 var movieInfo = {
     Name: ["Avengers: Endgame ", "Top End Wedding ", "Dumbo ", "Happy Prince "],
     Day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -153,23 +146,6 @@ var movieInfo = {
     Id: ["ACT", " AHF", "ANM", "RMC "]
 
 }
-
-// var movieInformation = {
-//     film1: [{ "name": "Avengers: Endgame", "day": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ["9pm", "6pm"] }],
-//     film2: [{ "name": "Top End Wedding", "day": ["Monday", "Tuesday", "Saturday", "Sunday"], "time": ["6pm", "3pm"] }],
-//     film3: [{ "name": "Dumbo", "day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ["12pm", "6pm"] }],
-//     film4: [{ "name": "Happy Prince", "day": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "time": ['12pm', "9pm"] }]
-
-// }
-
-// var x, y, z = " "
-// for (i = 0; i < movieInformation.film1.length; i++) {
-//     x += movieInformation.film1[i].name
-//     for (j= 0; j < movieInformation.film1.day.length; j ++ ) {
-//         x += movieInformation.film1[i].day[j]
-//         for
-//     }
-
 
 // Reset Booking Form 
 
@@ -181,7 +157,6 @@ function Reset() {
     var dropDown3 = document.getElementById("seats-FCA");
     var dropDown4 = document.getElementById("seats-FCP");
     var dropDown5 = document.getElementById("seats-FCC");
-
 
     dropDown.selectedIndex = 0;
     dropDown1.selectedIndex = 0;
@@ -203,9 +178,9 @@ function Reset() {
 
 
 //  Avengers button
-document.getElementById("myBtn").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][2], movieInfo['Time'][3], movieInfo['Id'][0]);Reset() });
+document.getElementById("myBtn").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][2], movieInfo['Time'][3], movieInfo['Id'][0]); Reset() });
 
-document.getElementById("myBtn1").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][4], movieInfo['Time'][3], movieInfo['Id'][0]);Reset() });
+document.getElementById("myBtn1").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][4], movieInfo['Time'][3], movieInfo['Id'][0]); Reset() });
 
 document.getElementById("myBtn2").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo['Day'][5], movieInfo['Time'][2], movieInfo['Id'][0]); Reset() });
 
@@ -214,52 +189,52 @@ document.getElementById("myBtn3").addEventListener("click", function () { showFi
 document.getElementById("myBtn4").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3], movieInfo['Id'][0]) });
 
 // Top end wedding button
-document.getElementById("myBtna").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2], movieInfo['Id'][1]);Reset() });
+document.getElementById("myBtna").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2], movieInfo['Id'][1]); Reset() });
 
-document.getElementById("myBtn1a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][1], movieInfo['Time'][2], movieInfo['Id'][1]);Reset() });
+document.getElementById("myBtn1a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][1], movieInfo['Time'][2], movieInfo['Id'][1]); Reset() });
 
-document.getElementById("myBtn2a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][5], movieInfo['Time'][1], movieInfo['Id'][1]);Reset() });
+document.getElementById("myBtn2a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][5], movieInfo['Time'][1], movieInfo['Id'][1]); Reset() });
 
-document.getElementById("myBtn3a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][6], movieInfo['Time'][1], movieInfo['Id'][1]);Reset() });
+document.getElementById("myBtn3a").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][6], movieInfo['Time'][1], movieInfo['Id'][1]); Reset() });
 
 //  Dumbo button
-document.getElementById("myBtnb").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][0], movieInfo['Time'][4], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtnb").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][0], movieInfo['Time'][4], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn1b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][1], movieInfo['Time'][4], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtn1b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][1], movieInfo['Time'][4], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn2b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][2], movieInfo['Time'][2], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtn2b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][2], movieInfo['Time'][2], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn3b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][4], movieInfo['Time'][2], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtn3b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][4], movieInfo['Time'][2], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn4b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][5], movieInfo['Time'][4], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtn4b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][5], movieInfo['Time'][4], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn5b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][6], movieInfo['Time'][4], movieInfo['Id'][2]);Reset() });
+document.getElementById("myBtn5b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][6], movieInfo['Time'][4], movieInfo['Id'][2]); Reset() });
 
-document.getElementById("myBtn6b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][3], movieInfo['Time'][4]), movieInfo['Id'][2];Reset() });
+document.getElementById("myBtn6b").addEventListener("click", function () { showFilminfo(movieInfo['Name'][2], movieInfo['Day'][3], movieInfo['Time'][4]), movieInfo['Id'][2]; Reset() });
 
 //  Happy prince button
-document.getElementById("myBtnc").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][2], movieInfo['Time'][4], movieInfo['Id'][3]);Reset() });
+document.getElementById("myBtnc").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][2], movieInfo['Time'][4], movieInfo['Id'][3]); Reset() });
 
-document.getElementById("myBtn1c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][4], movieInfo['Time'][4], movieInfo['Id'][3]);Reset() });
+document.getElementById("myBtn1c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][4], movieInfo['Time'][4], movieInfo['Id'][3]); Reset() });
 
-document.getElementById("myBtn2c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][5], movieInfo['Time'][3], movieInfo['Id'][3]);Reset() });
+document.getElementById("myBtn2c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][5], movieInfo['Time'][3], movieInfo['Id'][3]); Reset() });
 
-document.getElementById("myBtnb3c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][6], movieInfo['Time'][3], movieInfo['Id'][3]);Reset() });
+document.getElementById("myBtn3c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][6], movieInfo['Time'][3], movieInfo['Id'][3]); Reset() });
 
-document.getElementById("myBtn4c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4], movieInfo['Id'][3]);Reset() });
-
-
+document.getElementById("myBtn4c").addEventListener("click", function () { showFilminfo(movieInfo['Name'][3], movieInfo['Day'][3], movieInfo['Time'][4], movieInfo['Id'][3]); Reset() });
 
 
-// choose at least one seat 
+
+
+// must select the date and time to book the ticket
 var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (a) {
-    if (document.getElementById('formDay').value == "Day") {
-        a.preventDefault()
+    if (document.getElementById("formDay").innerHTML == "Day") {
+        a.preventDefault();
         alert("You have to choose the date and time to book the ticket")
     }
-})
-
+});
+// choose at least one seat to submit the booking form
 validateForm.addEventListener('submit', function (e) {
     if (document.getElementById('total').innerText == 0) {
         e.preventDefault()
