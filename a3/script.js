@@ -24,7 +24,7 @@ document.addEventListener('scroll', () => {
 })
 // synopsis
 
-var listId = ['content1', 'content2', 'content3', 'content4']
+var listId = ['sypnosisACT', 'sypnosisRMC', 'sypnosisANM', 'sypnosisAHF']
 function displayContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
     showFilminfo((movieInfo['Name'][listId.indexOf(id1)]), "Day", "Time");
     document.getElementById(id1).style.display = 'block'
@@ -39,12 +39,13 @@ function scrollToRightPlace(id) {
 function getContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
     displayContent(id1, id2, id3, id4)
     scrollToRightPlace(id1)
+    Reset()
 }
 
-document.getElementById('content1-btn').onclick = function () { getContent('content1', 'content2', 'content3', 'content4') } // end game
-document.getElementById('content2-btn').onclick = function () { getContent('content2', 'content1', 'content3', 'content4') } // top end wedding
-document.getElementById('content3-btn').onclick = function () { getContent('content3', 'content2', 'content1', 'content4') } // dumbo 
-document.getElementById('content4-btn').onclick = function () { getContent('content4', 'content2', 'content3', 'content1') } // happy prince
+document.getElementById('moviePanelACT').onclick = function () { getContent('sypnosisACT', 'sypnosisRMC', 'sypnosisANM', 'sypnosisAHF') } // end game
+document.getElementById('moviePanelRMC').onclick = function () { getContent('sypnosisRMC', 'sypnosisACT', 'sypnosisANM', 'sypnosisAHF') } // top end wedding
+document.getElementById('moviePanelANM').onclick = function () { getContent('sypnosisANM', 'sypnosisRMC', 'sypnosisACT', 'sypnosisAHF') } // dumbo 
+document.getElementById('moviePanelAHF').onclick = function () { getContent('sypnosisAHF', 'sypnosisRMC', 'sypnosisANM', 'sypnosisACT') } // happy prince
 
 // Booking form movie title fuction
 
@@ -228,17 +229,28 @@ document.getElementById("myBtn4c").addEventListener("click", function () { showF
 
 // must select the date and time to book the ticket
 var validateForm = document.getElementById("booking")
+
 validateForm.addEventListener('submit', function (a) {
     if (document.getElementById("formDay").innerHTML == "Day") {
         a.preventDefault();
         alert("You have to choose the date and time to book the ticket")
     }
 });
+
+// Must select a movie
+validateForm.addEventListener('submit', function (b) {
+    if (document.getElementById("formTitle").innerHTML == "") {
+        b.preventDefault();
+        alert("You have to choose a movie to book the ticket")
+    }
+});
+
+
 // choose at least one seat to submit the booking form
 validateForm.addEventListener('submit', function (e) {
-    if (document.getElementById('total').innerText == 0) {
+    if (document.getElementById('total').innerText == 0 || document.getElementById('total').innerText == "$0.00" ) {
         e.preventDefault()
-        alert("Please select the amount of ticket")
+        alert("Please select the amount of ticket. At least 1 ticket must be chosen to order")
     }
 })
 
