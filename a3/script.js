@@ -1,8 +1,5 @@
 /* Insert your javascript here */
 
-/* https://www.w3schools.com/jsref/prop_element_clientheight.asp */ // have a look at this site nha em
-
-let activeLink = document.querySelectorAll('.nav-item') // 
 let element = document.getElementsByTagName('nav') // get element which has tag name = nav, they are: about us, price, now showing
 let navbarHeight = element[0].clientHeight // height of navigation bar equal to the height of aboutus_clientheight 
 let aboutUs = document.getElementById('About-us') // assign variable aboutUs to get all the content in which the id = about-us
@@ -11,6 +8,7 @@ let nowshowing = document.getElementById('nowshowing') // assign variable nowsho
 let reachAboutUs = aboutUs.offsetTop // assign reachAboutUs: get the height to reach About us section: from the top of page to "About us" section
 let reachPrice = price.offsetTop // assign reachPrice: get the height to reach Price section: from the top of page to "Price" section
 let reachNowShowing = nowshowing.offsetTop // assign reachNowShowing: get the height to reach Now showing section: from the top of page to "now showing" section
+let activeLink = document.querySelectorAll('.nav-item')
 
 document.addEventListener('scroll', () => {
     let scrollDistance = navbarHeight + window.scrollY // the real scroll long is equaled to the height of navigation bar + window scrolling 
@@ -25,9 +23,11 @@ document.addEventListener('scroll', () => {
     else activeLink[2].classList.remove('active') // otherwise, it will be disable
 })
 // synopsis
+
+var listId = ['content1', 'content2', 'content3', 'content4']
 function displayContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
+    showFilminfo((movieInfo['Name'][listId.indexOf(id1)]), "Day", "Time");
     document.getElementById(id1).style.display = 'block'
-    // showFilminfo(movieInfo['Name'][1], "Day", "Time")
     document.getElementById(id2).style.display = 'none';
     document.getElementById(id3).style.display = 'none';
     document.getElementById(id4).style.display = 'none';
@@ -35,6 +35,7 @@ function displayContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
 function scrollToRightPlace(id) {
     document.getElementById(id).scrollIntoView();
 }
+
 function getContent(id1 = " ", id2 = " ", id3 = " ", id4 = " ") {
     displayContent(id1, id2, id3, id4)
     scrollToRightPlace(id1)
@@ -301,13 +302,20 @@ button4c.addEventListener("click", function () { showFilminfo(movieInfo['Name'][
 button4c.addEventListener("click", Reset);
 
 
+
 // choose at least one seat 
 var validateForm = document.getElementById("booking")
+validateForm.addEventListener('submit', function (a) {
+    if (document.getElementById('formDay').value = "Day") {
+        a.preventDefault()
+        alert("You have to choose the date and time to book the ticket")
+    }
+})
+
 validateForm.addEventListener('submit', function (e) {
     if (document.getElementById('total').innerText == 0) e.preventDefault() // if the result of total is nothing
 })
 
-var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (e) {
     if (document.getElementById('total').innerText == 0) {
         e.preventDefault()
@@ -339,7 +347,6 @@ for (var i = firstMonth; i <= totalMonth; i++) {
     select1.appendChild(opt1);
 }
 // check expiry time whether in the future or not 
-var validateForm = document.getElementById("booking")
 validateForm.addEventListener('submit', function (a) {
     var selectedMonth = document.getElementById('cust-Expiry-month').value
     var selectedYear = document.getElementById('cust-Expiry-year').value
