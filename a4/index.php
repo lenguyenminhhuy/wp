@@ -30,9 +30,8 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-
+  <?php include 'tools.php'?>
 </head>
-
 <body onLoad="populateYearSelect()">
   <!-- Navigation bar  -->
   <main>
@@ -45,11 +44,7 @@
         <li><a class="nav-item nav-link" href="#now-showing">Now Showing</a></li>
       </ul>
     </nav>
-
-
     <!-- We apply parallax effect scrolling into our website to make it more appealing.  -->
-
-
     <!-- Promotion slide -->
     <div class="parallax1"></div>
     <div id="Promotion" style="background-color:whitesmoke ">
@@ -89,14 +84,11 @@
         </a>
       </div>
     </div>
-
-
     <!-- About us section -->
     <div class="parallax2"></div>
     <section>
       <div id="About-us" style="background-color: whitesmoke ">
         <h3 class="section-heading" style="color: #E25B45;">About Us</h3>
-
         <div class="Sectionquote1">Our cinema has gone under extensive improvement and renovations so that we could
           not
           just bring you the best cinematic experience but also fantastic way to enjoy it. We have renovated the
@@ -106,7 +98,6 @@
           the projection and sound systems are now upgraded with 3D Dolby Vision projection and Dolby Atmos sound to
           bring
           customer the best cinematic experience they have ever seen. </div>
-
         <li class="auh" style="text-align:left;  font-size: 280%; color: #E25B45; padding-left:2%; opacity: 0.7;
         ">New seats</li>
         <div>
@@ -162,7 +153,6 @@
       </div>
     </section>
     <!-- End of About us section  -->
-
     <!-- Price section  -->
     <div class="parallax3">
       <section>
@@ -216,8 +206,6 @@
       </section>
     </div>
     <!-- End Price Section -->
-
-
     <!-- Now showing section  -->
     <div class=" parallax2"></div>
     <div style="background-color: whitesmoke ;font-size:36px" id="nowshowing">
@@ -257,7 +245,6 @@
                     </p>
                     <!-- Modal 1 -->
                   </div>
-
                 </div>
               </div>
               </a>
@@ -283,28 +270,18 @@
                       <br /> <b> Saturday </b>: 3pm (T15)
                       <br /> <b> Sunday </b>: 3pm (T15)
                     </p>
-
-
                   </div>
-
-
                 </div>
               </div>
             </div>
           </div>
           <!-- end Panel 2 -->
-
           <!-- panel 3 -->
-
           <div style=" margin-top:7.5px;">
-
             <div class=" d-flex row justify-content-center my-3">
-
               <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="moviePanelANM"
                 style="background-color: #F3DBCF;padding-top: 8px;padding-bottom: 8px;">
-
                 <div class="row px-1">
-
                   <div class="col-sm-6">
                     <img src="media2/now-showing-3.jpg"
                       style="max-width: 100%;height: auto; border:white 2px solid; object-fit: cover;">
@@ -316,7 +293,6 @@
                     </div>
                     <div class="movie-schedule" style="font-size: 20px"> <b> Showing timetable in this week </b>
                     </div>
-
                     <div class="movie-info" style="font-size: 18px" ;>
                       <p>
                         <br /> <b> Monday </b>: 12pm (T12)
@@ -327,18 +303,11 @@
                         <br /> <b> Saturday </b>: 12pm (T12)
                         <br /> <b> Sunday </b>: 12pm (T12)
                       </p>
-
-
                     </div>
-
-
                   </div>
-
                 </div>
               </div>
-
               <!-- end panel 3 -->
-
               <div class="col-xs-5 col-md-5 col-sm-12 mx-2 " id="moviePanelAHF"
                 style="background-color: #F3DBCF;padding-top: 8px; padding-bottom: 8px;"> <a href="#content4"></a>
                 <div class="row px-1">
@@ -362,23 +331,16 @@
                         <br /> <b> Saturday </b>: 9pm (T21)
                         <br /> <b> Sunday </b>: 9pm (T21)
                       </p>
-
                       <!-- Modal 4 -->
-
                     </div>
-
-
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
       </section>
     </div>
     <!-- End of now showing section  -->
-
-
     <!-- content1 -->
     <div id="sypnosisACT" class="content1">
       <div>
@@ -422,19 +384,16 @@
               <button type="button" class="btn btn-outline-danger" id="myBtn1"> Friday: 9pm (T21)</button>
               <button type="button" class="btn btn-outline-dark" id="myBtn2"> Saturday: 6pm (T18)</button>
               <button type="button" class="btn btn-outline-info" id="myBtn3"> Sunday: 6pm (T18)</button>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- end of content1 -->
-
     <!-- content 2 -->
     <div id="sypnosisRMC" class="content">
       <div id="content-2">
         <div style="background-color: #FFDECD; background-size: cover; ">
-
           <div class="row">
             <div class="col-sm-9">
               <h5 style=" font-size: 40px; padding-left: 60px; padding-top: 50px; font-family:'Franklin Gothic Medium'; text-decoration:
@@ -466,7 +425,6 @@
                   booking: </b> </label>
             </div>
             <div class="col-sm-9" style="color:grey;">
-
               <button type="button" class="btn btn-outline-warning" id="myBtna"> Monday: 6pm (T18)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn1a"> Tuesday: 6pm
                 (T18)</button>
@@ -478,7 +436,6 @@
       </div>
     </div>
     <!-- end of content2 -->
-
     <!-- content3 -->
     <div id="sypnosisANM" class="content">
       <div>
@@ -497,7 +454,6 @@
               </h7>
               <p style="text-align: left; margin-left: 10px; font-size: 18px;">
                 Struggling circus owner Max Medici enlists former star
-
                 Holt Farrier and his children Milly and Joe to care for Dumbo,
                 a baby elephant whose oversized ears make him the circus' laughing stock.
                 But when they discover that Dumbo can fly, the circus makes an incredible comeback,
@@ -516,7 +472,6 @@
                   booking: </b> </label>
             </div>
             <div class="col-sm-9" style="color:grey;">
-
               <button type="button" class="btn btn-outline-warning" id="myBtnb"> Monday: 12pm
                 (T12)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn1b"> Tuesday: 12pm
@@ -531,14 +486,12 @@
                 (T12)</button>
               <button type="button" class="btn btn-outline-info" id="myBtn5b"> Sunday: 12pm
                 (T12)</button>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- end of content 3 -->
-
     <!-- content 4 -->
     <div id="sypnosisAHF" class="content">
       <div>
@@ -583,7 +536,6 @@
                 Thursday: 12pm (T12)</button>
               <button type="button" class="btn btn-outline-danger" id="myBtn1c" target="_blank"> Friday:
                 12pm (T12)</button>
-
               <button type="button" class="btn btn-outline-dark" id="myBtn2c" target="_blank">
                 Saturday:
                 9pm (T21)</button>
@@ -594,12 +546,14 @@
         </div>
       </div>
     </div>
-
-
     <!-- Booking area section -->
+<<<<<<< HEAD
 
     <form action="index.php#" method="POST" id="booking"
       class="booking">
+=======
+    <form id="booking" class="booking" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+>>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
       <div class="container-fluid">
         <div style="text-align: center;">
           <span style="font-size:xx-large; font-weight: bold;" id="formTitle"></span>
@@ -612,7 +566,11 @@
           <input type="hidden" name="movie[day]" id='movie-day' value="">
           <input type="hidden" name="movie[hour]" id='movie-hour' value="">
         </div>
+<<<<<<< HEAD
         <form action="" method="POST">
+=======
+        <!-- <form action="" method="GET"> -->
+>>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
           <div class="row">
             <div class="col-lg-6">
               <fieldset class="standard">
@@ -720,44 +678,50 @@
                 <div class="card-body" id="total">
                 </div>
               </div>
-
             </div>
             <div class="col-lg-6">
               <fieldset class="customer-info">
                 </br>
+<<<<<<< HEAD
                 <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name"
                   pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required >
                 <br>
                 <label for="cust-mail">Email </label><input type="email" name="cust[email]" id="cust-email" required>
+=======
+                <label for="cust-name">Name </label>
+                <input type="text" name="cust[name]" value="<?php echo $_POST['cust[name]']; ?>" id="cust-name"
+                  pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required>
+                  <span class="text-danger">* <?php echo $nameErr; ?></span>
+                <br>
+                <label for="cust-mail">Email </label><input  name="cust[email]" id="cust-mail" >
+                <span class="text-danger">* <?php echo $mailErr; ?></span>
+>>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
                 <br>
                 <label for="cust-mobile">Mobile </label><input type="tel" name="cust[mobile]"
                   pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
                   required>
+                  <span class="text-danger">* <?php echo $mobileErr; ?></span>
                 <br>
                 <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]"
                   pattern="^( ?\d){14,19}" id="cust-credit" required>
+                  <span class="text-danger">* <?php echo $cardErr; ?></span>
                 <br>
-
                 <label for="">Expiry</label>
                 <select id="cust-Expiry-month" name="cust[expiryMonth]" required></select>
                 <select id="cust-Expiry-year" name="cust[expiryYear]" required></select>
                 <br>
-                <button class="order-btn" type="submit" id="order">
+                <button class="order-btn" type="submit" name="submit" id="order">
                   Order
                   <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                </button>
+              </button>
               </fieldset>
             </div>
-        </form>
+        <!-- </form> -->
       </div>
       </div>
     </form>
-
     <!-- End of booking section  -->
-
-
   </main>
-
   <!-- Footer  -->
   <footer id="footer">
     <div>&copy;
@@ -778,6 +742,11 @@
     </form>
     </div>
   </footer>
+  <?php 
+  preShow($_GET);
+  preShow($_POST);    
+  preShow($_SESSION);
+  printMyCode();   
+  ?>
 </body>
-
 </html>

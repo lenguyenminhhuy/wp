@@ -187,7 +187,7 @@ document.getElementById("myBtn2").addEventListener("click", function () { showFi
 
 document.getElementById("myBtn3").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][6], movieInfo['Time'][2], movieInfo['Id'][0]); Reset() });
 
-document.getElementById("myBtn4").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3], movieInfo['Id'][0]) });
+document.getElementById("myBtn4").addEventListener("click", function () { showFilminfo(movieInfo['Name'][0], movieInfo["Day"][3], movieInfo['Time'][3], movieInfo['Id'][0]); Reset() });
 
 // Top end wedding button
 document.getElementById("myBtna").addEventListener("click", function () { showFilminfo(movieInfo['Name'][1], movieInfo['Day'][0], movieInfo['Time'][2], movieInfo['Id'][1]); Reset() });
@@ -289,4 +289,3 @@ validateForm.addEventListener('submit', function (a) {
         }
     }
 })
-

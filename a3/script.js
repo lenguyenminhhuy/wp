@@ -172,7 +172,9 @@ function Reset() {
     $('#cust-mail').val(' ');
     $('#cust-mobile').val(' ');
     $('#cust-credit').val(' ');
-    $('#cust-expiry').val(' ');
+    $('#cust-Expiry-month').val(' ');
+    $('#cust-Expiry-year').val(' ');
+    
 
 }
 
@@ -272,6 +274,9 @@ for (var i = currentYear; i <= totalYear; i++) {
 }
 
 for (var i = firstMonth; i <= totalMonth; i++) {
+    if (i<10){
+        i = '0' + i
+    }
     var opt1 = document.createElement('option');
     opt1.value = i;
     opt1.innerHTML = i;
