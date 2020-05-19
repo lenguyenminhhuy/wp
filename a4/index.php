@@ -1,17 +1,39 @@
+<?php include 'tools.php';
 
+session_start();
+if (isset($_POST['session-reset'])) {
+  $reset_flag = session_destroy();
+  if ($reset_flag) {
+      unset($_POST['session-reset']);
+      header("Location: index.php#");
+  } else exit("Session failed to reset");
+}
 
+if (isset($_POST['submit'])){
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $mobile = $_POST['mobilenumber'];
+  $card = $_POST['card'];
+  $day = $_POST['day'];
+  $hour = $_POST['hour'];
+  $movieName = $_POST['moviename'];
+}
+$total = 0;
+if ($_POST['total'] != 0) {
+  $total = $_POST['total'];
+  $_SESSION['total'] = $total;
+  $_SESSION['seats'] = $_POST['seats'];
+} else
+  $generalErr = "At least 1 ticket is required";
+
+?>
 
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Assignment 4 - Cinemax </title>
-   <!-- Passing certain PHP variables to script.js -->
-   <?php
-    php2js($chosenMov, 'chosenMov');
-    ?>
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
@@ -30,7 +52,6 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-  <?php include 'tools.php'?>
 </head>
 <body onLoad="populateYearSelect()">
   <!-- Navigation bar  -->
@@ -547,13 +568,7 @@
       </div>
     </div>
     <!-- Booking area section -->
-<<<<<<< HEAD
-
-    <form action="index.php#" method="POST" id="booking"
-      class="booking">
-=======
-    <form id="booking" class="booking" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
->>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
+    <form id="booking" class="booking" method="POST" action="receipt.php">
       <div class="container-fluid">
         <div style="text-align: center;">
           <span style="font-size:xx-large; font-weight: bold;" id="formTitle"></span>
@@ -562,21 +577,18 @@
           <span style="font-size:xx-large; font-weight: bold;" id="space1"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formTime"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formID"> </span>
-          <input type="hidden" name="movie[id]" id="movie-id" value="">
-          <input type="hidden" name="movie[day]" id='movie-day' value="">
-          <input type="hidden" name="movie[hour]" id='movie-hour' value="">
+          <input type="hidden" name="moviename" id="movie-name" value="">
+          <input type="hidden" name="id" id="movie-id" value="">
+          <input type="hidden" name="day" id='movie-day' value="">
+          <input type="hidden" name="hour" id='movie-hour' value="">
         </div>
-<<<<<<< HEAD
-        <form action="" method="POST">
-=======
         <!-- <form action="" method="GET"> -->
->>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
           <div class="row">
             <div class="col-lg-6">
               <fieldset class="standard">
                 <legend class="legend">Standard </legend>
-                <label for="seats-STA">Adults  </label>
-                <select class="select" name="seats[STA]" id="seats-STA" onchange="totalPrice()" <?php if (!empty($_POST['seats']['STA'])) echo "value=\"{$_POST['seats']['STA']}\"" ?> >
+                <label for="seats-STA">Adults </label>
+                <select class="select" name="seats[STA]" id="seats-STA" onchange="totalPrice()">
                   <option value=""> Please select </option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -591,8 +603,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-STP">Concessions</label>
-                <select class="select" name="seats[STP]" id="seats-STP" onchange="totalPrice()"  <?php if (!empty($_POST['seats']['STP'])) echo "value=\"{$_POST['seats']['STP']}\""; ?>>
+                <label for="seats-STP">Concessions </label>
+                <select class="select" name="seats[STP]" id="seats-STP" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -607,7 +619,7 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-STC">Children <?php if (!empty($_POST['seats']['STC'])) echo "value=\"{$_POST['seats']['STC']}\"" ?></label>
+                <label for="seats-STC">Children </label>
                 <select class="select" name="seats[STC]" id="seats-STC" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
@@ -624,9 +636,9 @@
                 </select>
               </fieldset>
               <fieldset class="first-class">
-                <legend class="legend">First class  </legend>
-                <label for="seats-FCA">Adults  </label>
-                <select class="select" name="seats[FCA]" id="seats-FCA" onchange="totalPrice()" <?php if (!empty($_POST['seats']['FCA'])) echo "value=\"{$_POST['seats']['FCA']}\"" ?>>
+                <legend class="legend">First class </legend>
+                <label for="seats-FCA">Adults </label>
+                <select class="select" name="seats[FCA]" id="seats-FCA" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -641,8 +653,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-FCP">Concessions  </label>
-                <select class="select" name="seats[FCP]" id="seats-FCP" onchange="totalPrice()" <?php if (!empty($_POST['seats']['FCP'])) echo "value=\"{$_POST['seats']['FCP']}\"" ?>>
+                <label for="seats-FCP">Concessions </label>
+                <select class="select" name="seats[FCP]" id="seats-FCP" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -657,8 +669,8 @@
                   <option value="10">10</option>
                 </select>
                 <br>
-                <label for="seats-FCC">Children  </label>
-                <select class="select" name="seats[FCC]" id="seats-FCC" onchange="totalPrice()" <?php if (!empty($_POST['seats']['FCC'])) echo "value=\"{$_POST['seats']['FCC']}\"" ?>>
+                <label for="seats-FCC">Children </label>
+                <select class="select" name="seats[FCC]" id="seats-FCC" onchange="totalPrice()">
                   <option value="">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -673,36 +685,31 @@
                   <option value="10">10</option>
                 </select>
               </fieldset>
-              <div class="total" id="price" name= "total"> Total <?php if (!empty($_POST['total'])) echo "value=\"{$total}\"" ?> </div>
+              <div class="total" id="price"> Total </div>
               <div class="total-price">
-                <div class="card-body" id="total">
+                <div  class="card-body" id="total" name="total" >
                 </div>
               </div>
             </div>
+      
+            
             <div class="col-lg-6">
               <fieldset class="customer-info">
                 </br>
-<<<<<<< HEAD
-                <label for="cust-name">Name </label><input type="text" name="cust[name]" id="cust-name"
-                  pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required >
-                <br>
-                <label for="cust-mail">Email </label><input type="email" name="cust[email]" id="cust-email" required>
-=======
                 <label for="cust-name">Name </label>
-                <input type="text" name="cust[name]" value="<?php echo $_POST['cust[name]']; ?>" id="cust-name"
+                <input type="text" name="name" value="<?php echo $_POST['cust[name]']; ?>" id="cust-name"
                   pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required>
                   <span class="text-danger">* <?php echo $nameErr; ?></span>
                 <br>
-                <label for="cust-mail">Email </label><input  name="cust[email]" id="cust-mail" >
+                <label for="cust-mail">Email </label><input  name="email" id="cust-mail" >
                 <span class="text-danger">* <?php echo $mailErr; ?></span>
->>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
                 <br>
-                <label for="cust-mobile">Mobile </label><input type="tel" name="cust[mobile]"
+                <label for="cust-mobile">Mobile </label><input type="tel" name="mobilenumber"
                   pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
                   required>
                   <span class="text-danger">* <?php echo $mobileErr; ?></span>
                 <br>
-                <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]"
+                <label for="cust-credit">Creditcard </label><input type="text" name="creditcard"
                   pattern="^( ?\d){14,19}" id="cust-credit" required>
                   <span class="text-danger">* <?php echo $cardErr; ?></span>
                 <br>
@@ -739,8 +746,7 @@
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button>
     <form method="POST">
                 <input type="submit" value="Reset current session" name='session-reset'>
-    </form>
-    </div>
+            </form></div>
   </footer>
   <?php 
   preShow($_GET);

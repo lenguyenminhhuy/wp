@@ -1,8 +1,25 @@
-<<<<<<< HEAD
-=======
 <?php
   session_start();
 
+$seatArray = [
+    'STA' => "Standard Adult",
+    'STP' => "Standard Concession",
+    'STC' => "Standard Children",
+    'FCA' => "First Class Adult",
+    'FCP' => "First Class Concession",
+    'FCC' => "First Class Children",
+   
+];
+
+$priceArray = [
+  'STA' => [14, 19.8],
+  'STP' => [12.5, 17.5],
+  'STC' => [11, 15.3],
+  'FCA' => [24, 30],
+  'FCP' => [22.5, 27],
+  'FCC' => [21, 24],
+  
+];
 
 // Print POST,GET,SESSION
   function preShow( $arr, $returnAsString=false ) {
@@ -67,8 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       $cardErr = "Only numbers and spaces are allowed";
   }
   }
-
 }
+
+
+
 
 
 
@@ -113,4 +132,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 //              </form>
 
 ?>
->>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe

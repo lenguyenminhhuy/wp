@@ -1,5 +1,3 @@
-/* Insert your javascript here */
-
 let element = document.getElementsByTagName('nav') // get element which has tag name = nav, they are: about us, price, now showing
 var navbarHeight = element[0].clientHeight // height of navigation bar equal to the height of aboutus_clientheight 
 var aboutUs = document.getElementById('About-us') // assign variable aboutUs to get all the content in which the id = about-us
@@ -54,6 +52,8 @@ function showFilminfo(nameFilm = "", dayFilm = "", timeFilm = "", idFilm = "") {
         document.getElementById('booking').classList.add("show");
     }
     document.getElementById('formTitle').innerHTML = nameFilm;
+    document.getElementById('movie-name').value = nameFilm; // set value for movie-day 
+
     document.getElementById('space').innerHTML = "-";
 
     document.getElementById('formDay').innerHTML = dayFilm;
@@ -172,8 +172,8 @@ function Reset() {
     $('#cust-mail').val(' ');
     $('#cust-mobile').val(' ');
     $('#cust-credit').val(' ');
-    $('#cust-expiry').val(' ');
-
+    $('#cust-Expiry-month').val(' ');
+    $('#cust-Expiry-year').val(' ');
 }
 
 
@@ -248,7 +248,7 @@ validateForm.addEventListener('submit', function (b) {
 
 // choose at least one seat to submit the booking form
 validateForm.addEventListener('submit', function (e) {
-    if (document.getElementById('total').innerText == 0 || document.getElementById('total').innerText == "$0.00" ) {
+    if (document.getElementById('total').innerText == 0 || document.getElementById('total').innerText == "$0.00") {
         e.preventDefault()
         alert("Please select the amount of ticket. At least 1 ticket must be chosen to order")
     }
@@ -289,3 +289,9 @@ validateForm.addEventListener('submit', function (a) {
         }
     }
 })
+if (i < 10) {
+    i = '0' + i
+}
+var opt1 = document.createElement('option');
+opt1.value = i;
+opt1.innerHTML = i;

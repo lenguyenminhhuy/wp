@@ -229,9 +229,9 @@ position: relative;
 margin-bottom: 30px;
 background-image: url(media2/bg2.jpg);
 background-size: cover;
-width: 90%;
+width: 100%;
 height: 100%;
-left: 3%;
+left: 2%;
 padding-bottom: 3%;
 }
 
@@ -299,7 +299,7 @@ form{
 .first-class{  
   border: rgb(226, 201, 154) 2px solid;
   margin-top: 20px;
-  background-color: #F3DBCF;
+  background-color: #F3DBCF ;
 
 }
 label { 
@@ -421,160 +421,5 @@ height: 30px;
   width: 100%;
   height: 100%;
   border: none;
-<<<<<<< HEAD
-}
-=======
 }
 
-<<<<<<< HEAD
-/* 
-@font-face {
-  font-family: "Pare Reverse";
-  src: url("../fonts/Pare\ Reverse\ Italic.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Sen";
-  src: url("../fonts/Sen.ttf");
-  font-display: swap;
-}
-
-@media screen {
-  html {
-    background-color: #d4d4d4;
-    scroll-behavior: smooth;
-  }
-  body {
-    margin: 0;
-  }
-  div,
-  p,
-  span,
-  td,
-  th {
-    font-family: Sen;
-    font-size: 30px;
-  }
-  header {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: #000;
-    padding-bottom: 10px;
-  }
-  header a:hover,
-  header a:active,
-  header a:link,
-  header a:visited {
-    text-decoration: none;
-  }
-  header span {
-    display: block;
-    font-family: "Pare Reverse";
-    font-size: 150px;
-    font-weight: bolder;
-    letter-spacing: 6px;
-    color: #f9ed69;
-  }
-  header p {
-    color: #f9ed69;
-    margin: 0;
-  }
-  section {
-    background-color: #d4d4d4;
-  }
-  .row.row-cols-2 {
-    padding: 2% 0;
-  }
-  #cust-info,
-  #movie-info {
-    background-color: rgba(0, 0, 0, 0.11);
-    padding-left: 2%;
-  }
-  #seats-info table tr {
-    text-align: center;
-  }
-  footer {
-    background-color: #e2e2e2;
-  }
-  footer div {
-    font-size: 20px;
-  }
-}
-
-@media print {
-  html {
-    background-color: #fff;
-    color: #000;
-    font-family: Sen;
-  }
-  body {
-    margin: 0;
-  }
-  header,
-  footer,
-  aside,
-  nav,
-  form,
-  iframe,
-  .menu,
-  .hero,
-  .adslot {
-    display: none;
-  }
-  header {
-    page-break-before: always;
-  }
-  table,
-  img,
-  svg {
-    page-break-inside: avoid;
-  }
-  div,
-  p,
-  span,
-  td,
-  th {
-    font-family: Garamond, Georgia, serif;
-    font-size: 21pt;
-  }
-  header {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  header > div {
-    border: 5px solid black;
-    width: fit-content;
-    margin: auto;
-    padding: 0 45mm;
-  }
-  header span {
-    font-family: "Pare Reverse";
-    font-size: 150pt;
-    font-weight: bolder;
-    letter-spacing: 6px;
-    color: #000;
-  }
-  header a:link,
-  header a:visited {
-    text-decoration: none;
-  }
-  #cust-info,
-  #movie-info {
-    border: 5px solid black;
-    padding-left: 10mm;
-  }
-  table {
-    margin-top: 10%;
-  }
-  #buttons {
-    display: none;
-  }
-  .row.row-cols-2 {
-    margin-top: 10%;
-  }
-} */
-=======
->>>>>>> 35a6e6849eb3fa3de599be12f503dedfdab21838
->>>>>>> 67d7545ebcb48c98a7e9ea2eaebf80f0df55c6fe
