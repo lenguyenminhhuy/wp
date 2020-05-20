@@ -26,6 +26,8 @@ if ($_POST['total'] != 0) {
 } else
   $generalErr = "At least 1 ticket is required";
 
+  
+
 ?>
 
 <!DOCTYPE html>
@@ -567,8 +569,9 @@ if ($_POST['total'] != 0) {
         </div>
       </div>
     </div>
+
     <!-- Booking area section -->
-    <form id="booking" class="booking" method="POST" action="receipt.php">
+    <form id="booking" class="booking" method="POST" action="">
       <div class="container-fluid">
         <div style="text-align: center;">
           <span style="font-size:xx-large; font-weight: bold;" id="formTitle"></span>
@@ -696,21 +699,22 @@ if ($_POST['total'] != 0) {
             <div class="col-lg-6">
               <fieldset class="customer-info">
                 </br>
-                <label for="cust-name">Name </label>
-                <input type="text" name="name" value="<?php echo $_POST['cust[name]']; ?>" id="cust-name"
-                  pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required>
+                <label for="cust-name"> Name </label>
+                <input type="text" name="custname" id="cust-name" value="<?php if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){echo $_POST["custname"];} ?>" >
+                  <!-- pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required -->
                   <span class="text-danger">* <?php echo $nameErr; ?></span>
                 <br>
-                <label for="cust-mail">Email </label><input  name="email" id="cust-mail" >
-                <span class="text-danger">* <?php echo $mailErr; ?></span>
+                <label for="cust-mail">Email </label><input   name="custemail" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
+                 <span class="text-danger">* <?php echo $mailErr; ?></span>
+                 <!-- Include type email when done -->
                 <br>
-                <label for="cust-mobile">Mobile </label><input type="tel" name="mobilenumber"
-                  pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
-                  required>
+                <label for="cust-mobile">Mobile </label><input type="tel" name="mobilenumber" value="<?php if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){echo $_POST["mobilenumber"];} ?>" >
+                  <!-- pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
+                  required -->
                   <span class="text-danger">* <?php echo $mobileErr; ?></span>
                 <br>
-                <label for="cust-credit">Creditcard </label><input type="text" name="creditcard"
-                  pattern="^( ?\d){14,19}" id="cust-credit" required>
+                <label for="cust-credit">Creditcard </label><input type="text" name="creditcard" value="<?php if (!preg_match("/^( ?\d){14,19}$/", $card)){echo $_POST["creditcard"];} ?>" >
+                  <!-- pattern="^( ?\d){14,19}" id="cust-credit" required -->
                   <span class="text-danger">* <?php echo $cardErr; ?></span>
                 <br>
                 <label for="">Expiry</label>
@@ -752,7 +756,11 @@ if ($_POST['total'] != 0) {
   preShow($_GET);
   preShow($_POST);    
   preShow($_SESSION);
-  printMyCode();   
+  printMyCode();
+  processing();   
+
+  
+
   ?>
 </body>
 </html>

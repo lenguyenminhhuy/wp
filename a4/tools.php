@@ -39,96 +39,77 @@ function printMyCode() {
   echo '</ol></pre>';
 }
 
+//Protect input
+function testInput($data){
+  $data = htmlspecialchars($data);
+  $data = stripslashes($data);
+  return $data;
+}
 
-// Validate Text input
+// if(isset($_POST['submit'])){
+
+//Validate Text input
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-  //Name
-  if (empty($_POST["cust[name]"])){
-      $nameErr = "Name is required";
+
+  // Name
+  $name = testInput($_POST["custname"]);
+  if (empty($_POST["custname"])){
+    $nameErr = "Name is required";
   }else{
-    $name = $_POST["cust[name]"];
-    if (!preg_match("/^[a-zA-Z ]*$/", $name)){
+    // $name = testInput($_POST["custname"]);
+    if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){
     $nameErr = "Only western letters and spaces are allowed";
-    }
   }
-
-
+  }
+  
   //Mail
-  if (empty($_POST["cust[email]"])){
-      $mailErr = "Mail is required";
+  $mail = testInput($_POST["custemail"]);
+  if (empty($_POST["custemail"])){
+    $mailErr = "Mail is required";
   }else{
-    $mail = $_POST["cust[email]"];
+    // $mail = testInput($_POST["custemail"]);
     if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-    $mailErr = "Only valid mail account is allowed";
-    }
+    $mailErr = "Only valid mail account is allowed (Delete the white space before your account name in the input box)";
   }
-
-
+  }
+  
+  
   //Mobile
-  if (empty($_POST["cust[mobile]"])){
+  $mobile = testInput($_POST["mobilenumber"]);
+  if (empty($_POST["mobilenumber"])){
       $mobileErr = "Mobile number is required";
   }else{
-    $mobile = $_POST["cust[mobile]"];
-    if (!preg_match("/^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$/", $mobile)){
+    // $mobile = testInput($_POST["mobilenumber"]);
+    if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){
       $mobileErr = "Australian number only";
   }
   }
-
+  
   //Credit card
-  if (empty($_POST["cust[card]"])){
+  $card = testInput($_POST["creditcard"]);
+  if (empty($_POST["creditcard"])){
       $cardErr = "Card is required";
   }else{
-    $card = $_POST["cust[card]"];
-    if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $card)){
+    // $card = testInput($_POST["creditcard"]);
+    if (!preg_match("/^( ?\d){14,19}$/", $card)){
       $cardErr = "Only numbers and spaces are allowed";
   }
   }
+
+
+
+// Redirect testing
+// if ( (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)) && !filter_var($mail, FILTER_VALIDATE_EMAIL) && (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)) && (!preg_match("/^( ?\d){14,19}$/", $card)) ){
+//   header("Location: receipt.php");
+// }
+
+
 }
 
 
 
+ 
 
-
-
-
-// function preShow( $arr, $returnAsString=false ) {
-//   $ret  = '<pre>' . print_r($arr, true) . '</pre>';
-//   if ($returnAsString)
-//        return $ret;
-//  else 
-//       echo $ret; 
-// }
-// preShow($_POST);     // ie echo a string
-//                 preShow($_SESSION);
-//                $aaarg = preShow($my_bad_array, true);    // ie return as a string
-//                echo "Why is \n $aaarg \n not working?"; 
-// function printMyCode() {
-//                    $lines = file($_SERVER['SCRIPT_FILENAME']);
-//                    echo "<pre class='mycode'><ol>";
-//                    foreach ($lines as $line)
-//                           echo '<li>'.rtrim(htmlentities($line)).'</li>';
-//                    echo '</ol></pre>';
-//              }
-//              printMyCode();    // prints all lines of code in this file with line numbers
-// function php2js( $arr, $arrName ) {
-//                    $lineEnd="";
-//                    echo "<script>\n";
-//                    echo "/* Generated with A4's php2js() function */";
-//                    echo "  var $arrName = ".json_encode($arr, JSON_PRETTY_PRINT);
-//                    echo "</script>\n\n";
-//                }
-//               $pricesArrayPHP = array ( ... );
-//               php2js($pricesArrayPHP, 'pricesArrayJS');   // ie echos javascript equivalent code
-// if (isset($_POST['session-reset'])) {
-//                   foreach($_SESSION as $something => &$whatever) {
-//                        unset($whatever);
-//                   }
-//              }
-//              <form ... >
-//                    ... 
-//                    <input type='submit' name='session-reset' value='Reset the session' >
-//                     ...
-//              </form>
+  
 
 ?>

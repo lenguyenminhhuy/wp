@@ -1,10 +1,11 @@
 <?php 
-include 'tools.php';
 session_start();
-if (empty($_SESSION)) header("Location: index.php");
+include 'tools.php';
+// if (empty($_SESSION)) header("Location: index.php");
 $id = $_POST['id'];
 $day =  $_POST['day'];
 $hour =  $_POST['hour'];
+$name = testInput($_POST["custname"]);
 
 if (
     (($day !== "Saturday" && $day !== "Sunday") && $hour === '12pm') ||
@@ -55,13 +56,13 @@ else
                         <h2>Customer information:</h2>
                     </div>
                     <div class="row">
-                        <div class="col-sm-2">Name</div> 
-                        <div class="col-sm-10">: <?php echo $_POST['name'] ?></div>
+                        <div class="col-sm-2">Name</div>  
+                        <div class="col-sm-10">: <?php echo $name ?></div>
                     </div>
                     <br/>
                     <div class="row">
                         <div class="col-sm-2">Email</div> 
-                        <div class="col-sm-10">: <?php echo $_POST['email'] ?></div>
+                        <div class="col-sm-10">: <?php echo $_POST['custemail'] ?></div>
                     </div>
                     <br/>
 
