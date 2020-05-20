@@ -51,9 +51,23 @@ function testInput($data){
 //Validate Text input
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
+
+    if (!empty($_POST['movie']['day']))
+        $_SESSION['movie'] = $_POST['movie'];
+    else
+        $generalErr = "Please choose a time and date";
+
+    if ($_POST['total'] != 0) {
+        $total = $_POST['total'];
+        $_SESSION['total'] = $total;
+        $_SESSION['seats'] = $_POST['seats'];
+    } else
+        $generalErr = "At least 1 ticket is required";
+
+
   // Name
-  $name = testInput($_POST["custname"]);
-  if (empty($_POST["custname"])){
+  $name = testInput($_POST['cust']['name']);
+  if (empty($_POST['cust']['name'])){
     $nameErr = "Name is required";
   }else{
     // $name = testInput($_POST["custname"]);
@@ -63,8 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   
   //Mail
-  $mail = testInput($_POST["custemail"]);
-  if (empty($_POST["custemail"])){
+  $mail = testInput($_POST['cust']['email']);
+  if (empty($_POST['cust']['email'])){
     $mailErr = "Mail is required";
   }else{
     // $mail = testInput($_POST["custemail"]);
@@ -75,8 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
   
   //Mobile
-  $mobile = testInput($_POST["mobilenumber"]);
-  if (empty($_POST["mobilenumber"])){
+  $mobile = testInput($_POST['cust']['mobile']);
+  if (empty($_POST['cust']['mobile'])){
       $mobileErr = "Mobile number is required";
   }else{
     // $mobile = testInput($_POST["mobilenumber"]);
@@ -86,8 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   
   //Credit card
-  $card = testInput($_POST["creditcard"]);
-  if (empty($_POST["creditcard"])){
+  $card = testInput($_POST['cust']['card']);
+  if (empty($_POST['cust']['card'])){
       $cardErr = "Card is required";
   }else{
     // $card = testInput($_POST["creditcard"]);
@@ -95,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       $cardErr = "Only numbers and spaces are allowed";
   }
   }
-
-
-
+  if (empty($nameErr . $mobileErr . $cardErr . $mailErr .$gen )) {
+    header("Location: receipt.php");
+  }
 // Redirect testing
 // if ( (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)) && !filter_var($mail, FILTER_VALIDATE_EMAIL) && (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)) && (!preg_match("/^( ?\d){14,19}$/", $card)) ){
 //   header("Location: receipt.php");

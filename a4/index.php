@@ -8,26 +8,23 @@ if (isset($_POST['session-reset'])) {
       header("Location: index.php#");
   } else exit("Session failed to reset");
 }
+// if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-if (isset($_POST['submit'])){
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $mobile = $_POST['mobilenumber'];
-  $card = $_POST['card'];
-  $day = $_POST['day'];
-  $hour = $_POST['hour'];
-  $movieName = $_POST['moviename'];
-}
-$total = 0;
-if ($_POST['total'] != 0) {
-  $total = $_POST['total'];
-  $_SESSION['total'] = $total;
-  $_SESSION['seats'] = $_POST['seats'];
-} else
-  $generalErr = "At least 1 ticket is required";
+// $chosenMov = $_POST['movie']['id'];
 
-  
+// if (!empty($_POST['movie']['day']))
+//     $_SESSION['movie'] = $_POST['movie'];
+// else
+//     $generalErr = "Please choose a time and date";
 
+// if ($_POST['total'] != 0) {
+//     $total = $_POST['total'];
+//     $_SESSION['total'] = $total;
+//     $_SESSION['seats'] = $_POST['seats'];
+// } else
+//     $generalErr = "At least 1 ticket is required";
+
+// }
 ?>
 
 <!DOCTYPE html>
@@ -571,7 +568,7 @@ if ($_POST['total'] != 0) {
     </div>
 
     <!-- Booking area section -->
-    <form id="booking" class="booking" method="POST" action="">
+    <form id="booking" class="booking" method="POST" action="index.php">
       <div class="container-fluid">
         <div style="text-align: center;">
           <span style="font-size:xx-large; font-weight: bold;" id="formTitle"></span>
@@ -580,10 +577,10 @@ if ($_POST['total'] != 0) {
           <span style="font-size:xx-large; font-weight: bold;" id="space1"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formTime"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formID"> </span>
-          <input type="hidden" name="moviename" id="movie-name" value="">
-          <input type="hidden" name="id" id="movie-id" value="">
-          <input type="hidden" name="day" id='movie-day' value="">
-          <input type="hidden" name="hour" id='movie-hour' value="">
+          <input type="hidden" name="movie[name]" id="movie-name" value="">
+          <input type="hidden" name="movie[id]" id="movie-id" value="">
+          <input type="hidden" name="movie[day]" id='movie-day' value="">
+          <input type="hidden" name="movie[hour]" id='movie-hour' value="">
         </div>
         <!-- <form action="" method="GET"> -->
           <div class="row">
@@ -700,20 +697,20 @@ if ($_POST['total'] != 0) {
               <fieldset class="customer-info">
                 </br>
                 <label for="cust-name"> Name </label>
-                <input type="text" name="custname" id="cust-name" value="<?php if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){echo $_POST["custname"];} ?>" >
+                <input type="text" name="cust[name]" id="cust-name" value="<?php if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){echo $_POST["custname"];} ?>" >
                   <!-- pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required -->
                   <span class="text-danger">* <?php echo $nameErr; ?></span>
                 <br>
-                <label for="cust-mail">Email </label><input   name="custemail" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
+                <label for="cust-mail">Email </label><input   name="cust[email]" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
                  <span class="text-danger">* <?php echo $mailErr; ?></span>
                  <!-- Include type email when done -->
                 <br>
-                <label for="cust-mobile">Mobile </label><input type="tel" name="mobilenumber" value="<?php if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){echo $_POST["mobilenumber"];} ?>" >
+                <label for="cust-mobile">Mobile </label><input type="tel" name="cust[mobile]" value="<?php if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){echo $_POST["mobilenumber"];} ?>" >
                   <!-- pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
                   required -->
                   <span class="text-danger">* <?php echo $mobileErr; ?></span>
                 <br>
-                <label for="cust-credit">Creditcard </label><input type="text" name="creditcard" value="<?php if (!preg_match("/^( ?\d){14,19}$/", $card)){echo $_POST["creditcard"];} ?>" >
+                <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]" value="<?php if (!preg_match("/^( ?\d){14,19}$/", $card)){echo $_POST["creditcard"];} ?>" >
                   <!-- pattern="^( ?\d){14,19}" id="cust-credit" required -->
                   <span class="text-danger">* <?php echo $cardErr; ?></span>
                 <br>

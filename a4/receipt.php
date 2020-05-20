@@ -1,12 +1,17 @@
 <?php 
 session_start();
 include 'tools.php';
-// if (empty($_SESSION)) header("Location: index.php");
-$id = $_POST['id'];
-$day =  $_POST['day'];
-$hour =  $_POST['hour'];
-$name = testInput($_POST["custname"]);
-
+if (empty($_SESSION)) header("Location: index.php");
+$movie = $_SESSION['movie'];
+$idMovie = $movie['id'];
+$day =  $movie['day'];
+$hour =  $movie['hour'];
+$name = $movie['name'];
+$cust = $_SESSION['cust'];
+$custEmail = $cust['email'];
+$custName = $cust['name'];
+$custMobile = $cust['mobile'];
+$custCard = $cust['card'];
 if (
     (($day !== "Saturday" && $day !== "Sunday") && $hour === '12pm') ||
     ($day === "Monday" || $day === "Wednesday")
@@ -57,18 +62,18 @@ else
                     </div>
                     <div class="row">
                         <div class="col-sm-2">Name</div>  
-                        <div class="col-sm-10">: <?php echo $name ?></div>
+                        <div class="col-sm-10">: <?php echo $_SESSION['cust']['name'] ?></div>
                     </div>
                     <br/>
                     <div class="row">
                         <div class="col-sm-2">Email</div> 
-                        <div class="col-sm-10">: <?php echo $_POST['custemail'] ?></div>
+                        <div class="col-sm-10">: <?php echo $_SESSION['cust']['email'] ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="col-sm-2">Mobile</div>
-                        <div class="col-sm-10">: <?php echo $_POST['mobilenumber'] ?></div>
+                        <div class="col-sm-10">: <?php echo$_SESSION['cust']['mobile'] ?></div>
                     </div>
                 </div>
 
@@ -78,19 +83,19 @@ else
                     </div>
                     <div class="row">
                         <div class="col-sm-2">Day</div>
-                        <div class="col-sm-10">: <?php echo $_POST['day'] ?></div>
+                        <div class="col-sm-10">: <?php echo $day ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="col-sm-2">Hour</div> 
-                        <div class="col-sm-10">: <?php echo $_POST['hour'] ?></div>
+                        <div class="col-sm-10">: <?php echo $hour ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="col-sm-2">Movie</div> 
-                        <div class="col-sm-10">: <?php echo  $_POST['moviename']?></div>
+                        <div class="col-sm-10">: <?php echo  $name?></div>
                     </div>
                 </div>
             </div>
@@ -98,7 +103,7 @@ else
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Origin Number</th>
                         <th scope="col">Type of seat</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
@@ -111,14 +116,14 @@ else
                     {
                         return number_format((float)$num, 2, '.', ''); //number_format ( $number, $decimals, $decimalpoint, $sep )
                     }
-                    foreach ($_POST['seats'] as $type => $quantity) {
+                    foreach ($_SESSION['seats'] as $type => $quantity) {
                         if ($quantity) {
                             $total = $discountPrice ? convert($priceArray[$type][0] * $quantity) : convert($priceArray[$type][1] * $quantity);
                             echo "<tr>";
-                            echo "<th scope=\"row\">{$originalNumber}</th>";
-                            echo "<td>{$seatArray[$type]}</td>";
-                            echo "<td>{$quantity}</td>";
-                            echo "<td>$" . $total . "</td>";
+                            echo "<th scope=\"row\"> {$originalNumber} </th>";
+                            echo "<td> { $seatArray [$type] } </td>";
+                            echo "<td> { $quantity} </td> ";
+                            echo "<td>  { '$' . $total} </td> ";
                             echo "</tr>";
                             $originalNumber += 1;
                             $totalprice = $totalprice + $total;
@@ -130,29 +135,29 @@ else
                    
                     echo "<tr>";
                     echo "<th colspan=\"3\" scope=\"row\">GST</th>";
-                    echo "<td>$" . convert($GST) . "</td>";
+                    echo "<td> $" . convert($GST) . "</td>";
                     echo "</tr>";
                     echo "<tr>";
                     echo "<th colspan=\"3\" scope=\"row\">Total</th>";
-                    echo "<td>$" . convert($totalprice + $GST) . "</td>";
+                    echo "<td> $" . convert($totalprice + $GST) . "</td>";
                     echo "</tr>";
                     
                     $information = [
                         date("y-m-d"),
-                        $_POST['name'],
-                        $_POST['email'],
-                        $_POST['mobilenumber'],
-                        $_POST['card'],
-                        $_POST['day'],
-                        $_POST['hour'],
-                        $_POST['moviename'],
-                        $id . " " . $day . " "  . $hour,
-                        $_POST['seats']['STA'],
-                        $_POST['seats']['STP'],
-                        $_POST['seats']['STC'],
-                        $_POST['seats']['FCA'],
-                        $_POST['seats']['FCP'],
-                        $_POST['seats']['FCC'],
+                        $_SESSION['cust']['name'],
+                        $_SESSION['cust']['email'],
+                        $_SESSION['cust']['mobile'],
+                        $_SESSION['cust']['card'],
+                        $_SESSION['movie']['day'],
+                        $_SESSION['movie']['hour'],
+                        $_SESSION['movie']['name'],
+                        $idMovie . " " . $day . " "  . $hour,
+                        $_SESSION['seats']['STA'],
+                        $_SESSION['seats']['STP'],
+                        $_SESSION['seats']['STC'],
+                        $_SESSION['seats']['FCA'],
+                        $_SESSION['seats']['FCP'],
+                        $_SESSION['seats']['FCC'],
                         convert($totalprice + $GST)
                     ];
                     
