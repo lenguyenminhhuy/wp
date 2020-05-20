@@ -8,6 +8,7 @@ if (isset($_POST['session-reset'])) {
       header("Location: index.php#");
   } else exit("Session failed to reset");
 }
+
 if (isset($_POST['submit']))
 {
     // Lưu Session
@@ -15,8 +16,8 @@ if (isset($_POST['submit']))
     $_SESSION['email'] = $_POST['cust']['email'];
     $_SESSION['mobile'] = $_POST['cust']['mobile'];
     $_SESSION['card'] = $_POST['cust']['card'];
-
-
+    $_SESSION['seats'] = $_POST['seats'];
+    $_SESSION['total'] = $_POST['total'];
 }
 
 ?>
@@ -681,7 +682,8 @@ if (isset($_POST['submit']))
               </fieldset>
               <div class="total" id="price"> Total </div>
               <div class="total-price">
-                <div  class="card-body" id="total" name="total" >
+                <div  class="card-body" id="total" >
+                <input type="hidden" name="total" >
                 </div>
               </div>
             </div>
@@ -695,7 +697,7 @@ if (isset($_POST['submit']))
                   <!-- pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required -->
                   <span class="text-danger">* <?php echo $nameErr; ?></span>
                 <br>
-                <label for="cust-mail">Email </label><input   name="cust[email]" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
+                <label for="cust-mail">Email </label><input type="email"  name="cust[email]" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
                  <span class="text-danger">* <?php echo $mailErr; ?></span>
                  <!-- Include type email when done -->
                 <br>

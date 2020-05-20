@@ -2,24 +2,13 @@
 session_start();
 include 'tools.php';
 if (empty($_SESSION)) header("Location: index.php");
+
 $movie = $_SESSION['movie'];
 $idMovie = $movie['id'];
 $day =  $movie['day'];
 $hour =  $movie['hour'];
 $name = $movie['name'];
-
-$cust = $_SESSION['cust'];
-$custEmail = $cust['email'];
-$custName = $cust['name'];
-$custMobile = $cust['mobile'];
-$custCard = $cust['card'];
-if (
-    (($day !== "Saturday" && $day !== "Sunday") && $hour === '12pm') ||
-    ($day === "Monday" || $day === "Wednesday")
-)
-    $discountPrice = true;
-else
-    $discountPrice = false;
+$seat = $_SESSION['seats'];
 ?>
 
 
@@ -30,19 +19,20 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Receipt</title>
+    
+    <script  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src='script.js'></script>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" id='stylecss' type="text/css" href="style.css">
+    <link rel="stylesheet" id='wireframecss' type="text/css" href="../wireframe.css" disabled>
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script async defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script async defer src='script.js'></script>
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" id='stylecss' type="text/css" href="style.css">
-    <link rel="stylesheet" id='wireframecss' type="text/css" href="../wireframe.css" disabled>
     <noscript>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" id='wireframecss' type="text/css" href="../wireframe.css" disabled>
         <link rel="stylesheet" id='stylecss' type="text/css" href="style.css">
     </noscript>
-    <script async defer src='../wireframe.js'></script>
+    <script  src='../wireframe.js'></script>
 </head>
 
 <body>
@@ -79,7 +69,7 @@ else
                     <br/>
                     <div class="row">
                         <div class="col-sm-3"> Credit card </div>
-                        <div class="col-sm-9">: <?php echo$_SESSION['card'] ?></div>
+                        <div class="col-sm-9">: <?php echo $_SESSION['card'] ?></div>
                     </div>
                 </div>
 
@@ -100,8 +90,8 @@ else
                     <br/>
 
                     <div class="row">
-                        <div class="col-sm-3">Movie</div> 
-                        <div class="col-sm-9">: <?php echo  $name?></div>
+                        <div class="col-sm-3">Movie</div>
+                        <div class="col-sm-9">: <?php echo  $name?></div> 
                     </div>
                     <br/>
                     <div class="row">
@@ -124,37 +114,49 @@ else
                 </thead>
                 <tbody>
                     <?php
+                    // assign origin number
                     $originalNumber = 1;
+                    // format number
                     function convert($num)
                     {
                         return number_format((float)$num, 2, '.', ''); //number_format ( $number, $decimals, $decimalpoint, $sep )
                     }
+                    // check whether that type is discount  or not
+                    if (
+                        (($day !== "Saturday" && $day !== "Sunday") && $hour === '12pm') ||
+                        ($day === "Monday" || $day === "Wednesday")
+                    )
+                        $discountPrice = true;
+                    else
+                        $discountPrice = false;
+                    // get value from each selection 
                     foreach ($_SESSION['seats'] as $type => $quantity) {
                         if ($quantity) {
-                            $total = $discountPrice ? convert($priceArray[$type][0] * $quantity) : convert($priceArray[$type][1] * $quantity);
+                            $total = $discountPrice ? 
+                            convert($priceArray[$type][0] * $quantity) : convert($priceArray[$type][1] * $quantity);
                             echo "<tr>";
-                            echo "<th scope=\"row\"> {$originalNumber} </th>";
-                            echo "<td> { $seatArray [$type] } </td>";
-                            echo "<td> { $quantity} </td> ";
-                            echo "<td>  { '$' . $total} </td> ";
+                            echo "<th scope=\"row\">  $originalNumber  </th>";
+                            echo "<td>  $seatArray[$type]  </td>"; 
+                            echo "<td> $quantity </td> ";
+                            echo "<td> $"   . $total . "</td> ";
                             echo "</tr>";
                             $originalNumber += 1;
-                            $totalprice = $totalprice + $total;
+                            $totalPrice = $totalPrice + $total;
+                            $GST = $totalPrice*1/11;
                         }
-                        
-                        $GST = $totalprice * 1 / 11;
-
-                    }
-                   
-                    echo "<tr>";
-                    echo "<th colspan=\"3\" scope=\"row\">GST</th>";
-                    echo "<td> $" . convert($GST) . "</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                    echo "<th colspan=\"3\" scope=\"row\">Total</th>";
-                    echo "<td> $" . convert($totalprice + $GST) . "</td>";
-                    echo "</tr>";
-                    
+                    } 
+                    ?>
+                    <tr> 
+                    <th  scope="row" colspan="3"> <?php echo "GST" ?> </th>
+                    <td> <?php echo "$" . convert($GST) ?> </td>
+                    </tr>
+                    <tr>
+                    <th  scope="row" colspan="3"> <?php echo "Total" ?> </th>
+                    <td> <?php echo "$" . convert($totalPrice + $GST)?> </td>
+                    </tr>
+                    </tr>
+                    <?php
+                    // booking form information
                     $information = [
                         date("y-m-d"),
                         $_SESSION['name'],
@@ -171,9 +173,9 @@ else
                         $_SESSION['seats']['FCA'],
                         $_SESSION['seats']['FCP'],
                         $_SESSION['seats']['FCC'],
-                        convert($totalprice + $GST)
+                        convert($totalPrice + $GST)
                     ];
-                    
+                    // save data to bookings.txt file 
                     $file = fopen("bookings.txt", "a");
                     flock($file, LOCK_SH);
                     fputcsv($file, $information, "\t");

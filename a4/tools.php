@@ -1,26 +1,6 @@
 <?php
   session_start();
 
-$seatArray = [
-    'STA' => "Standard Adult",
-    'STP' => "Standard Concession",
-    'STC' => "Standard Children",
-    'FCA' => "First Class Adult",
-    'FCP' => "First Class Concession",
-    'FCC' => "First Class Children",
-   
-];
-
-$priceArray = [
-  'STA' => [14, 19.8],
-  'STP' => [12.5, 17.5],
-  'STC' => [11, 15.3],
-  'FCA' => [24, 30],
-  'FCP' => [22.5, 27],
-  'FCC' => [21, 24],
-  
-];
-
 // Print POST,GET,SESSION
   function preShow( $arr, $returnAsString=false ) {
   $ret  = '<pre>' . print_r($arr, true) . '</pre>';
@@ -51,18 +31,13 @@ function testInput($data){
 //Validate Text input
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
+  if ($_POST['total'] != 0) {
+    $total = $_POST['total'];
+    $_SESSION['total'] = $total;
+    $_SESSION['seats'] = $_POST['seats'];
+} else
+    $generalErr = "At least 1 ticket is required";
 
-    if (!empty($_POST['movie']['day']))
-        $_SESSION['movie'] = $_POST['movie'];
-    else
-        $generalErr = "Please choose a time and date";
-
-    if ($_POST['total'] != 0) {
-        $total = $_POST['total'];
-        $_SESSION['total'] = $total;
-        $_SESSION['seats'] = $_POST['seats'];
-    } else
-        $generalErr = "At least 1 ticket is required";
 
 
   // Name
@@ -109,20 +84,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       $cardErr = "Only numbers and spaces are allowed";
   }
   }
+  // direct to Receipt page
   if (empty($nameErr . $mobileErr . $cardErr . $mailErr .$gen )) {
     header("Location: receipt.php");
   }
-// Redirect testing
-// if ( (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)) && !filter_var($mail, FILTER_VALIDATE_EMAIL) && (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)) && (!preg_match("/^( ?\d){14,19}$/", $card)) ){
-//   header("Location: receipt.php");
-// }
-
 
 }
 
+// create array of seat and price
+$seatArray = [
+  'STA' => "Standard Adult",
+  'STP' => "Standard Concession",
+  'STC' => "Standard Children",
+  'FCA' => "First Class Adult",
+  'FCP' => "First Class Concession",
+  'FCC' => "First Class Children",
+];
 
+$priceArray = [
+'STA' => [14, 19.8],
+'STP' => [12.5, 17.5],
+'STC' => [11, 15.3],
+'FCA' => [24, 30],
+'FCP' => [22.5, 27],
+'FCC' => [21, 24],
 
- 
+];
 
   
 
