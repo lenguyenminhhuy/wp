@@ -7,6 +7,7 @@ $idMovie = $movie['id'];
 $day =  $movie['day'];
 $hour =  $movie['hour'];
 $name = $movie['name'];
+
 $cust = $_SESSION['cust'];
 $custEmail = $cust['email'];
 $custName = $cust['name'];
@@ -62,23 +63,23 @@ else
                     </div>
                     <div class="row">
                         <div class="col-sm-3">Name</div>  
-                        <div class="col-sm-9">: <?php echo $_SESSION['cust']['name'] ?></div>
+                        <div class="col-sm-9">: <?php echo $_SESSION['name'] ?></div>
                     </div>
                     <br/>
                     <div class="row">
                         <div class="col-sm-3">Email</div> 
-                        <div class="col-sm-9">: <?php echo $_SESSION['cust']['email'] ?></div>
+                        <div class="col-sm-9">: <?php echo $_SESSION['email'] ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="col-sm-3">Mobile</div>
-                        <div class="col-sm-9">: <?php echo$_SESSION['cust']['mobile'] ?></div>
+                        <div class="col-sm-9">: <?php echo$_SESSION['mobile'] ?></div>
                     </div>
                     <br/>
                     <div class="row">
                         <div class="col-sm-3"> Credit card </div>
-                        <div class="col-sm-9">: <?php echo$_SESSION['cust']['card'] ?></div>
+                        <div class="col-sm-9">: <?php echo$_SESSION['card'] ?></div>
                     </div>
                 </div>
 
@@ -156,10 +157,10 @@ else
                     
                     $information = [
                         date("y-m-d"),
-                        $_SESSION['cust']['name'],
-                        $_SESSION['cust']['email'],
-                        $_SESSION['cust']['mobile'],
-                        $_SESSION['cust']['card'],
+                        $_SESSION['name'],
+                        $_SESSION['email'],
+                        $_SESSION['mobile'],
+                        $_SESSION['card'],
                         $_SESSION['movie']['day'],
                         $_SESSION['movie']['hour'],
                         $_SESSION['movie']['name'],

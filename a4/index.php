@@ -8,23 +8,17 @@ if (isset($_POST['session-reset'])) {
       header("Location: index.php#");
   } else exit("Session failed to reset");
 }
-// if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if (isset($_POST['submit']))
+{
+    // Lưu Session
+    $_SESSION['name'] = $_POST['cust']['name'];
+    $_SESSION['email'] = $_POST['cust']['email'];
+    $_SESSION['mobile'] = $_POST['cust']['mobile'];
+    $_SESSION['card'] = $_POST['cust']['card'];
 
-// $chosenMov = $_POST['movie']['id'];
 
-// if (!empty($_POST['movie']['day']))
-//     $_SESSION['movie'] = $_POST['movie'];
-// else
-//     $generalErr = "Please choose a time and date";
+}
 
-// if ($_POST['total'] != 0) {
-//     $total = $_POST['total'];
-//     $_SESSION['total'] = $total;
-//     $_SESSION['seats'] = $_POST['seats'];
-// } else
-//     $generalErr = "At least 1 ticket is required";
-
-// }
 ?>
 
 <!DOCTYPE html>
