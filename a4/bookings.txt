@@ -374,3 +374,10 @@ Date	Name	Email	Mobile	MovieID	Day	Hour	"STA Qty"	"STP Qty"	"STC Qty"	"FCA Qty"	
 20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
 20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
 20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00
+20-05-20					Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"							0.00

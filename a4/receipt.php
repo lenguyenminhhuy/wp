@@ -61,19 +61,24 @@ else
                         <h2>Customer information:</h2>
                     </div>
                     <div class="row">
-                        <div class="col-sm-2">Name</div>  
-                        <div class="col-sm-10">: <?php echo $_SESSION['cust']['name'] ?></div>
+                        <div class="col-sm-3">Name</div>  
+                        <div class="col-sm-9">: <?php echo $_SESSION['cust']['name'] ?></div>
                     </div>
                     <br/>
                     <div class="row">
-                        <div class="col-sm-2">Email</div> 
-                        <div class="col-sm-10">: <?php echo $_SESSION['cust']['email'] ?></div>
+                        <div class="col-sm-3">Email</div> 
+                        <div class="col-sm-9">: <?php echo $_SESSION['cust']['email'] ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
-                        <div class="col-sm-2">Mobile</div>
-                        <div class="col-sm-10">: <?php echo$_SESSION['cust']['mobile'] ?></div>
+                        <div class="col-sm-3">Mobile</div>
+                        <div class="col-sm-9">: <?php echo$_SESSION['cust']['mobile'] ?></div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-sm-3"> Credit card </div>
+                        <div class="col-sm-9">: <?php echo$_SESSION['cust']['card'] ?></div>
                     </div>
                 </div>
 
@@ -82,21 +87,28 @@ else
                         <h2>Movie information:</h2>
                     </div>
                     <div class="row">
-                        <div class="col-sm-2">Day</div>
-                        <div class="col-sm-10">: <?php echo $day ?></div>
+                        <div class="col-sm-3">Day</div>
+                        <div class="col-sm-9">: <?php echo $day ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
-                        <div class="col-sm-2">Hour</div> 
-                        <div class="col-sm-10">: <?php echo $hour ?></div>
+                        <div class="col-sm-3">Hour</div> 
+                        <div class="col-sm-9">: <?php echo $hour ?></div>
                     </div>
                     <br/>
 
                     <div class="row">
-                        <div class="col-sm-2">Movie</div> 
-                        <div class="col-sm-10">: <?php echo  $name?></div>
+                        <div class="col-sm-3">Movie</div> 
+                        <div class="col-sm-9">: <?php echo  $name?></div>
                     </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-sm-3"> Booking at </div> 
+                        <div class="col-sm-9">: <?php date_default_timezone_set("Asia/Bangkok"); echo date("l d-m-Y H:i"); ?>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <h1 style="text-align: center; font-family: Poppins-Medium"> THIS IS YOUR TICKET INFORMATION </h1>
