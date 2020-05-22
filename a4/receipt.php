@@ -40,7 +40,7 @@ $seat = $_SESSION['seats'];
       <a href="index.php"> Back to booking page </a>
         <div>
         <img id="logo" src="media2/logo-op.png" />
-    <span id="quote">More than just a cinematic experience</span>
+    <div id="quote">More than just a cinematic experience</div>
     <h4 style="text-align: center">ABN: 00 123 456 789</h4>
         </div>
     </header>
