@@ -38,6 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 } else
     $generalErr = "At least 1 ticket is required";
 
+  $expiryMonth = $_POST['cust']['expiryMonth'];
+  $expiryYear = $_POST['cust']['expiryYear'];
+  if ($expiryMonth == date("m") && $expiryYear == date("Y") ){
+    $expiryErr = "Expiry date can not be within a month of the purchase date";
+  }
+
 
 
   // Name

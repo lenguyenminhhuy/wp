@@ -715,6 +715,7 @@ if (isset($_POST['submit']))
                 <label for="">Expiry</label>
                 <select id="cust-Expiry-month" name="cust[expiryMonth]" required></select>
                 <select id="cust-Expiry-year" name="cust[expiryYear]" required></select>
+                <span class="text-danger">* <?php echo $expiryErr; ?></span>
                 <br>
                 <button class="order-btn" type="submit" name="submit" id="order">
                   Order
