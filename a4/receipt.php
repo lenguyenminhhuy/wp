@@ -57,16 +57,17 @@ $seat = $_SESSION['seats'];
                     </div>
                     <br/>
                     <div class="row">
+                        <div class="col-sm-3">Mobile</div>
+                        <div class="col-sm-9">: <?php echo$_SESSION['mobile'] ?></div>
+                    </div>
+                    <br/>
+                    <div class="row">
                         <div class="col-sm-3">Email</div> 
                         <div class="col-sm-9">: <?php echo $_SESSION['email'] ?></div>
                     </div>
                     <br/>
 
-                    <div class="row">
-                        <div class="col-sm-3">Mobile</div>
-                        <div class="col-sm-9">: <?php echo$_SESSION['mobile'] ?></div>
-                    </div>
-                    <br/>
+                    
                     <div class="row">
                         <div class="col-sm-3"> Credit card </div>
                         <div class="col-sm-9">: <?php echo $_SESSION['card'] ?></div>
