@@ -103,7 +103,7 @@ $seat = $_SESSION['seats'];
                 </div>
             </div>
             <h1 style="text-align: center; font-family: Poppins-Medium"> THIS IS YOUR TICKET INFORMATION </h1>
-            <table>
+            <table >
                 <thead>
                     <tr>
                         <th scope="col">Origin Number</th>
@@ -130,13 +130,13 @@ $seat = $_SESSION['seats'];
                     else
                         $discountPrice = false;
                     // get value from each selection 
-                    foreach ($_SESSION['seats'] as $type => $quantity) {
-                        if ($quantity) {
+                    foreach ($_SESSION['seats'] as $typeOfSeat => $quantity) {
+                        if ($quantity > 0) {
                             $total = $discountPrice ? 
-                            convert($priceArray[$type][0] * $quantity) : convert($priceArray[$type][1] * $quantity);
+                            convert($priceArray[$typeOfSeat][0] * $quantity) : convert($priceArray[$typeOfSeat][1] * $quantity);
                             echo "<tr>";
                             echo "<th scope=\"row\">  $originalNumber  </th>";
-                            echo "<td>  $seatArray[$type]  </td>"; 
+                            echo "<td>  $seatArray[$typeOfSeat]  </td>"; 
                             echo "<td> $quantity </td> ";
                             echo "<td> $"   . $total . "</td> ";
                             echo "</tr>";
@@ -151,7 +151,7 @@ $seat = $_SESSION['seats'];
                     <td> <?php echo "$" . convert($GST) ?> </td>
                     </tr>
                     <tr>
-                    <th  scope="row" colspan="3"> <?php echo "Total" ?> </th>
+                    <th  scope="row" colspan="3"> <?php echo "Total price" ?> </th>
                     <td> <?php echo "$" . convert($totalPrice + $GST)?> </td>
                     </tr>
                     </tr>
@@ -183,14 +183,15 @@ $seat = $_SESSION['seats'];
                     fclose($file);
                     ?>
                     <tr id="buttons">
-                        <td colspan="2">
-                            <button type="button" class="btn btn-warning btn-block btn-lg" onclick="window.print();">Print group ticket</button>
-                        </td>
-                        <td colspan="2">
+                    <td colspan="2">
                             <form action="indiTicket.php" method="post">
-                                <input type="submit" value="Print individual ticket(s)" class="btn btn-danger btn-block btn-lg">
+                                <input type="submit" value="Print a single ticket" class="btn btn-success btn-block btn-lg">
                             </form>
                         </td>
+                        <td colspan="2">
+                            <button type="button" class="btn btn-warning btn-block btn-lg" onclick="window.print();">Print all tickets</button>
+                        </td>
+                  
                     </tr>
                 </tbody>
             </table>  

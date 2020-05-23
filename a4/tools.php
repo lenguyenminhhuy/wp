@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }else{
     // $name = testInput($_POST["custname"]);
     if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){
-    $nameErr = "Only western letters and spaces are allowed";
+    $nameErr = "Only western letters and spaces are allowed (No the white space before your account name in the input box)";
   }
   }
   
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }else{
     // $mail = testInput($_POST["custemail"]);
     if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-    $mailErr = "Only valid mail account is allowed (Delete the white space before your account name in the input box)";
+    $mailErr = "Only valid mail account is allowed (No the white space before your email in the input box)";
   }
   }
   
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }else{
     // $mobile = testInput($_POST["mobilenumber"]);
     if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){
-      $mobileErr = "Australian number only";
+      $mobileErr = "Australian number only (No the white space before your mobile phone in the input box)";
   }
   }
   

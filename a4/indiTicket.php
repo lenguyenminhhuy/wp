@@ -53,10 +53,10 @@ $discountPrice = true;
 else
  $discountPrice = false;
 // get value from each selection 
-foreach ($_SESSION['seats'] as $type => $quantity) {
+foreach ($_SESSION['seats'] as $typeOfSeat => $quantity) {
     if ($quantity > 0) {
         $priceTicket = $discountPrice ? 
-        convert($priceArray[$type][0]) : convert($priceArray[$type][1]);
+        convert($priceArray[$typeOfSeat][0]) : convert($priceArray[$typeOfSeat][1]);
         echo $a = <<<ticket
         <header>
         <a href="index.php"> Back to booking page </a>
@@ -139,7 +139,7 @@ foreach ($_SESSION['seats'] as $type => $quantity) {
         $GST = convert($GST);
         $total = $GST + $priceTicket;
         echo $b = <<<infoPrice
-        <td>  $seatArray[$type]  </td> 
+        <td>  $seatArray[$typeOfSeat]  </td> 
         <td> $ $priceTicket </td>
         </tr>
         <tr>

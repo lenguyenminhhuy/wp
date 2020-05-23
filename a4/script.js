@@ -272,10 +272,13 @@ for (var i = currentYear; i <= totalYear; i++) {
 }
 
 for (var i = firstMonth; i <= totalMonth; i++) {
-    var opt1 = document.createElement('option');
-    opt1.value = i;
-    opt1.innerHTML = i;
-    select1.appendChild(opt1);
+    if (i < 10) {
+        i = parseInt('0') + i;
+        var opt1 = document.createElement('option');
+        opt1.value = i;
+        opt1.innerHTML = i;
+        select1.appendChild(opt1);
+    }
 }
 // check expiry time whether in the future or not 
 validateForm.addEventListener('submit', function (a) {
@@ -289,9 +292,3 @@ validateForm.addEventListener('submit', function (a) {
         }
     }
 })
-if (i < 10) {
-    i = '0' + i
-}
-var opt1 = document.createElement('option');
-opt1.value = i;
-opt1.innerHTML = i;

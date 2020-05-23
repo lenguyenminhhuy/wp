@@ -1,13 +1,7 @@
 <?php include 'tools.php';
 
 session_start();
-if (isset($_POST['session-reset'])) {
-  $reset_flag = session_destroy();
-  if ($reset_flag) {
-      unset($_POST['session-reset']);
-      header("Location: index.php#");
-  } else exit("Session failed to reset");
-}
+
 
 if (isset($_POST['submit']))
 {
@@ -18,6 +12,8 @@ if (isset($_POST['submit']))
     $_SESSION['card'] = $_POST['cust']['card'];
     $_SESSION['seats'] = $_POST['seats'];
     $_SESSION['total'] = $_POST['total'];
+    $_SESSION['movie'] = $_POST['movie'];
+
 }
 
 ?>
@@ -744,9 +740,18 @@ if (isset($_POST['submit']))
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button>
-    <form method="POST">
-                <input type="submit" value="Reset current session" name='session-reset'>
-            </form></div>
+    <?php
+    if (isset($_POST['session-reset'])) {
+      $resetSession = session_destroy();
+      if ($resetSession) {
+          unset($_POST['session-reset']);
+          header("Location: index.php");
+      };
+    } ?>
+      <form method="POST">
+          <input type="submit" value="Reset data" name='session-reset'>
+      </form>
+    </div>
   </footer>
   <?php 
   preShow($_GET);
@@ -754,9 +759,6 @@ if (isset($_POST['submit']))
   preShow($_SESSION);
   printMyCode();
   processing();   
-
-  
-
   ?>
 </body>
 </html>
