@@ -66,6 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $seatErr = "choose at least one seat";
   }
 
+  // //Seats Input Validation
+  // $seatsInput = testInput($_POST['seats']['STA']);
+  // if ($seatsInput != [0,10] ){
+  //   $seatErr = "Stop hacking our website";
+  // }
+
   // Name
   $name = testInput($_POST['cust']['name']);
   if (empty($_POST['cust']['name'])){
@@ -107,11 +113,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }else{
     // $card = testInput($_POST["creditcard"]);
     if (!preg_match("/^( ?\d){14,19}$/", $card)){
-      $cardErr = "Only numbers and spaces are allowed";
+      $cardErr = "Only numbers and spaces are allowed (No the white space before your mobile phone in the input box)";
   }
   }
   // direct to Receipt page
-  if (empty($nameErr . $mobileErr . $cardErr . $mailErr  .$movieErr .$movieErr1 .$expiryErr .$seatErr )) {
+  if (empty($nameErr . $mobileErr . $cardErr . $mailErr  .$movieErr .$movieErr1 .$expiryErr .$seatErr .$_POST['cust']['mobile'] )) {
     header("Location: receipt.php");
   }
 

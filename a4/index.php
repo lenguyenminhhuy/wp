@@ -581,6 +581,7 @@ if (isset($_POST['submit']))
             <div class="col-lg-6">
               <fieldset class="standard">
                 <legend class="legend">Standard </legend>
+                <span class="text-danger">*All dropdown value must be selected (Please select 0 if you don't want to buy the ticket)</span>
                 <label for="seats-STA">Adults </label>
                 <select class="select" name="seats[STA]" id="seats-STA" onchange="totalPrice()">
                   <option value="Please select"> Please select </option>
@@ -631,6 +632,7 @@ if (isset($_POST['submit']))
               </fieldset>
               <fieldset class="first-class">
                 <legend class="legend">First class </legend>
+                <span class="text-danger">*All dropdown value must be selected (Please select 0 if you don't want to buy the ticket)</span>
                 <label for="seats-FCA">Adults </label>
                 <select class="select" name="seats[FCA]" id="seats-FCA" onchange="totalPrice()">
                   <option value="Please select">Please select</option>
@@ -692,21 +694,20 @@ if (isset($_POST['submit']))
               <fieldset class="customer-info">
                 </br>
                 <label for="cust-name"> Name </label>
-                <input type="text" name="cust[name]" id="cust-name" value="<?php if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){echo $_POST["custname"];} ?>" >
-                  <!-- pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required -->
+                <input type="text" name="cust[name]" id="cust-name" value="<?php if (!preg_match("/^[a-zA-Z \-.']{1,100}$/", $name)){echo $_POST['cust']['name'];} ?>" 
+                  pattern="^[a-zA-Z \-.']{1,100}$" title="Western name only" required>
                   <span class="text-danger">* <?php echo $nameErr; ?></span>
                 <br>
-                <label for="cust-mail">Email </label><input type="email"  name="cust[email]" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST["custemail"];} ?>" >
+                <label for="cust-mail">Email </label><input type ="email"  name="cust[email]" id="cust-mail" value = "<?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) { echo $_POST['cust']['email'];} ?>" >
                  <span class="text-danger">* <?php echo $mailErr; ?></span>
-                 <!-- Include type email when done -->
                 <br>
-                <label for="cust-mobile">Mobile </label><input type="tel" name="cust[mobile]" value="<?php if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){echo $_POST["mobilenumber"];} ?>" >
-                  <!-- pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
-                  required -->
+                <label for="cust-mobile">Mobile </label><input type="tel" name="cust[mobile]" value="<?php if (!preg_match("/^(\(04\)|04|\+614)( ?[0-9]){8}$/", $mobile)){echo $_POST['cust']['mobile'];} ?>" 
+                  pattern="^(\s\(04\)|\s04|\s\+614)( ?[0-9]){8}$" id="cust-mobile" title="Australian number only"
+                  required>
                   <span class="text-danger">* <?php echo $mobileErr; ?></span>
                 <br>
-                <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]" value="<?php if (!preg_match("/^( ?\d){14,19}$/", $card)){echo $_POST["creditcard"];} ?>" >
-                  <!-- pattern="^( ?\d){14,19}" id="cust-credit" required -->
+                <label for="cust-credit">Creditcard </label><input type="text" name="cust[card]" value="<?php if (!preg_match("/^( ?\d){14,19}$/", $card)){echo $_POST['cust']['card'];} ?>" 
+                  pattern="^( ?\d){14,19}" id="cust-credit" required>
                   <span class="text-danger">* <?php echo $cardErr; ?></span>
                 <br>
                 <label for="">Expiry</label>
@@ -759,8 +760,7 @@ if (isset($_POST['submit']))
   preShow($_POST);    
   preShow($_SESSION);
   printMyCode();
-  processing();   
- 
+  
   ?>
 </body>
 </html>
