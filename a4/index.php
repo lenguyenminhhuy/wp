@@ -11,10 +11,10 @@ if (isset($_POST['submit']))
     $_SESSION['mobile'] = $_POST['cust']['mobile'];
     $_SESSION['card'] = $_POST['cust']['card'];
     $_SESSION['seats'] = $_POST['seats'];
-    $_SESSION['total'] = $_POST['total'];
     $_SESSION['movie'] = $_POST['movie'];
 
 }
+
 
 ?>
 
@@ -570,19 +570,20 @@ if (isset($_POST['submit']))
           <span style="font-size:xx-large; font-weight: bold;" id="space1"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formTime"> </span>
           <span style="font-size:xx-large; font-weight: bold;" id="formID"> </span>
-          <input type="hidden" name="movie[name]" id="movie-name" value="">
+          <input type="hidden" name="movie[name]" id="movie-name" value="">   <span class="text-danger"> <?php echo $movieErr; ?></span>
           <input type="hidden" name="movie[id]" id="movie-id" value="">
-          <input type="hidden" name="movie[day]" id='movie-day' value="">
+          <input type="hidden" name="movie[day]" id='movie-day' value="">  <span class="text-danger"> <?php echo $movieErr1; ?></span>
           <input type="hidden" name="movie[hour]" id='movie-hour' value="">
         </div>
         <!-- <form action="" method="GET"> -->
+        <span class="text-danger"> <?php echo $seatErr; ?></span>
           <div class="row">
             <div class="col-lg-6">
               <fieldset class="standard">
                 <legend class="legend">Standard </legend>
                 <label for="seats-STA">Adults </label>
                 <select class="select" name="seats[STA]" id="seats-STA" onchange="totalPrice()">
-                  <option value=""> Please select </option>
+                  <option value="Please select"> Please select </option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -598,7 +599,7 @@ if (isset($_POST['submit']))
                 <br>
                 <label for="seats-STP">Concessions </label>
                 <select class="select" name="seats[STP]" id="seats-STP" onchange="totalPrice()">
-                  <option value="">Please select</option>
+                  <option value="Please select">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -614,7 +615,7 @@ if (isset($_POST['submit']))
                 <br>
                 <label for="seats-STC">Children </label>
                 <select class="select" name="seats[STC]" id="seats-STC" onchange="totalPrice()">
-                  <option value="">Please select</option>
+                  <option value="Please select">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -632,7 +633,7 @@ if (isset($_POST['submit']))
                 <legend class="legend">First class </legend>
                 <label for="seats-FCA">Adults </label>
                 <select class="select" name="seats[FCA]" id="seats-FCA" onchange="totalPrice()">
-                  <option value="">Please select</option>
+                  <option value="Please select">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -648,7 +649,7 @@ if (isset($_POST['submit']))
                 <br>
                 <label for="seats-FCP">Concessions </label>
                 <select class="select" name="seats[FCP]" id="seats-FCP" onchange="totalPrice()">
-                  <option value="">Please select</option>
+                  <option value="Please select">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -664,7 +665,7 @@ if (isset($_POST['submit']))
                 <br>
                 <label for="seats-FCC">Children </label>
                 <select class="select" name="seats[FCC]" id="seats-FCC" onchange="totalPrice()">
-                  <option value="">Please select</option>
+                  <option value="Please select">Please select</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -681,7 +682,7 @@ if (isset($_POST['submit']))
               <div class="total" id="price"> Total </div>
               <div class="total-price">
                 <div  class="card-body" id="total" >
-                <input type="hidden" name="total" >
+                <input type="hidden" name="total">
                 </div>
               </div>
             </div>
@@ -759,6 +760,7 @@ if (isset($_POST['submit']))
   preShow($_SESSION);
   printMyCode();
   processing();   
+ 
   ?>
 </body>
 </html>

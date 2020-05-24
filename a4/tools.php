@@ -31,20 +31,40 @@ function testInput($data){
 //Validate Text input
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-  if ($_POST['total'] != 0) {
-    $total = $_POST['total'];
-    $_SESSION['total'] = $total;
-    $_SESSION['seats'] = $_POST['seats'];
-} else
-    $generalErr = "At least 1 ticket is required";
+//   if ($_POST['total'] != 0) {
+//     $total = $_POST['total'];
+//     $_SESSION['total'] = $total;
+//     $_SESSION['seats'] = $_POST['seats'];
+// } else
+//     $ticketErr = "At least 1 ticket has been chosen";
 
   $expiryMonth = $_POST['cust']['expiryMonth'];
   $expiryYear = $_POST['cust']['expiryYear'];
   if ($expiryMonth == date("m") && $expiryYear == date("Y") ){
     $expiryErr = "Expiry date can not be within a month of the purchase date";
   }
+//movie name
+  if (!empty($_POST['movie']['name'])) {
+    $_SESSION['movie']['name'] =  $_POST['movie']['name'];
+  } else 
+   $movieErr = "Choose at least one movie to book the ticket";
+// movie time
+   if (($_POST['movie']['day'] !== "Day")) {
+  
+    $_SESSION['movie']['day'] = $_POST['movie']['day'];
+  } else 
+   $movieErr1 = "Choose at least one day to book the ticket";
+// seat
 
-
+  foreach ($_POST['seats'] as $type => $numberOfSeat) {
+      if ((int)$numberOfSeat > 0 && $numberOfSeat != "Please select") {
+        $_SESSION['seats'] = $_POST['seats'];
+      break;
+      }
+  }
+  if (is_null($_SESSION['seats'])) {
+    $seatErr = "choose at least one seat";
+  }
 
   // Name
   $name = testInput($_POST['cust']['name']);
@@ -91,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   }
   // direct to Receipt page
-  if (empty($nameErr . $mobileErr . $cardErr . $mailErr .$gen )) {
+  if (empty($nameErr . $mobileErr . $cardErr . $mailErr  .$movieErr .$movieErr1 .$expiryErr .$seatErr )) {
     header("Location: receipt.php");
   }
 
