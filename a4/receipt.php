@@ -191,6 +191,9 @@ $seat = $_SESSION['seats'];
                             <form action="indiTicket.php" method="post">
                                 <input type="submit" value="Print a single ticket" class="btn btn-success btn-block btn-lg">
                             </form>
+                            <?php 
+                      
+                            ?>
                         </td>
                         <td colspan="2">
                             <button type="button" class="btn btn-warning btn-block btn-lg" onclick="window.print();">Print all tickets</button>

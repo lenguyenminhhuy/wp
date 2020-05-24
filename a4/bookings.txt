@@ -820,3 +820,33 @@ Date	Name	Email	Mobile	MovieID	Day	Hour	"STA Qty"	"STP Qty"	"STC Qty"	"FCA Qty"	
 20-05-24	"phan dinh phung highschool"	haha19@gmail.com	"+614 2525 7768"	" 99 22 33 88 4 88 33 88 2"	Wednesday	9pm	"Avengers: Endgame "	"ACT Wednesday 9pm"	5	2	3	4	2	3	362.18
 20-05-24	"phan dinh phung highschool"	haha19@gmail.com	"+614 2525 7768"	" 99 22 33 88 4 88 33 88 2"	Thursday	9pm	"Avengers: Endgame "	"ACT Thursday 9pm"	4	4	3	4	3	5	563.02
 20-05-24	"phan dinh phung highschool"	haha19@gmail.com	"+614 2525 7768"	"99 22 33 88 4 88 33 88 2"	Thursday	9pm	"Avengers: Endgame "	"ACT Thursday 9pm"	100	3	2	3	4	5	2597.56
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789123456	Saturday	6pm	"Avengers: Endgame "	"ACT Saturday 6pm"	4	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	86.40
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Thursday	9pm	"Avengers: Endgame "	"ACT Thursday 9pm"	4	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	86.40
+20-05-24	Mi	csd@gmail.com	+61412345671	23456789123456	Friday	9pm	"Avengers: Endgame "	"ACT Friday 9pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	csd@gmail.com	+61412345671	12345678912345	Tuesday	6pm	"Top End Wedding "	" AHF Tuesday 6pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	csd@gmail.com	+61456728911	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	csd@gmail.com	+61456728911	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789124156	Tuesday	6pm	"Top End Wedding "	" AHF Tuesday 6pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789124156	Tuesday	6pm	"Top End Wedding "	" AHF Tuesday 6pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	csd@gmail.com	+61412345671	12345678912345	Saturday	6pm	"Avengers: Endgame "	"ACT Saturday 6pm"	1	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	21.60
+20-05-24	Mi	csd@gmail.com	+61412345671	12345678912345		6pm	"Avengers: Endgame "	"ACT  6pm"	1	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	21.60
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"	2	2	"Please select"	"Please select"	"Please select"	"Please select"	57.82
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"	2	2	"Please select"	"Please select"	"Please select"	"Please select"	57.82
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"	2	2	"Please select"	"Please select"	"Please select"	"Please select"	57.82
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	12pm	"Happy Prince "	"RMC  Friday 12pm"	2	2	"Please select"	"Please select"	"Please select"	"Please select"	57.82
+20-05-24	Mi	leemii1802@gmail.com	+61412345671	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	1	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	21.60
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456		3pm	"Top End Wedding "	" AHF  3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456		3pm	"Top End Wedding "	" AHF  3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456		3pm	"Top End Wedding "	" AHF  3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456		3pm	"Top End Wedding "	" AHF  3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	"mi "	leemii1802@gmail.com	+61456789876	123456789123456		3pm	"Top End Wedding "	" AHF  3pm"	3	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	64.80
+20-05-24	ABC	csd@gmail.com	+61456789876	23456789123456	Friday	9pm	"Avengers: Endgame "	"ACT Friday 9pm"	4	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	86.40
+20-05-24	ABC	csd@gmail.com	+61456789876	23456789123456		9pm	"Avengers: Endgame "	"ACT  9pm"	4	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	86.40
+20-05-24	ABC	csd@gmail.com	+61456789876	23456789123456		9pm	"Avengers: Endgame "	"ACT  9pm"	4	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	86.40
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	2	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	43.20
+20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789123456	Sunday	3pm	"Top End Wedding "	" AHF Sunday 3pm"	2	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	43.20
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	9pm	"Avengers: Endgame "	"ACT Friday 9pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
+20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Thursday	9pm	"Avengers: Endgame "	"ACT Thursday 9pm"	2	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	43.20

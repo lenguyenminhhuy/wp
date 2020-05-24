@@ -230,29 +230,29 @@ document.getElementById("myBtn4c").addEventListener("click", function () { showF
 // must select the date and time to book the ticket
 // var validateForm = document.getElementById("booking")
 
-validateForm.addEventListener('submit', function (a) {
-    if (document.getElementById("formDay").innerHTML == "Day") {
-        a.preventDefault();
-        alert("You have to choose the date and time to book the ticket")
-    }
-});
+// validateForm.addEventListener('submit', function (a) {
+//     if (document.getElementById("formDay").innerHTML == "Day") {
+//         a.preventDefault();
+//         alert("You have to choose the date and time to book the ticket")
+//     }
+// });
 
 // Must select a movie
-validateForm.addEventListener('submit', function (b) {
-    if (document.getElementById("formTitle").innerHTML == "") {
-        b.preventDefault();
-        alert("You have to choose a movie to book the ticket")
-    }
-});
+// validateForm.addEventListener('submit', function (b) {
+//     if (document.getElementById("formTitle").innerHTML == "") {
+//         b.preventDefault();
+//         alert("You have to choose a movie to book the ticket")
+//     }
+// });
 
 
 // choose at least one seat to submit the booking form
-validateForm.addEventListener('submit', function (e) {
-    if (document.getElementById('total').innerText == 0 || document.getElementById('total').innerText == "$0.00") {
-        e.preventDefault()
-        alert("Please select the amount of ticket. At least 1 ticket must be chosen to order")
-    }
-})
+// validateForm.addEventListener('submit', function (e) {
+//     if (document.getElementById('total').innerText == 0 || document.getElementById('total').innerText == "$0.00") {
+//         e.preventDefault()
+//         alert("Please select the amount of ticket. At least 1 ticket must be chosen to order")
+//     }
+// })
 
 // format expiry date
 var firstMonth = 1;
@@ -286,14 +286,14 @@ for (var i = firstMonth; i <= 12; i++) {
 }
 // Get current month, year
 // check expiry time whether in the future or not
-validateForm.addEventListener('submit', function (a) {
-    var selectedMonth = document.getElementById('cust-Expiry-month').value
-    var selectedYear = document.getElementById('cust-Expiry-year').value
-    var currentMonth = new Date().getMonth() + 1
-    if (parseInt(selectedYear) == currentYear) {
-        if (parseInt(selectedMonth) < currentMonth) {
-            a.preventDefault()
-            alert("Please choose the month in the future only")
-        }
-    }
-})
+// validateForm.addEventListener('submit', function (a) {
+//     var selectedMonth = document.getElementById('cust-Expiry-month').value
+//     var selectedYear = document.getElementById('cust-Expiry-year').value
+//     var currentMonth = new Date().getMonth() + 1
+//     if (parseInt(selectedYear) == currentYear) {
+//         if (parseInt(selectedMonth) < currentMonth) {
+//             a.preventDefault()
+//             alert("Please choose the month in the future only")
+//         }
+//     }
+// })

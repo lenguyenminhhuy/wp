@@ -5,7 +5,7 @@ if (empty($_SESSION)) header("Location: index.php");
 
 $movie = $_SESSION['movie'];
 $idMovie = $movie['id'];
-$day =  $movie['day'];
+$day =  $_SESSION['movie1'];
 $hour =  $movie['hour'];
 $name = $movie['name'];
 $seat = $_SESSION['seats'];
@@ -101,7 +101,7 @@ foreach ($_SESSION['seats'] as $typeOfSeat => $quantity) {
                       </div>
                       <div class="row">
                           <div class="col-sm-3">Day</div>
-                          <div class="col-sm-9">:  {$day} </div>
+                          <div class="col-sm-9">: {$day} </div>
                       </div>
                       <br/>
         
@@ -113,7 +113,7 @@ foreach ($_SESSION['seats'] as $typeOfSeat => $quantity) {
         
                       <div class="row">
                           <div class="col-sm-3">Movie</div>
-                          <div class="col-sm-9">:{$name} </div> 
+                          <div class="col-sm-9">: {$name} </div> 
                       </div>
                       <br/>
                       <div class="row">

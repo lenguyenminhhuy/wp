@@ -31,12 +31,6 @@ function testInput($data){
 //Validate Text input
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-//   if ($_POST['total'] != 0) {
-//     $total = $_POST['total'];
-//     $_SESSION['total'] = $total;
-//     $_SESSION['seats'] = $_POST['seats'];
-// } else
-//     $ticketErr = "At least 1 ticket has been chosen";
 
   $expiryMonth = $_POST['cust']['expiryMonth'];
   $expiryYear = $_POST['cust']['expiryYear'];
@@ -117,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   }
   // direct to Receipt page
-  if (empty($nameErr . $mobileErr . $cardErr . $mailErr  .$movieErr .$movieErr1 .$expiryErr .$seatErr .$_POST['cust']['mobile'] )) {
+  if (empty($nameErr . $mobileErr . $cardErr . $mailErr  .$movieErr .$movieErr1 .$expiryErr .$seatErr  )) {
     header("Location: receipt.php");
   }
 
