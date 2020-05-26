@@ -1,3 +1,12 @@
+<?php 
+// session_start();
+
+// 	if(!isset($_SESSION['Userdata']['adminName'])){
+// 		echo "anonymous";
+// 	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
