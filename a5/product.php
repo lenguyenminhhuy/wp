@@ -17,7 +17,9 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/owl.carousel.css" />
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="nav.css" />
+
 	<link rel="stylesheet" href="css/animate.css" />
 
 
@@ -35,29 +37,14 @@
 	</div>
 
 	<!-- Header section -->
-	<header class="header-section header-normal">
-		<div class="container-fluid">
-			<!-- logo -->
-			<div class="site-logo">
-				<img src="img/logo.png" alt="logo">
-			</div>
-			<!-- responsive -->
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<div class="header-right">
-				<a href="cart.html" class="card-bag"><img src="img/icons/bag.png" alt=""><span>2</span></a>
-				<a href="#" class="search"><img src="img/icons/search.png" alt=""></a>
-			</div>
-			<!-- site menu -->
-			<ul class="main-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="categorie.html">Category</a></li>
-				<li><a href="checkout.html">Checkout</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-	</header>
+	<nav id="navigtion" class="sticky">
+      <ul>
+	  <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
+		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
+        <li><a class="nav-item nav-link" href="contact.php"> Contact </a></li>
+      </ul>
+    </nav>
 	<!-- Header section end -->
 
 
@@ -67,8 +54,8 @@
 			<div class="site-breadcrumb">
 				<a href="">Home</a> /
 				<a href="">Sales</a> /
-				<a href="">Bags</a> /
-				<span>Shoulder bag</span>
+				<a href="">Shirt</a> /
+				<span> Shirt for women  </span>
 			</div>
 			<img src="img/page-info-art.png" alt="" class="page-info-art">
 		</div>
@@ -82,20 +69,9 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<figure>
-						<img class="product-big-img" src="img/product/1.jpg" alt="">
+						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
 					</figure>
-					<div class="product-thumbs">
-						<div class="product-thumbs-track">
-							<div class="pt" data-imgbigurl="img/product/1.jpg"><img src="img/product/thumb-1.jpg"
-									alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/2.jpg"><img src="img/product/thumb-2.jpg"
-									alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/3.jpg"><img src="img/product/thumb-3.jpg"
-									alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/4.jpg"><img src="img/product/thumb-4.jpg"
-									alt=""></div>
-						</div>
-					</div>
+				
 				</div>
 				<div class="col-lg-6">
 					<div class="product-content">
@@ -119,86 +95,137 @@
 							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
 							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
 							consectetur, adipisci velit</p>
-						<div class="color-choose">
-							<span>Colors:</span>
-							<div class="cs-item">
-								<input type="radio" name="cs" id="black-color" checked>
-								<label class="cs-black" for="black-color"></label>
-							</div>
-							<div class="cs-item">
-								<input type="radio" name="cs" id="blue-color">
-								<label class="cs-blue" for="blue-color"></label>
-							</div>
-							<div class="cs-item">
-								<input type="radio" name="cs" id="yollow-color">
-								<label class="cs-yollow" for="yollow-color"></label>
-							</div>
-							<div class="cs-item">
-								<input type="radio" name="cs" id="orange-color">
-								<label class="cs-orange" for="orange-color"></label>
-							</div>
-						</div>
-						<div class="size-choose">
-							<span>Size:</span>
-							<div class="sc-item">
-								<input type="radio" name="sc" id="l-size" checked>
-								<label for="l-size">L</label>
-							</div>
-							<div class="sc-item">
-								<input type="radio" name="sc" id="xl-size">
-								<label for="xl-size">XL</label>
-							</div>
-							<div class="sc-item">
-								<input type="radio" name="sc" id="xxl-size">
-								<label for="xxl-size">XXL</label>
-							</div>
-						</div>
-						<a href="#" class="site-btn btn-line">ADD TO CART</a>
+						
+	
 					</div>
 				</div>
 			</div>
-			<div class="product-details">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<ul class="nav" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab"
-									aria-controls="tab-1" aria-selected="true">Description</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab"
-									aria-controls="tab-2" aria-selected="false">Additional information</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab"
-									aria-controls="tab-3" aria-selected="false">Reviews (0)</a>
-							</li>
-						</ul>
-						<div class="tab-content">
-							<!-- single tab content -->
-							<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-									laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-									architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-									voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-									qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-									quia dolor sit amet, consectetur, adipisci velit</p>
-							</div>
-							<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-									laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-									architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-									voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-									qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-									quia dolor sit amet, consectetur, adipisci velit</p>
-							</div>
-							<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+		
+				</div>
+			</div>
 
+			<div class="page-area product-page spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<figure>
+						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
+					</figure>
+				
+				</div>
+				<div class="col-lg-6">
+					<div class="product-content">
+						<h2>B </h2>
+						<div class="pc-meta">
+							<h4 class="price">$19.50</h4>
+							<div class="review">
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+								<span>(2 reviews)</span>
 							</div>
 						</div>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
+							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit</p>
+						
+	
 					</div>
 				</div>
 			</div>
+		
+				</div>
+			</div>
+
+			<div class="page-area product-page spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<figure>
+						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
+					</figure>
+				
+				</div>
+				<div class="col-lg-6">
+					<div class="product-content">
+						<h2>C</h2>
+						<div class="pc-meta">
+							<h4 class="price">$19.50</h4>
+							<div class="review">
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+								<span>(2 reviews)</span>
+							</div>
+						</div>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
+							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit</p>
+						
+	
+					</div>
+				</div>
+			</div>
+		
+				</div>
+			</div>
+
+			<div class="page-area product-page spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<figure>
+						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
+					</figure>
+				
+				</div>
+				<div class="col-lg-6">
+					<div class="product-content">
+						<h2>D</h2>
+						<div class="pc-meta">
+							<h4 class="price">$19.50</h4>
+							<div class="review">
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+								<span>(2 reviews)</span>
+							</div>
+						</div>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
+							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit</p>
+						
+	
+					</div>
+				</div>
+			</div>
+		
+				</div>
+			</div>
+
+
+			
 			<div class="text-center rp-title">
 				<h5>Related products</h5>
 			</div>
@@ -206,7 +233,7 @@
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/1.jpg" alt="">
+							<img src="img/clothes/1.jpg" alt="">
 							<div class="pi-meta">
 								<div class="pi-m-left">
 									<img src="img/icons/eye.png" alt="">
@@ -221,14 +248,13 @@
 						<div class="product-info">
 							<h6>Long red Shirt</h6>
 							<p>$39.90</p>
-							<a href="#" class="site-btn btn-line">ADD TO CART</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/2.jpg" alt="">
+							<img src="img/clothes/2.jpg" alt="">
 							<div class="bache">NEW</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
@@ -244,14 +270,13 @@
 						<div class="product-info">
 							<h6>Hype grey shirt</h6>
 							<p>$19.50</p>
-							<a href="#" class="site-btn btn-line">ADD TO CART</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/3.jpg" alt="">
+							<img src="img/clothes/3.jpg" alt="">
 							<div class="pi-meta">
 								<div class="pi-m-left">
 									<img src="img/icons/eye.png" alt="">
@@ -266,14 +291,13 @@
 						<div class="product-info">
 							<h6>long sleeve jacket</h6>
 							<p>$59.90</p>
-							<a href="#" class="site-btn btn-line">ADD TO CART</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/4.jpg" alt="">
+							<img src="img/clothes/4.jpg" alt="">
 							<div class="bache sale">SALE</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
@@ -289,7 +313,6 @@
 						<div class="product-info">
 							<h6>Denim men shirt</h6>
 							<p>$32.20 <span>RRP 64.40</span></p>
-							<a href="#" class="site-btn btn-line">ADD TO CART</a>
 						</div>
 					</div>
 				</div>

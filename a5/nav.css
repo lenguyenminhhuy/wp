@@ -1,0 +1,44 @@
+.sticky{
+    overflow:hidden;
+    width:100%; 
+    color:white; 
+    position:sticky;
+    top:0px;
+    z-index: 1;
+  }
+  
+  nav{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    position: sticky;
+    top: 0;
+  }
+  
+  nav ul{
+    display: flex;
+    margin: 0px;
+    padding: 0px, 100px;
+    float: right;
+  }
+  
+  nav ul li{
+    list-style: none;
+  }
+  
+  nav ul li a{
+    display: block;
+    color: white;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 50px;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    background:#f2d9ff;
+    color:  #E25B45 ;
+  }
