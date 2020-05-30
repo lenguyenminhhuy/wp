@@ -45,7 +45,6 @@ require 'config.php';
                           'pid' => $_POST["pid"],  
                           'pname'  => $_POST["pname"],  
                           'pbrand' =>	$_POST["pbrand"],
-
                           'pprice'   => $_POST["pprice"],  
                           'pquantity' => $_POST["pquantity"]  
                      );  
@@ -58,7 +57,6 @@ require 'config.php';
                      'pid' => $_POST["pid"],  
                      'pname' => $_POST["pname"],  
                      'pbrand' =>	$_POST["pbrand"],
-
                      'pprice' =>  $_POST["pprice"],  
                      'pquantity' => $_POST["pquantity"]  
                 );  

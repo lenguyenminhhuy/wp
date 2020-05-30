@@ -55,7 +55,7 @@ if(isset($_GET["action"]))
 
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
 	<title> Assignment 5 </title>
@@ -74,15 +74,70 @@ if(isset($_GET["action"]))
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/owl.carousel.css" />
 	<link rel="stylesheet" href="style.css" />
-	<link rel="stylesheet" href="nav.css" />
+	<link rel="stylesheet" href="./nav.css" />
 
 	<link rel="stylesheet" href="css/animate.css" />
+	<style>
+		 input[type="text"] { 
+    width:250px; 
+    height: 35px;
+    margin:5px 0px; 
+    border: grey 1px solid;
+    border-radius: 8px;
+} 
+input[type="email"] { 
+  width:250px; 
+  height: 35px;
+  margin:5px 0px; 
+  border: grey 1px solid;
+  border-radius: 8px;
+} 
+input[type="tel"] { 
+  width:250px; 
+  height: 35px;
+  margin:5px 0px; 
+  border: grey 1px solid;
+  border-radius: 8px;
+} 
+input[type="month"] { 
+  width:250px; 
+  height: 35px;
+  margin:5px 0px; 
+  border: grey 1px solid;
+  border-radius: 8px;
+} 
+.legend{
+  margin-left: 3%; 
+  margin-right: 0; 
+  padding-left: 2%; 
+  padding-right: 2%; 
+
+  width: inherit;
+}
 
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+
+.order-btn {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  min-width: 100px;
+  height: 50px;
+  background-color: #da8757;
+  border-radius: 25px;
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: 0px 9px 28px 0px rgba(240, 177, 135, 0.5);
+  align-items: center;
+  margin-left: 55%;
+  margin-top: 50px;
+}
+.order-btn:hover {
+  background-color: #333333;
+  box-shadow: grey
+}
+	</style>
 
 </head>
 
@@ -95,7 +150,7 @@ if(isset($_GET["action"]))
 	<!-- Header section -->
 	<nav id="navigtion" class="sticky">
       <ul>
-	  <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+	  <li><a class="nav-item nav-link" href="index.php"> Home </a></li>
 		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
 		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
 
@@ -174,43 +229,85 @@ if(isset($_GET["action"]))
 		</div>
 	</div>
 	<br />
+
+
 		<div class="card-warp">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4">
 						<div class="shipping-info">
-							<h4>Shipping method</h4>
-							<p>Select the one you want</p>
-							<div class="shipping-chooes">
-								<div class="sc-item">
-									<input type="radio" name="sc" id="one">
-									<label for="one">Next day delivery<span>$4.99</span></label>
-								</div>
-								<div class="sc-item">
-									<input type="radio" name="sc" id="two">
-									<label for="two">Standard delivery<span>$1.99</span></label>
-								</div>
-								<div class="sc-item">
-									<input type="radio" name="sc" id="three">
-									<label for="three">Personal Pickup<span>Free</span></label>
-								</div>
-							</div>
-							<h4>Cupon code</h4>
-							<p>Enter your cupone code</p>
-							<div class="cupon-input">
-								<input type="text">
-								<button class="site-btn">Apply</button>
+							<h4>Shipping information</h4>
+							<div class="col-lg-6">
+									<form action="" method="GET">
+              <fieldset class="customer-info">
+                </br>
+                <label for="cust-name"> Name </label><input style="width: 300px"type="text" name="name" id="cust-name"
+                   required>
+				<br>
+				<br>
+                <label for="cust-mail">Email </label><input  style="width: 300px" type="email" name="email" id="cust-mail" required>
+				<br>
+				<br>
+                <label for="cust-mobile">Mobile </label><input  style="width: 300px" type="tel" name="mobile"
+                  
+                  required>
+				<br>
+				<br>
+				<label for="cust-name"> Address </label><input  style="width: 300px" type="text" name="address" id="cust-address"
+                   required>
+				<br>
+				<br>
+                <label for="cust-credit">Creditcard </label><input  style="width: 300px" type="text" name="credit_card"
+                 id="cust-credit" required>
+                <br>
+				<br>
+                
+				<br>
+				<br>
+			
+                <button class="order-btn" type="submit" id="order" onclick="showTotal()">
+                  Order
+                  <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </button>
+			  </fieldset>
+			  </form>
+            </div>
+				<h4></h4>
+					<p></p>
+						<div class="cupon-input">
 							</div>
 						</div>
 					</div>
+
+				<?php 
+				if(isset($_GET['name'])){
+				$name = $_GET['name'];
+				}
+				if( isset($_GET['address'])){
+					$address = $_GET['address'];
+				}
+				if( isset($_GET['mobile'])){
+					$mobile = $_GET['mobile'];
+				}
+				if(!empty($_SESSION["my_cart"]))  
+				{  
+					$total = 0;  
+					foreach($_SESSION["my_cart"] as $keys => $values)  
+					{   
+					$totalPrice = $totalPrice + ($values["pquantity"] * $values["pprice"]);
+					}
+				}
+				?>
 					<div class="offset-lg-2 col-lg-6">
 						<div class="cart-total-details">
 							<h4>Cart total</h4>
 							<p>Final Info</p>
 							<ul class="cart-total-card">
-								<li>Subtotal<span>$59.90</span></li>
-								<li>Shipping<span>Free</span></li>
-								<li class="total">Total<span>$59.90</span></li>
+								<li>Name<span> <?=$name;?> </span></li>
+								<li>Address<span> <?=$address?></span></li>
+								<li>Mobile number <span> <?=$mobile?></span></li>
+
+								<li class="total">Total<span> <?=$totalPrice?> </span></li>
 							</ul>
 							<a class="site-btn btn-full" href="checkout.html">Proceed to checkout</a>
 						</div>

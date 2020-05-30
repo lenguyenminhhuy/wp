@@ -37,7 +37,7 @@
 </div>
 	<nav id="navigtion" class="sticky">
       <ul>
-	  <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+	  <li><a class="nav-item nav-link" href="index.php">Home</a></li>
 		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
 		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
 
