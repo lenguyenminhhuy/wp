@@ -6,7 +6,6 @@ $(document).ready(function (data) {
         var pbrand = $('#brand' + pid).val();
         var pprice = $('#price' + pid).val();
         var pquantity = $('#quantity' + pid).val();
-
         if (pquantity > 0) {
             $.ajax({
                 url: "action.php",

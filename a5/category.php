@@ -27,7 +27,7 @@
 
 	<nav id="navigtion" class="sticky">
       <ul>
-        <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+        <li><a class="nav-item nav-link" href="index.php"> Home </a></li>
 		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
 		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
         <li><a class="nav-item nav-link" href="contact.php"> Contact </a></li>
@@ -40,12 +40,14 @@
 	<!-- Page Info -->
 	<div class="page-info-section page-info-big">
 		<div class="container">
-			<h2> Woman </h2>
+			<h2> Woman </h2> 
+			
 			<div class="site-breadcrumb">
 				<a href="index.php">Home</a> /
 				<span> Woman clothes</span> /
 				<a href="product.php"> Women shirts </a>
 			</div>
+			<h6> <i> (Click to <span> <b> women shirts </b> </span> to see all women products which are now selling.) </i> </h6>
 			<img src="img/categorie-page-top.png" alt="" class="cata-top-pic">
 		</div>
 	</div>

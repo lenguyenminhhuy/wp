@@ -1,28 +1,24 @@
+<?php
+ session_start();  
+
+ require 'config.php';
+ ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-	<title> Assignment 5 </title>
-	<meta charset="UTF-8">
-	<meta name="description" content="The Plaza eCommerce Template">
-	<meta name="keywords" content="plaza, eCommerce, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="img/favicon.ico" rel="shortcut icon" />
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" />
+<title> Assignment 5</title>  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="nav.css" />
-	<link rel="stylesheet" href="css/animate.css" />
 </head>
 
 <body>
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 	<nav id="navigtion" class="sticky">
       <ul>
-	  <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+	  <li><a class="nav-item nav-link" href="index.php"> Home </a></li>
 		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
 		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
         <li><a class="nav-item nav-link" href="contact.php"> Contact </a></li>
@@ -39,260 +35,38 @@
 			<img src="img/page-info-art.png" alt="" class="page-info-art">
 		</div>
 	</div>
-	<div class="page-area product-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<figure>
-						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
-					</figure>
-				</div>
-				<div class="col-lg-6">
-					<div class="product-content">
-						<h2>Black Shoulder bag</h2>
-						<div class="pc-meta">
-							<h4 class="price">$19.50</h4>
-							<div class="review">
-								<div class="rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star is-fade"></i>
-								</div>
-								<span>(2 reviews)</span>
-							</div>
-						</div>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
-							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-							consectetur, adipisci velit</p>
-						
+                <h3 style="text-align:center" id="title"> All products </h3> <br/>  
+                     <div id="products" class="tab-pane fade in active">  
+                     <?php  
+                     $query1 = "SELECT * FROM tbl_product ORDER BY id ASC";  
+                     $result1 = $conn->query($query1);  
+                     while($row = $result1->fetch_assoc())  
+                     {  
+                     ?>  
+					  <div class="container-fluid">  
+           <div class="row">
+                     <div class="col-md-3" id="brand<?=$row['brand']?>">  
+                          <div style="background-color: #f2d9ff ;border: 1.2px solid #e072a6;  border-radius:8px; padding:15px;   margin-bottom: 20px">  
+							   <img src="img/clothes/<?= $row["image"]; ?>" class="img-responsive" /><br />  
+                               <h4 class="text-info" style="text-align:center;">Name: <?= $row["name"]; ?></h4>  
+							   <h5 class="text-danger" style="text-align:center;"> Brand: <?= $row["brand"]; ?></h5>  
+                               <h5 class="text-danger" style="text-align:center;">Price: $ <?= $row["price"]; ?></h5>  
+							   <div style="height: 150px; "> <p> <span class="text-danger"> Description:</span> <?= $row['description'];?></p> </div>
+                               <input type="text" name="quantity" id="quantity<?= $row["id"]; ?>" class="form-control" value="1" />  
+							   <input type="hidden" name="product_name" id="name<?= $row["id"]; ?>" value="<?= $row["name"]; ?>" />  
+							   <input type="hidden" name="product_brand" id="brand<?= $row["id"]; ?>" value="<?= $row["brand"]; ?>" />  
+                               <input type="hidden" name="product_price" id="price<?= $row["id"]; ?>" value="<?= $row["price"]; ?>" />  
+                               <input type="button" name="cart_update" id="<?= $row["id"]; ?>" style="margin-top:10px; height: 42px; padding-bottom: 5px; color: white" class="btn btn-danger btn-block btn-lg form-control cart_update" value="Add to Cart" />  
+						  </div>  
 	
-					</div>
-				</div>
-			</div>
-		
-				</div>
-			</div>
-
-			<div class="page-area product-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<figure>
-						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
-					</figure>
-				
-				</div>
-				<div class="col-lg-6">
-					<div class="product-content">
-						<h2>B </h2>
-						<div class="pc-meta">
-							<h4 class="price">$19.50</h4>
-							<div class="review">
-								<div class="rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star is-fade"></i>
-								</div>
-								<span>(2 reviews)</span>
-							</div>
-						</div>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
-							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-							consectetur, adipisci velit</p>
-						
-	
-					</div>
-				</div>
-			</div>
-		
-				</div>
-			</div>
-
-			<div class="page-area product-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<figure>
-						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
-					</figure>
-				
-				</div>
-				<div class="col-lg-6">
-					<div class="product-content">
-						<h2>C</h2>
-						<div class="pc-meta">
-							<h4 class="price">$19.50</h4>
-							<div class="review">
-								<div class="rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star is-fade"></i>
-								</div>
-								<span>(2 reviews)</span>
-							</div>
-						</div>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
-							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-							consectetur, adipisci velit</p>
-						
-	
-					</div>
-				</div>
-			</div>
-		
-				</div>
-			</div>
-
-			<div class="page-area product-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<figure>
-						<img class="product-big-img" src="img/clothes/1.jpg" alt="">
-					</figure>
-				
-				</div>
-				<div class="col-lg-6">
-					<div class="product-content">
-						<h2>D</h2>
-						<div class="pc-meta">
-							<h4 class="price">$19.50</h4>
-							<div class="review">
-								<div class="rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star is-fade"></i>
-								</div>
-								<span>(2 reviews)</span>
-							</div>
-						</div>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore- mque
-							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-							architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-							aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-							voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-							consectetur, adipisci velit</p>
-						
-	
-					</div>
-				</div>
-			</div>
-		
-				</div>
-			</div>
-
-
+                     </div>  
+                     <?php  
+                     }  
+                     ?>  
+					 </div>  
+                </div>  
 			
-			<div class="text-center rp-title">
-				<h5>Related products</h5>
-			</div>
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/clothes/1.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>quick view</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>save</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Long red Shirt</h6>
-							<p>$39.90</p>
-						</div>
-					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/clothes/2.jpg" alt="">
-							<div class="bache">NEW</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>quick view</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>save</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Hype grey shirt</h6>
-							<p>$19.50</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/clothes/3.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>quick view</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>save</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>long sleeve jacket</h6>
-							<p>$59.90</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/clothes/4.jpg" alt="">
-							<div class="bache sale">SALE</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>quick view</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>save</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Denim men shirt</h6>
-							<p>$32.20 <span>RRP 64.40</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Page end -->
 
 
@@ -385,6 +159,9 @@
 
 
 	<!--====== Javascripts & Jquery ======-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+	<script async defer src='filter.js'></script>
+	<script async defer src='cart.js'></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>

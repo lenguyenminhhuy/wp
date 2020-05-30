@@ -850,3 +850,5 @@ Date	Name	Email	Mobile	MovieID	Day	Hour	"STA Qty"	"STP Qty"	"STC Qty"	"FCA Qty"	
 20-05-24	Mi	leemii1802@gmail.com	+61456789876	123456789123456	Sunday	3pm	"Top End Wedding "	" AHF Sunday 3pm"	2	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	43.20
 20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Friday	9pm	"Avengers: Endgame "	"ACT Friday 9pm"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	0.00
 20-05-24	Mi	csd@gmail.com	+61456789876	123456789123456	Thursday	9pm	"Avengers: Endgame "	"ACT Thursday 9pm"	2	"Please select"	"Please select"	"Please select"	"Please select"	"Please select"	43.20
+20-05-30	Mi	leemii1802@gmail.com	+61456789876	123456789124156	Saturday	3pm	"Top End Wedding "	" AHF Saturday 3pm"	2	2	2	1	1	2	229.31
+20-05-30	Mi	leemii1802@gmail.com	+61456789876	123456789124156		3pm	"Top End Wedding "	" AHF  3pm"	2	2	2	1	1	2	229.31

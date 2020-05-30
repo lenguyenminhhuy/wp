@@ -20,19 +20,74 @@
            <link rel="stylesheet" href="nav.css"/>
 		   <script async defer src='filter.js'></script>
 		   <script async defer src='cart.js'></script>
-
         </head>  
       <body>   
 	<nav id="navigtion" class="sticky">
       <ul>
-	  <li><a class="nav-item nav-link" href="index.php">About Us</a></li>
+	  <li><a class="nav-item nav-link" href="index.php"> Home </a></li>
 		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
 		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
         <li><a class="nav-item nav-link" href="contact.php"> Contact </a></li>
       </ul>
     </nav>
            <br />  
-           <div class="container-fluid">  
+
+           	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+	
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="container-fluid">
+			<!-- logo -->
+			<div class="site-logo">
+				<img src="img/logo.png" alt="logo">
+			</div>
+			<!-- responsive -->
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
+			</div>
+			<div class="header-right">
+				<a href="#" class="search"><img src="img/icons/search.png" alt=""></a>
+			</div>
+			<!-- site menu -->
+		
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="img/bg.jpg">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="hs-left"><img src="img/slider-img.png" alt=""></div>
+				<div class="hs-right">
+						
+				</div>
+			</div>
+		
+		<div class="section-title">
+			<h2 style="text-align: center; font-size: 60px">Premium products</h2>
+			<p style="text-align: center;color: grey; font-size: 20px">We recommend</p>
+		</div>
+		<div class="intro-slider" >
+			
+					<div class="col-lg-4">
+							<img src="img/intro/1.jpg" alt="#">
+					</div>
+				
+					<div class="col-lg-4">
+							<img src="img/intro/2.jpg" alt="#">
+                         </div>
+                         <div class="col-lg-4">
+							<img src="img/intro/3.jpg" alt="#">
+					</div>
+		</div>
+     </section>
+  
+           <div class="container-fluid" style="padding-top: 500px">  
            <div class="row">
 				<div class="col-lg-3">
 					<h3 style="text-align:center"> Select brand </h3>
@@ -116,5 +171,19 @@
            <form method="POST">
           <input type="submit" value="Reset data" name='session-reset'>
       </form> 
+      <footer id="footer">
+    <div>&copy;
+      <script>
+        document.write(new Date().getFullYear());
+      </script> Web programming - Assignment 4
+      <div> <b> Group </b>: Group 12
+        <br>
+        <b> Student name 1 </b> : Le Nguyen Minh Huy - s3777280
+        <br>
+        <b> Student name 2 </b> : Nguyen Quoc Thang - s3806617 </div>
+    </div>
+    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
+      Programming course at RMIT University in Melbourne, Australia.</div>
+      </footer>
       </body>  
  </html>  
