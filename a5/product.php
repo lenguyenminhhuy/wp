@@ -1,8 +1,7 @@
-<?php
- session_start();  
-
- require 'config.php';
- ?>
+<?php   
+session_start();  
+require 'system/helper.php';
+include("templates/header.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,63 +9,119 @@
 <title> Assignment 5</title>  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+	<script async defer src='assets/js/cart.js'></script>
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="nav.css" />
+	<style>
+		.description {
+			margin-top: 30px
+		}
+		.description p {
+			font-size: 25px
+		}
+		.des {
+			color: darkred
+		}
+	
+		.image img {
+			width: 440px;
+			margin-bottom: 10px
+		}
+		.image h2 {
+			text-align: center;
+		}
+	</style>
 </head>
-
 <body>
-	<nav id="navigtion" class="sticky">
-      <ul>
-	  <li><a class="nav-item nav-link" href="index.php"> Home </a></li>
-		<li><a class="nav-item nav-link" href="category.php"> Product detail </a></li>
-		<li><a class="nav-item nav-link" href="cart.php"> Cart</a></li>
-        <li><a class="nav-item nav-link" href="contact.php"> Contact </a></li>
-      </ul>
-    </nav>
 	<div class="page-info-section page-info">
 		<div class="container">
 			<div class="site-breadcrumb">
-				<a href="">Home</a> /
-				<a href="">Sales</a> /
+				<a href="index.php">Home</a> /
+			
 				<a href="">Shirt</a> /
 				<span> Shirt for women  </span>
 			</div>
 			<img src="img/page-info-art.png" alt="" class="page-info-art">
 		</div>
 	</div>
-                <h3 style="text-align:center" id="title"> All products </h3> <br/>  
-                     <div id="products" class="tab-pane fade in active">  
-                     <?php  
-                     $query1 = "SELECT * FROM tbl_product ORDER BY id ASC";  
-                     $result1 = $conn->query($query1);  
-                     while($row = $result1->fetch_assoc())  
-                     {  
-                     ?>  
-					  <div class="container-fluid">  
-           <div class="row">
-                     <div class="col-md-3" id="brand<?=$row['brand']?>">  
-                          <div style="background-color: #f2d9ff ;border: 1.2px solid #e072a6;  border-radius:8px; padding:15px;   margin-bottom: 20px">  
-							   <img src="img/clothes/<?= $row["image"]; ?>" class="img-responsive" /><br />  
-                               <h4 class="text-info" style="text-align:center;">Name: <?= $row["name"]; ?></h4>  
-							   <h5 class="text-danger" style="text-align:center;"> Brand: <?= $row["brand"]; ?></h5>  
-                               <h5 class="text-danger" style="text-align:center;">Price: $ <?= $row["price"]; ?></h5>  
-							   <div style="height: 150px; "> <p> <span class="text-danger"> Description:</span> <?= $row['description'];?></p> </div>
-                               <input type="text" name="quantity" id="quantity<?= $row["id"]; ?>" class="form-control" value="1" />  
-							   <input type="hidden" name="product_name" id="name<?= $row["id"]; ?>" value="<?= $row["name"]; ?>" />  
-							   <input type="hidden" name="product_brand" id="brand<?= $row["id"]; ?>" value="<?= $row["brand"]; ?>" />  
-                               <input type="hidden" name="product_price" id="price<?= $row["id"]; ?>" value="<?= $row["price"]; ?>" />  
-                               <input type="button" name="cart_update" id="<?= $row["id"]; ?>" style="margin-top:10px; height: 42px; padding-bottom: 5px; color: white" class="btn btn-danger btn-block btn-lg form-control cart_update" value="Add to Cart" />  
-						  </div>  
-	
-                     </div>  
-                     <?php  
-                     }  
-                     ?>  
-					 </div>  
-                </div>  
+	<br/>
+	<div class="container-fluid">
+	<div class="row">
 			
+			<div class="col-lg-3">
+					
+			<?php 
+			if (isset($_GET["pid"])){
+			$pid = $_GET["pid"];
+			//  echo $pid;
+			$sql = "SELECT * FROM tbl_product WHERE id='$pid'";
+			$result = $conn->query($sql);  
+				 while($row = $result->fetch_assoc())  
+				 {  
+				   $brand = $row['brand'];
+				   $name = $row['name'];
+				   $price = $row['price'];
+				   $description = $row['description'];
+				   $image = $row['image'];
+				   ?>
+				   	<div class="image">
+					<img src='assets/img/clothes/<?=$image?>'/>
+					<div> <h2>  <?=$name?> </h2> </div>
+					<input type="text" name="quantity" id="quantity<?= $row["id"]; ?>" class="form-control" value="1" />  
+					<input type="hidden" name="product_name" id="name<?= $row["id"]; ?>" value="<?= $row["name"]; ?>" />  
+					<input type="hidden" name="product_brand" id="brand<?= $row["id"]; ?>" value="<?= $row["brand"]; ?>" />  
+					<input type="hidden" name="product_price" id="price<?= $row["id"]; ?>" value="<?= $row["price"]; ?>" />  
+					<input type="button" name="cart_update" id="<?= $row["id"]; ?>" style="margin-top:10px; height: 42px; padding-bottom: 5px; color: white" class="btn btn-danger btn-block btn-lg form-control cart_update" value="Add to Cart" />  	
+		<?php
+			}
+		}
+		?>
+		<?php 
+			if (isset($_GET["pid"])){
+			$pid = $_GET["pid"];
+			//  echo $pid;
+			$sql = "SELECT * FROM tbl_product WHERE id='$pid'";
+			$result = $conn->query($sql);  
+				 while($row = $result->fetch_assoc())  
+				 {  
+					$image = $row['image'];
+					?>
+		</div>	
+	</div>
+	<?php }  } ?>
+				<div class="col-lg-9">		
+						<?php 
+						if (isset($_GET["pid"])){
+							$pid = $_GET["pid"];
+							//  echo $pid;
+							$sql = "SELECT * FROM tbl_product WHERE id='$pid'";
+							$result = $conn->query($sql);  
+							   while($row = $result->fetch_assoc())  
+							   {  
+								 $brand = $row['brand'];
+								 $name = $row['name'];
+								 $price = number_format($row['price'], 2);
+								 $description = $row['description'];
+								 $image = $row['image'];
+								 ?>
+								 <div class="description">
+								<p> <span class="des"> Description: </span> <?= $description ?> </p>
+								<h4 class="text-danger"> Price: <?=$price?> </h4> 
+								<br/>
+								<h4 class="text-danger"> Flash Sale <span style="color: grey ;font-size: 21px"> <i> Begin after 17:00 </i></span> </h4> 
+
+								</div>
+					  <?php
+							  }
+							  }
+				?>
 				</div>
+				
+
+
+			</div>
+</div>
 	<!-- Page end -->
 
 
@@ -161,7 +216,6 @@
 	<!--====== Javascripts & Jquery ======-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 	<script async defer src='filter.js'></script>
-	<script async defer src='cart.js'></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
