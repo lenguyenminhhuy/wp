@@ -1,66 +1,63 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PDO - Create a Record </title>
-      
+    <title>PDO - Create a Record </title>      
     <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-          
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />          
 </head>
 <body>
-  
     <!-- container -->
     <div class="container">
    
         <div class="page-header">
             <h1>Create an Admin account</h1>
-        </div>
-      
+        </div>    
         <?php
     if($_POST){
         // include database connection
-        include 'config/database1.php';
-    
+        include 'config/database1.php';    
         try{
-            $query = "INSERT INTO admin1
-                SET Username=:Username, password=:password
-                    created=:created";
-    
+            $query =   "INSERT INTO admin1(Username, password) VALUES (?,?)";    
             // prepare query for execution
             $stmt = $con->prepare($query);
     
             // posted values
+            //$id=htmlspecialchars(strip_tags($_POST['id']));
             $Username=htmlspecialchars(strip_tags($_POST['Username']));
             $password=htmlspecialchars(strip_tags($_POST['password']));
 
             // bind the parameters
-            $stmt->bindParam(':Username', $Username);
-            $stmt->bindParam(':password', $password);
+            $stmt->bindParam('ss', $u, $p);
+            $u = $Username;
+            $p = $password;
+            //$u = $Username;
+            //$p = $password;
+            //$stmt->bindParam(':Username', $Username);
+            //$stmt->bindParam(':password', $password);
             
             // specify when this record was inserted to the database
-            $created=date('Y-m-d H:i:s');
-            $stmt->bindParam(':created', $created);
+            // $created=date('Y-m-d H:i:s');
+            // $stmt->bindParam(':created', $created);
             
             // Execute the query
-            if($stmt->execute()){
-                echo "<div class='alert alert-success'>Record was saved.</div>";
-            }else{
-                echo "<div class='alert alert-danger'>Unable to save record.</div>";
-            }
-            
+            $stmt->execute();
+            echo "<div class='alert alert-success'>Record was saved.</div>";
+
+        } catch(Exception $exception){
+            var_dump($exception);
         }
-        
-        // show error
-        catch(PDOException $exception){
-            die('ERROR: ' . $exception->getMessage());
-        }
+        $stmt->close();
     }
         ?>
  
 <!-- html form here where the product information will be entered -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+<form action="create1.php" method="post" enctype="multipart/form-data">
 
 <table class='table table-hover table-responsive table-bordered'>
+<!-- <tr>
+            <td> Id</td>
+            <td><input type='number' name='id' class='form-control' /></td>
+        </tr> -->
         <tr>
             <td>Username</td>
             <td><input type='text' name='Username' class='form-control' /></td>

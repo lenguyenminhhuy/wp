@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-8 col-sm-12">
                         <div class="footer-widget about-widget">
-                            <img src="assets/img/logo.png" class="footer-logo" alt="">
+                            <!-- <img src="assets/img/logo.png" class="footer-logo" alt=""> -->
                             <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus
                                 urna, id dapibus erat iaculis ut. Integer ac sem.</p>
                             <div class="cards">
@@ -70,14 +70,22 @@
         <!-- Footer top section end -->
         
         <!-- Footer section -->
-        <footer class="footer-section">
+        <footer class="footer-section" style="color: white;">
             <div class="container">
                 <p class="copyright">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-                    with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank">Colorlib</a>
+                    <script>
+        document.write(new Date().getFullYear());
+      </script> Web programming - Assignment 4
+      <div> <b> Group </b>: Group 12
+        <br>
+        <b> Student name 1 </b> : Le Nguyen Minh Huy - s3777280
+        <br>
+        <b> Student name 2 </b> : Nguyen Quoc Thang - s3806617 </div>
+   
+    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
+      Programming course at RMIT University in Melbourne, Australia.</div> </div>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>

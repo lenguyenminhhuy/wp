@@ -25,16 +25,20 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_product SET name=:name, image=:image, price=:price, brand=:brand, description=:description, created=:created";
+        $query = "INSERT INTO tbl_product(id, name, image, price, brand, description) VALUES '(?,?,?,?,?)'";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
  
         // posted values
+        $id=htmlspecialchars(strip_tags($_POST['id']));
+
         $name=htmlspecialchars(strip_tags($_POST['name']));
-        $description=htmlspecialchars(strip_tags($_POST['description']));
+        $image=htmlspecialchars(strip_tags($_POST['image']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
         $brand=htmlspecialchars(strip_tags($_POST['brand']));
+
+        $description=htmlspecialchars(strip_tags($_POST['description']));
 
         // new 'image' field
         $image=!empty($_FILES["image"]["name"])
@@ -43,18 +47,27 @@ if($_POST){
         $image=htmlspecialchars(strip_tags($image));
  
         // bind the parameters
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':brand', $brand);
-        $stmt->bindParam(':image', $image);
+        $stmt->bindParam('ssssss', $id, $name, $image, $price, $brand, $description);
+        $id = $id;
+        $name = $name;
+        $image = $image;
+        $price = $price;
+        $brand = $brand;
+        $description = $description;
+        // $stmt->bindParam(':id', $id);
+
+        // $stmt->bindParam(':name', $name);
+        // $stmt->bindParam(':description', $description);
+        // $stmt->bindParam(':price', $price);
+        // $stmt->bindParam(':brand', $brand);
+        // $stmt->bindParam(':image', $image);
          
         // specify when this record was inserted to the database
-        $created=date('Y-m-d H:i:s');
-        $stmt->bindParam(':created', $created);
+        // $created=date('Y-m-d H:i:s');
+        // $stmt->bindParam(':created', $created);
          
         // Execute the query
-        if($stmt->execute()){
+        $stmt->execute();
             echo "<div class='alert alert-success'>Record was saved.</div>";
 
             // now, if image is not empty, try to upload the image
@@ -122,16 +135,16 @@ if($_POST){
         
         }
 
-        }else{
-            echo "<div class='alert alert-danger'>Unable to save record.</div>";
         }
-         
-    }
-     
+       
+    
+    
     // show error
-    catch(PDOException $exception){
-        die('ERROR: ' . $exception->getMessage());
-    }
+ 
+ catch(Exception $exception){
+    var_dump($exception);
+}
+$stmt->close();
 }
 ?>
  

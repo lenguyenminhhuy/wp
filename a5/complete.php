@@ -19,7 +19,23 @@ include("templates/header.php");
         <div class="container">
             <div class="row">
             <h3>Order Successfully Submitted</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac ante cursus lorem maximus semper non vitae nibh. Aenean aliquam lorem at lectus pulvinar, at eleifend enim rutrum. Suspendisse potenti. Donec bibendum arcu sed sapien convallis ullamcorper. Ut posuere urna velit, a luctus turpis cursus sit amet. </p>
+            <p>Your order has been successful and your parcel will be dispatched within the next 2 working days.
+	** Please note you will not receive a further order confirmation. You will receive an email notification when your order has been shipped. Otherwise we will only contact you if there is a problem or delay. **
+	<br/>
+	</br>
+	Important information relating to your order
+	Average shipping times
+	<ul>
+	<li> 
+	UK & Europe: 5-7 working days
+	</li>
+	<li>
+	USA & Rest of World: 7-14 working days
+	</li>
+	</ul>
+
+	Delivery addresses
+	We will ship to the address provided with the order. Please do not worry if you address is classed as ‘unconfirmed’ on your order email, this is set by PayPal and will not affect our dispatch. </p>
             </div> 
             </div>
         </div>

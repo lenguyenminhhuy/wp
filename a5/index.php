@@ -4,6 +4,10 @@ require 'system/helper.php';
 include("templates/header.php"); ?>
 
 	<!-- Hero section -->
+    <br/>
+
+    <h1 style="text-align: center;  color: #b249c9"> WELCOME TO SMARTWEAR </h1>
+    <BR/>
 	<section class="hero-section set-bg">
 		<div class="hero-slider owl-carousel">
 			<div class="hs-item">

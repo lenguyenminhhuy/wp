@@ -9,7 +9,6 @@ include("templates/header.php"); ?>
 <title> Assignment 5</title>  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-	<script async defer src='assets/js/cart.js'></script>
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="nav.css" />
@@ -21,15 +20,20 @@ include("templates/header.php"); ?>
 			font-size: 25px
 		}
 		.des {
-			color: darkred
+			color: #a3363d;
+			font-family: 'Raleway', sans-serif;
 		}
 	
 		.image img {
-			width: 440px;
+			width: 380px;
 			margin-bottom: 10px
 		}
 		.image h2 {
 			text-align: center;
+			font-family: cursive; 
+			color: #b249c9;
+			font-size: 40px;
+			padding-left: 50px
 		}
 	</style>
 </head>
@@ -65,14 +69,11 @@ include("templates/header.php"); ?>
 				   $description = $row['description'];
 				   $image = $row['image'];
 				   ?>
-				   	<div class="image">
-					<img src='assets/img/clothes/<?=$image?>'/>
-					<div> <h2>  <?=$name?> </h2> </div>
-					<input type="text" name="quantity" id="quantity<?= $row["id"]; ?>" class="form-control" value="1" />  
-					<input type="hidden" name="product_name" id="name<?= $row["id"]; ?>" value="<?= $row["name"]; ?>" />  
-					<input type="hidden" name="product_brand" id="brand<?= $row["id"]; ?>" value="<?= $row["brand"]; ?>" />  
-					<input type="hidden" name="product_price" id="price<?= $row["id"]; ?>" value="<?= $row["price"]; ?>" />  
-					<input type="button" name="cart_update" id="<?= $row["id"]; ?>" style="margin-top:10px; height: 42px; padding-bottom: 5px; color: white" class="btn btn-danger btn-block btn-lg form-control cart_update" value="Add to Cart" />  	
+				    <div class="image">
+					   <div> <h2 style="text-align: center">  <?=$name?> </h2> </div>
+
+					  	<img src='assets/img/clothes/<?=$image?>'/>
+					
 		<?php
 			}
 		}
@@ -90,7 +91,9 @@ include("templates/header.php"); ?>
 		</div>	
 	</div>
 	<?php }  } ?>
-				<div class="col-lg-9">		
+	<div class="col-lg-1">	
+	</div>
+				<div class="col-lg-8">		
 						<?php 
 						if (isset($_GET["pid"])){
 							$pid = $_GET["pid"];
@@ -106,11 +109,20 @@ include("templates/header.php"); ?>
 								 $image = $row['image'];
 								 ?>
 								 <div class="description">
-								<p> <span class="des"> Description: </span> <?= $description ?> </p>
-								<h4 class="text-danger"> Price: <?=$price?> </h4> 
+								<p> <span class="des"><b> Description: </b></span> <?= $description ?> </p>
 								<br/>
-								<h4 class="text-danger"> Flash Sale <span style="color: grey ;font-size: 21px"> <i> Begin after 17:00 </i></span> </h4> 
-
+								<h4 > <span style="font-family: 'Raleway', sans-serif; font-size: 30px ; color: #a3363d"> Price: </span> <?=$price?> </h4> 
+								<br/>
+								<br/>
+								<h4 class="text-danger"> <span  style="font-family: cursive; font-size: 30px ;" > Flash Sale </span> <span style="color: grey ;font-size: 21px"> <i> Begin after 17:00 </i></span> </h4> 
+								<input type="hidden" name="product_name" id="name<?= $row["id"]; ?>" value="<?= $row["name"]; ?>" />  
+								<input type="hidden" name="product_brand" id="brand<?= $row["id"]; ?>" value="<?= $row["brand"]; ?>" />  
+								<input type="hidden" name="product_price" id="price<?= $row["id"]; ?>" value="<?= $row["price"]; ?>" />  
+								<br/>
+								<div class="col-lg-5">	
+								<input type="text" name="quantity" id="quantity<?= $row["id"]; ?>" class="form-control" value="1" />  
+								<input type="button" name="cart_update" id="<?= $row["id"]; ?>" style="margin-top:10px; height: 42px; padding-bottom: 5px; color: white;" class="btn btn-danger btn-block btn-lg form-control cart_update" value="Add to Cart" />  	
+								</div>
 								</div>
 					  <?php
 							  }
@@ -198,18 +210,7 @@ include("templates/header.php"); ?>
 
 
 	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<p class="copyright">
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;
-				<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-				with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-					target="_blank">Colorlib</a>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</p>
-		</div>
-	</footer>
+	<?php  include("templates/footer.php"); ?>
 	<!-- Footer section end -->
 
 
