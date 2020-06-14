@@ -30,7 +30,6 @@ if (isset($_POST['submit']))
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
-  <script async defer src='script.js'></script>
   <script src='../wireframe.js'></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -761,6 +760,8 @@ if (isset($_POST['submit']))
       </form>
     </div>
   </footer>
+  <script async defer src='script.js'></script>
+
   <?php 
   preShow($_GET);
   preShow($_POST);    
