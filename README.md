@@ -1,2 +1,1 @@
-# ASSIGNMENT 1 
-The link to my website: https://s3777280.github.io/wp/
+## This repository contains 5 assignments of Web Programming course at RMIT University.
